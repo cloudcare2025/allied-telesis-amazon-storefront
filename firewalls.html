@@ -21,31 +21,145 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <style>
-        /* Page-specific styles for firewalls.html */
+        /* =============================================
+           FIREWALLS PAGE - REDESIGNED BACKGROUNDS
+           Clean CSS gradients. No background images.
+           Brand: #4D738A primary, #003865 secondary, #983222 accent
+           ============================================= */
+
+        /* Hero: dramatic gradient, no image */
+        .fw-hero-gradient {
+            position: relative;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #003865 0%, #002E54 35%, #1a3a4f 60%, #4D738A 100%);
+        }
+        .fw-hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 20% 80%, rgba(77, 115, 138, 0.35) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 40% at 80% 20%, rgba(152, 50, 34, 0.12) 0%, transparent 60%);
+            z-index: 1;
+        }
+        .fw-hero-gradient::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.015) 2px,
+                    rgba(255, 255, 255, 0.015) 4px
+                );
+            z-index: 1;
+            pointer-events: none;
+        }
+        .fw-hero-gradient .hero__content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 720px;
+            padding: 80px 20px;
+        }
+        .fw-hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 20px;
+            border-radius: 50px;
+            margin-bottom: 24px;
+        }
+        .fw-hero-gradient .hero__headline {
+            font-family: 'Roboto', sans-serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.08;
+            letter-spacing: 0.5px;
+        }
+        .fw-hero-gradient .hero__subtext {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.88);
+            line-height: 1.65;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Geometric accent shapes in hero */
+        .fw-hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .fw-hero-shape--1 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(77, 115, 138, 0.2) 0%, transparent 70%);
+            top: -80px;
+            right: -100px;
+        }
+        .fw-hero-shape--2 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 56, 101, 0.3) 0%, transparent 70%);
+            bottom: -60px;
+            left: -80px;
+        }
+        .fw-hero-shape--3 {
+            width: 180px;
+            height: 180px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            top: 50%;
+            right: 12%;
+            transform: translateY(-50%);
+        }
+
+        /* Product Showcase */
         .fw-product-showcase {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            margin-top: 40px;
+            gap: 40px;
+            margin-top: 48px;
         }
         .fw-product-detail {
             background: #fff;
-            border: 1px solid #e3e6e6;
-            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
             overflow: hidden;
-            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .fw-product-detail:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 56, 101, 0.1);
         }
         .fw-product-detail__image {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 32px;
-            background: #fff;
+            padding: 40px 32px;
+            background: linear-gradient(180deg, #fafbfc 0%, #fff 100%);
             min-height: 280px;
+            border-bottom: 1px solid #f0f0f0;
         }
         .fw-product-detail__image img {
             max-width: 100%;
@@ -53,11 +167,24 @@
             object-fit: contain;
         }
         .fw-product-detail__body {
-            padding: 24px 32px 32px;
+            padding: 28px 32px 36px;
+        }
+        .fw-product-detail__tier {
+            display: inline-block;
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #4D738A;
+            background: rgba(77, 115, 138, 0.08);
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin-bottom: 12px;
         }
         .fw-product-detail__name {
             font-family: 'Roboto', sans-serif;
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 700;
             color: #020817;
             margin-bottom: 4px;
@@ -68,20 +195,20 @@
             font-size: 14px;
             font-weight: 300;
             color: #4b5563;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
         .fw-product-detail__specs {
             list-style: none;
             padding: 0;
-            margin: 0 0 24px;
+            margin: 0 0 28px;
         }
         .fw-product-detail__specs li {
             font-family: 'Roboto', sans-serif;
             font-size: 14px;
             color: #2b333f;
             line-height: 1.7;
-            padding: 6px 0;
-            border-bottom: 1px solid #f0f0f0;
+            padding: 7px 0;
+            border-bottom: 1px solid #f0f2f4;
             display: flex;
             align-items: baseline;
             gap: 10px;
@@ -92,8 +219,8 @@
         .fw-product-detail__specs li::before {
             content: '';
             display: inline-block;
-            width: 6px;
-            height: 6px;
+            width: 5px;
+            height: 5px;
             background: #4D738A;
             border-radius: 50%;
             flex-shrink: 0;
@@ -109,55 +236,176 @@
             max-width: 220px;
         }
 
-        /* Comparison section enhancements */
-        .fw-comparison-intro {
-            text-align: center;
-            max-width: 680px;
-            margin: 0 auto 8px;
+        /* Features section: clean dark gradient, NO background image */
+        .fw-features-section {
+            position: relative;
+            padding: 100px 0;
+            overflow: hidden;
+            background: linear-gradient(160deg, #0a1628 0%, #0f2238 30%, #1a3a4f 65%, #234a5e 100%);
+        }
+        .fw-features-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 50% 80% at 0% 50%, rgba(77, 115, 138, 0.15) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 100% 30%, rgba(0, 56, 101, 0.2) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .fw-features-section .container {
+            position: relative;
+            z-index: 1;
+        }
+        .fw-features-title {
             font-family: 'Roboto', sans-serif;
-            font-size: 15px;
-            color: #4b5563;
+            font-size: 40px;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 16px;
+            letter-spacing: 0.3px;
+        }
+        .fw-features-subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            max-width: 560px;
+            margin: 0 auto 56px;
             line-height: 1.6;
         }
-        .comparison-table td.fw-highlight {
+        .fw-features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .fw-feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 36px 32px;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s;
+        }
+        .fw-feature-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.09);
+            border-color: rgba(77, 115, 138, 0.3);
+        }
+        .fw-feature-card__icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(77, 115, 138, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .fw-feature-card__title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 10px;
+            letter-spacing: 0.2px;
+        }
+        .fw-feature-card__text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.65;
+        }
+
+        /* Comparison section */
+        .fw-comparison {
+            background: #fff;
+            padding: 100px 0;
+        }
+        .fw-comparison .comparison-table thead th {
+            background: #003865;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 18px 16px;
+            text-align: center;
+            border-bottom: 3px solid #4D738A;
+        }
+        .fw-comparison .comparison-table thead th:first-child {
+            text-align: left;
+        }
+        .fw-comparison .comparison-table td.fw-highlight {
             color: #003865;
             font-weight: 600;
         }
-        .comparison-table td.fw-best {
+        .fw-comparison .comparison-table td.fw-best {
             color: #003865;
             font-weight: 700;
-            background: rgba(77, 115, 138, 0.06);
+            background: rgba(77, 115, 138, 0.05);
+        }
+
+        /* Stats section: gradient instead of flat color */
+        .fw-stats {
+            background: linear-gradient(135deg, #003865 0%, #002E54 40%, #1a3a4f 100%);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .fw-stats::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 70% 50% at 80% 80%, rgba(77, 115, 138, 0.2) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 50% at 10% 20%, rgba(0, 56, 101, 0.25) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .fw-stats .container {
+            position: relative;
+            z-index: 1;
+        }
+        .fw-stats .section-title--white {
+            font-family: 'Roboto', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0;
         }
 
         /* Cross-link tiles */
         .fw-crosslinks {
             background: #f7f8fa;
-            padding: 80px 0;
+            padding: 100px 0;
         }
         .fw-crosslinks__grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 40px;
+            gap: 28px;
+            margin-top: 48px;
         }
         .fw-crosslink-card {
             background: #fff;
-            border-radius: 12px;
-            padding: 32px;
+            border-radius: 16px;
+            padding: 40px 32px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s;
             text-decoration: none;
             display: block;
         }
         .fw-crosslink-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 12px 32px rgba(0, 56, 101, 0.1);
+            border-color: #4D738A;
         }
         .fw-crosslink-card__icon {
             width: 48px;
             height: 48px;
-            margin: 0 auto 16px;
+            margin: 0 auto 20px;
         }
         .fw-crosslink-card__title {
             font-family: 'Roboto', sans-serif;
@@ -170,32 +418,81 @@
             font-family: 'Roboto', sans-serif;
             font-size: 14px;
             color: #6b7280;
-            line-height: 1.6;
+            line-height: 1.65;
+        }
+
+        /* CTA section: dramatic gradient, NO background image */
+        .fw-cta-section {
+            position: relative;
+            padding: 100px 0;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(150deg, #003865 0%, #0a1628 40%, #1a3a4f 70%, #4D738A 100%);
+        }
+        .fw-cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse 60% 60% at 30% 70%, rgba(152, 50, 34, 0.1) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 50% at 70% 30%, rgba(77, 115, 138, 0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .fw-cta-section .contact-cta {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Divider line between sections */
+        .fw-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #e5e7eb 20%, #e5e7eb 80%, transparent 100%);
+            margin: 0;
+            border: none;
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
             .fw-product-showcase {
-                gap: 24px;
+                gap: 28px;
+            }
+            .fw-features-grid {
+                gap: 20px;
             }
             .fw-crosslinks__grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
         @media (max-width: 768px) {
+            .fw-hero-gradient {
+                min-height: 440px;
+            }
+            .fw-hero-gradient .hero__headline {
+                font-size: 36px;
+            }
+            .fw-hero-gradient .hero__subtext {
+                font-size: 16px;
+            }
             .fw-product-showcase {
                 grid-template-columns: 1fr;
             }
             .fw-product-detail__image {
                 min-height: 200px;
-                padding: 24px;
+                padding: 28px 24px;
             }
             .fw-product-detail__body {
-                padding: 20px 24px 28px;
+                padding: 24px 24px 32px;
+            }
+            .fw-features-grid {
+                grid-template-columns: 1fr;
+            }
+            .fw-features-title {
+                font-size: 30px;
             }
             .fw-crosslinks__grid {
                 grid-template-columns: 1fr;
             }
+            .fw-hero-shape { display: none; }
         }
     </style>
 </head>
@@ -339,27 +636,27 @@
             </div>
         </nav>
 
-        <!-- Hero Section -->
-        <section class="hero" data-section="firewalls">
-            <div class="hero__background">
-                <img src="images/hero/firewalls-hero.svg" alt="Allied Telesis Firewalls and Security" loading="eager" width="1500" height="300">
-            </div>
-            <div class="hero__overlay"></div>
+        <!-- Hero Section: Pure CSS Gradient -->
+        <section class="fw-hero-gradient" data-section="firewalls">
+            <div class="fw-hero-shape fw-hero-shape--1" aria-hidden="true"></div>
+            <div class="fw-hero-shape fw-hero-shape--2" aria-hidden="true"></div>
+            <div class="fw-hero-shape fw-hero-shape--3" aria-hidden="true"></div>
             <div class="hero__content">
+                <div class="fw-hero-badge">Unified Threat Management</div>
                 <h1 class="hero__headline">Firewalls &amp; Security</h1>
-                <p class="hero__subtext">Unified Threat Management with up to 10G performance, integrated SD-WAN, deep packet inspection, and autonomous self-defending security built on AlliedWare Plus.</p>
+                <p class="hero__subtext">Up to 10G performance, integrated SD-WAN, deep packet inspection, and autonomous self-defending security built on AlliedWare Plus.</p>
                 <div class="hero__ctas">
                     <a href="#product-showcase" class="btn btn--amazon">View UTM Firewalls</a>
                 </div>
             </div>
         </section>
 
-        <!-- Product Showcase (Core Content) -->
-        <section class="featured-products" id="product-showcase">
+        <!-- Product Showcase -->
+        <section class="featured-products" id="product-showcase" style="background: #fff; padding: 100px 0 80px;">
             <div class="container">
-                <div class="featured-products__header">
-                    <h2 class="section-title">ARX200S UTM Firewalls</h2>
-                    <p class="section-subtitle">Enterprise-grade unified threat management appliances with integrated SD-WAN, built on AlliedWare Plus</p>
+                <div class="featured-products__header" style="background: none; padding: 0; margin-bottom: 0;">
+                    <h2 class="section-title" style="text-align: center;">ARX200S UTM Firewalls</h2>
+                    <p class="section-subtitle" style="text-align: center;">Enterprise-grade unified threat management appliances with integrated SD-WAN, built on AlliedWare Plus</p>
                 </div>
                 <div class="fw-product-showcase">
 
@@ -369,6 +666,7 @@
                             <img src="images/products/firewalls/arx200s-gtx.png" alt="Allied Telesis ARX200S-GTX UTM Firewall" loading="lazy" width="400" height="300">
                         </div>
                         <div class="fw-product-detail__body">
+                            <span class="fw-product-detail__tier">Enterprise HQ</span>
                             <h3 class="fw-product-detail__name">ARX200S-GTX</h3>
                             <p class="fw-product-detail__subtitle">10G UTM Firewall &mdash; Enterprise Headquarters</p>
                             <ul class="fw-product-detail__specs">
@@ -391,6 +689,7 @@
                             <img src="images/products/firewalls/arx200s-gt.png" alt="Allied Telesis ARX200S-GT UTM Firewall" loading="lazy" width="400" height="300">
                         </div>
                         <div class="fw-product-detail__body">
+                            <span class="fw-product-detail__tier">Branch Office</span>
                             <h3 class="fw-product-detail__name">ARX200S-GT</h3>
                             <p class="fw-product-detail__subtitle">1G UTM Firewall &mdash; Branch Office</p>
                             <ul class="fw-product-detail__specs">
@@ -409,54 +708,52 @@
             </div>
         </section>
 
-        <!-- Advanced Security Features (Supporting Proof) -->
-        <section class="from-manufacturer" id="features">
-            <div class="from-manufacturer__background">
-                <div class="from-manufacturer__overlay"></div>
-            </div>
-            <div class="from-manufacturer__content">
-                <div class="container">
-                    <h2 class="from-manufacturer__title">Advanced Security Features</h2>
-                    <div class="from-manufacturer__grid">
-                        <div class="from-manufacturer__card">
-                            <div class="from-manufacturer__card-badge">
-                                <img src="images/branding/icon-security.svg" alt="" width="28" height="28" aria-hidden="true">
-                            </div>
-                            <h3 class="from-manufacturer__card-title">Unified Threat Management</h3>
-                            <p class="from-manufacturer__card-text">Application control, web filtering, antivirus, IPS, and advanced threat protection unified in a single appliance. Eliminate the complexity of managing separate point solutions.</p>
+        <hr class="fw-divider" aria-hidden="true">
+
+        <!-- Advanced Security Features: Pure CSS dark gradient -->
+        <section class="fw-features-section" id="features">
+            <div class="container">
+                <h2 class="fw-features-title">Advanced Security Features</h2>
+                <p class="fw-features-subtitle">Every ARX200S appliance delivers a complete security stack in a single platform</p>
+                <div class="fw-features-grid">
+                    <div class="fw-feature-card">
+                        <div class="fw-feature-card__icon">
+                            <img src="images/branding/icon-security.svg" alt="" width="28" height="28" aria-hidden="true">
                         </div>
-                        <div class="from-manufacturer__card">
-                            <div class="from-manufacturer__card-badge">
-                                <img src="images/branding/icon-performance.svg" alt="" width="28" height="28" aria-hidden="true">
-                            </div>
-                            <h3 class="from-manufacturer__card-title">Integrated SD-WAN</h3>
-                            <p class="from-manufacturer__card-text">Secure inter-branch connectivity with intelligent path selection and application-aware routing. Reduce WAN costs while maintaining security across distributed sites.</p>
+                        <h3 class="fw-feature-card__title">Unified Threat Management</h3>
+                        <p class="fw-feature-card__text">Application control, web filtering, antivirus, IPS, and advanced threat protection unified in a single appliance. Eliminate the complexity of managing separate point solutions.</p>
+                    </div>
+                    <div class="fw-feature-card">
+                        <div class="fw-feature-card__icon">
+                            <img src="images/branding/icon-performance.svg" alt="" width="28" height="28" aria-hidden="true">
                         </div>
-                        <div class="from-manufacturer__card">
-                            <div class="from-manufacturer__card-badge">
-                                <img src="images/branding/icon-automation.svg" alt="" width="28" height="28" aria-hidden="true">
-                            </div>
-                            <h3 class="from-manufacturer__card-title">AMF-Sec Self-Defending Network</h3>
-                            <p class="from-manufacturer__card-text">Automatically quarantines suspect devices without endpoint agents. Winner of the Fortress Cyber Security Award. Transforms the entire network into an intelligent security sensor.</p>
+                        <h3 class="fw-feature-card__title">Integrated SD-WAN</h3>
+                        <p class="fw-feature-card__text">Secure inter-branch connectivity with intelligent path selection and application-aware routing. Reduce WAN costs while maintaining security across distributed sites.</p>
+                    </div>
+                    <div class="fw-feature-card">
+                        <div class="fw-feature-card__icon">
+                            <img src="images/branding/icon-automation.svg" alt="" width="28" height="28" aria-hidden="true">
                         </div>
-                        <div class="from-manufacturer__card">
-                            <div class="from-manufacturer__card-badge">
-                                <img src="images/branding/icon-reliability.svg" alt="" width="28" height="28" aria-hidden="true">
-                            </div>
-                            <h3 class="from-manufacturer__card-title">AlliedWare Plus OS</h3>
-                            <p class="from-manufacturer__card-text">A single, unified operating system across all Allied Telesis infrastructure. Consistent CLI, centralized management, and automated firmware updates reduce operational overhead.</p>
+                        <h3 class="fw-feature-card__title">AMF-Sec Self-Defending Network</h3>
+                        <p class="fw-feature-card__text">Automatically quarantines suspect devices without endpoint agents. Winner of the Fortress Cyber Security Award. Transforms the entire network into an intelligent security sensor.</p>
+                    </div>
+                    <div class="fw-feature-card">
+                        <div class="fw-feature-card__icon">
+                            <img src="images/branding/icon-reliability.svg" alt="" width="28" height="28" aria-hidden="true">
                         </div>
+                        <h3 class="fw-feature-card__title">AlliedWare Plus OS</h3>
+                        <p class="fw-feature-card__text">A single, unified operating system across all Allied Telesis infrastructure. Consistent CLI, centralized management, and automated firmware updates reduce operational overhead.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Specifications Comparison -->
-        <section class="comparison-section" id="specs-comparison">
+        <section class="fw-comparison" id="specs-comparison">
             <div class="container">
-                <h2 class="section-title">Specifications Comparison</h2>
-                <p class="section-subtitle">Compare ARX200S firewall models to find the right fit for your deployment</p>
-                <div class="comparison-table-wrapper">
+                <h2 class="section-title" style="text-align: center;">Specifications Comparison</h2>
+                <p class="section-subtitle" style="text-align: center;">Compare ARX200S firewall models to find the right fit for your deployment</p>
+                <div class="comparison-table-wrapper" style="margin-top: 40px;">
                     <table class="comparison-table">
                         <thead>
                             <tr>
@@ -538,7 +835,7 @@
         </section>
 
         <!-- Trust / Stats Section -->
-        <section class="stats-section">
+        <section class="fw-stats">
             <div class="container">
                 <h2 class="section-title section-title--white">Trusted by 500,000+ Organizations</h2>
                 <div class="stats-grid">
@@ -561,8 +858,8 @@
         <!-- Cross-Links to Related Categories -->
         <section class="fw-crosslinks">
             <div class="container">
-                <h2 class="section-title text-center">Complete Your Network</h2>
-                <p class="section-subtitle text-center">The ARX200S firewalls integrate seamlessly with the full Allied Telesis ecosystem</p>
+                <h2 class="section-title" style="text-align: center;">Complete Your Network</h2>
+                <p class="section-subtitle" style="text-align: center;">The ARX200S firewalls integrate seamlessly with the full Allied Telesis ecosystem</p>
                 <div class="fw-crosslinks__grid">
                     <a href="switches.html" class="fw-crosslink-card">
                         <img src="images/nav/icon-switches.svg" alt="" class="fw-crosslink-card__icon" width="48" height="48" aria-hidden="true">
@@ -583,11 +880,8 @@
             </div>
         </section>
 
-        <!-- Page CTA -->
-        <section class="contact-cta-section">
-            <div class="contact-cta-section__background">
-                <img src="images/hero/firewalls-hero.svg" alt="" aria-hidden="true" loading="lazy">
-            </div>
+        <!-- Page CTA: Pure CSS gradient -->
+        <section class="fw-cta-section">
             <div class="contact-cta">
                 <h2 class="contact-cta__headline">Secure Your Network Today</h2>
                 <p class="contact-cta__text">Explore the ARX200S firewall family on Amazon. Enterprise-grade UTM security with integrated SD-WAN, zero-touch deployment, and autonomous threat containment.</p>

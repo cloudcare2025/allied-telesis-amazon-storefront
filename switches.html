@@ -21,11 +21,154 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <style>
-        /* Page-specific styles for switches.html */
+        /* =========================================
+           SWITCHES PAGE - COMPLETE REDESIGN
+           Clean gradients, no background images
+           ========================================= */
 
-        /* Section anchor nav */
+        /* Hero - dramatic layered gradient with geometric accent */
+        .sw-hero {
+            position: relative;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #001a33 0%, #003865 35%, #4D738A 70%, #6A8FA6 100%);
+        }
+        .sw-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse 80% 50% at 20% 80%, rgba(77, 115, 138, 0.3) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 40% at 80% 20%, rgba(0, 56, 101, 0.4) 0%, transparent 60%);
+            z-index: 1;
+        }
+        .sw-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(77, 115, 138, 0.5), transparent);
+        }
+        /* Subtle geometric grid overlay */
+        .sw-hero__grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: 1;
+        }
+        /* Floating accent shapes */
+        .sw-hero__accent {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(77, 115, 138, 0.15);
+            filter: blur(60px);
+            z-index: 1;
+        }
+        .sw-hero__accent--1 {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            right: -50px;
+        }
+        .sw-hero__accent--2 {
+            width: 300px;
+            height: 300px;
+            bottom: -80px;
+            left: 10%;
+            background: rgba(0, 56, 101, 0.2);
+        }
+        .sw-hero__content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 720px;
+            padding: 80px 20px;
+        }
+        .sw-hero__badge {
+            display: inline-block;
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            padding: 8px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .sw-hero__headline {
+            font-family: 'Roboto', sans-serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+        .sw-hero__subtext {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .sw-hero__ctas {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .sw-hero__stat-bar {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .sw-hero__stat {
+            text-align: center;
+        }
+        .sw-hero__stat-value {
+            font-family: 'Roboto', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+        }
+        .sw-hero__stat-label {
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.55);
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Anchor Nav */
         .sw-anchor-nav {
-            background: #f7f8fa;
+            background: #fff;
             border-bottom: 1px solid #e5e7eb;
             padding: 0;
             position: sticky;
@@ -38,9 +181,8 @@
             gap: 0;
             list-style: none;
             padding: 0;
-            margin: 0;
-            max-width: 1440px;
             margin: 0 auto;
+            max-width: 1440px;
         }
         .sw-anchor-nav__link {
             display: inline-block;
@@ -58,8 +200,8 @@
         }
         .sw-anchor-nav__link:hover,
         .sw-anchor-nav__link--active {
-            color: #4D738A;
-            border-bottom-color: #4D738A;
+            color: #003865;
+            border-bottom-color: #003865;
         }
         .sw-anchor-nav__count {
             font-weight: 400;
@@ -68,7 +210,7 @@
             font-size: 12px;
         }
 
-        /* Category intro text block */
+        /* Category intro */
         .sw-intro {
             background: #fff;
             padding: 48px 0 0;
@@ -84,11 +226,21 @@
             margin: 0 auto;
         }
 
-        /* Subsection dividers */
+        /* Section headers - refined dark navy bar */
         .sw-section-header {
-            background: #003865;
-            padding: 24px 0;
+            background: linear-gradient(135deg, #002647 0%, #003865 100%);
+            padding: 28px 0;
             position: relative;
+            overflow: hidden;
+        }
+        .sw-section-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(77, 115, 138, 0.1));
         }
         .sw-section-header__inner {
             max-width: 1440px;
@@ -97,6 +249,8 @@
             display: flex;
             align-items: baseline;
             justify-content: space-between;
+            position: relative;
+            z-index: 1;
         }
         .sw-section-header__title {
             font-family: 'Roboto', sans-serif;
@@ -109,17 +263,27 @@
             font-family: 'Roboto', sans-serif;
             font-size: 14px;
             font-weight: 300;
-            color: rgba(255, 255, 255, 0.75);
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 4px;
         }
         .sw-section-header__count {
             font-family: 'Roboto', sans-serif;
             font-size: 13px;
             font-weight: 400;
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.55);
             white-space: nowrap;
         }
 
-        /* Product card feature list styling (fixes missing SCSS) */
+        /* Product sections */
+        .sw-products {
+            background: #fff;
+            padding-bottom: 60px;
+        }
+        .sw-products--alt {
+            background: #f7f8fa;
+        }
+
+        /* Product card feature list */
         .product-card__features {
             list-style: none;
             padding: 0;
@@ -146,7 +310,7 @@
             border-radius: 50%;
         }
 
-        /* Flagship highlight card */
+        /* Flagship card */
         .product-card--flagship {
             border: 2px solid #4D738A;
             position: relative;
@@ -166,9 +330,125 @@
             border-radius: 0 0 4px 4px;
         }
 
-        /* Cross-link tiles */
-        .sw-crosslinks {
+        /* Why AT Switches - clean dark gradient, NO background images */
+        .sw-features {
+            position: relative;
+            padding: 100px 0;
+            overflow: hidden;
+            background: linear-gradient(160deg, #0a1628 0%, #002647 40%, #003865 100%);
+        }
+        .sw-features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse 50% 50% at 10% 90%, rgba(77, 115, 138, 0.15) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 90% 10%, rgba(77, 115, 138, 0.1) 0%, transparent 60%);
+        }
+        .sw-features::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+        .sw-features__content {
+            position: relative;
+            z-index: 2;
+        }
+        .sw-features__title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 52px;
+            letter-spacing: 0.5px;
+        }
+        .sw-features__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .sw-feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 36px;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .sw-feature-card:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .sw-feature-card__badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: rgba(77, 115, 138, 0.2);
+            border-radius: 10px;
+            margin-bottom: 16px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #4D738A;
+        }
+        .sw-feature-card__title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+        }
+        .sw-feature-card__text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+        }
+
+        /* Comparison section */
+        .sw-comparison {
             background: #f7f8fa;
+            padding: 80px 0;
+        }
+
+        /* Stats section - clean gradient, no images */
+        .sw-stats {
+            background: linear-gradient(135deg, #003865 0%, #4D738A 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .sw-stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 70%);
+        }
+        .sw-stats__content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Cross-links */
+        .sw-crosslinks {
+            background: #fff;
             padding: 80px 0;
         }
         .sw-crosslinks__grid {
@@ -178,18 +458,19 @@
             margin-top: 40px;
         }
         .sw-crosslink-card {
-            background: #fff;
+            background: #f7f8fa;
             border-radius: 12px;
-            padding: 32px;
+            padding: 36px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e5e7eb;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
             display: block;
         }
         .sw-crosslink-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            border-color: #4D738A;
         }
         .sw-crosslink-card__icon {
             width: 48px;
@@ -210,9 +491,60 @@
             line-height: 1.6;
         }
 
-        /* Alternating section backgrounds */
-        .featured-products--alt {
-            background: #f7f8fa;
+        /* Bottom CTA - clean gradient, NO background images */
+        .sw-cta {
+            position: relative;
+            padding: 100px 0;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #001a33 0%, #003865 50%, #4D738A 100%);
+        }
+        .sw-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse 60% 50% at 30% 20%, rgba(77, 115, 138, 0.2) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 50% at 70% 80%, rgba(0, 56, 101, 0.25) 0%, transparent 60%);
+        }
+        .sw-cta::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .sw-cta__content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .sw-cta__headline {
+            font-family: 'Roboto', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+        .sw-cta__text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+            margin-bottom: 32px;
         }
 
         /* Product card shipping used as subtitle */
@@ -233,6 +565,12 @@
                 flex-direction: column;
                 gap: 4px;
             }
+            .sw-features__grid {
+                grid-template-columns: 1fr;
+            }
+            .sw-hero__stat-bar {
+                gap: 32px;
+            }
         }
         @media (max-width: 768px) {
             .sw-anchor-nav__list {
@@ -249,6 +587,22 @@
             }
             .sw-section-header__title {
                 font-size: 20px;
+            }
+            .sw-hero__headline {
+                font-size: 36px;
+            }
+            .sw-hero__subtext {
+                font-size: 16px;
+            }
+            .sw-hero__stat-bar {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .sw-features__title {
+                font-size: 32px;
+            }
+            .sw-cta__headline {
+                font-size: 30px;
             }
         }
     </style>
@@ -395,18 +749,32 @@
             </div>
         </nav>
 
-        <!-- Hero Section -->
-        <section class="hero" data-section="switches">
-            <div class="hero__background">
-                <img src="images/hero/switches-hero.svg" alt="Allied Telesis Enterprise Switches" loading="eager" width="1500" height="300">
-            </div>
-            <div class="hero__overlay"></div>
-            <div class="hero__content">
-                <h1 class="hero__headline">Enterprise Switches</h1>
-                <p class="hero__subtext">From 100G backbone aggregation to multi-gigabit edge access -- Layer 3 managed switches with VCStack resilience, AMF Plus automation, and up to 1.92 Tbps switching fabric.</p>
-                <div class="hero__ctas">
-                    <a href="#campus" class="btn btn--primary btn--large">View All 17 Switches</a>
+        <!-- Hero Section - Pure CSS gradient, no background images -->
+        <section class="sw-hero">
+            <div class="sw-hero__grid"></div>
+            <div class="sw-hero__accent sw-hero__accent--1"></div>
+            <div class="sw-hero__accent sw-hero__accent--2"></div>
+            <div class="sw-hero__content">
+                <span class="sw-hero__badge">17 Enterprise-Grade Models</span>
+                <h1 class="sw-hero__headline">Enterprise Switches</h1>
+                <p class="sw-hero__subtext">From 100G backbone aggregation to multi-gigabit edge access -- Layer 3 managed switches with VCStack resilience, AMF Plus automation, and up to 1.92 Tbps switching fabric.</p>
+                <div class="sw-hero__ctas">
+                    <a href="#campus" class="btn btn--primary btn--large">View All Switches</a>
                     <a href="#specs-comparison" class="btn btn--secondary btn--large">Compare Specs</a>
+                </div>
+                <div class="sw-hero__stat-bar">
+                    <div class="sw-hero__stat">
+                        <div class="sw-hero__stat-value">1.92 Tbps</div>
+                        <div class="sw-hero__stat-label">Max Fabric</div>
+                    </div>
+                    <div class="sw-hero__stat">
+                        <div class="sw-hero__stat-value">100G</div>
+                        <div class="sw-hero__stat-label">Uplinks</div>
+                    </div>
+                    <div class="sw-hero__stat">
+                        <div class="sw-hero__stat-value">VCStack</div>
+                        <div class="sw-hero__stat-label">Resilience</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -431,7 +799,7 @@
         <!-- ============================================ -->
         <!--   ENTERPRISE CAMPUS (13 products)            -->
         <!-- ============================================ -->
-        <section class="featured-products" id="campus">
+        <section class="featured-products sw-products" id="campus">
             <div class="sw-section-header">
                 <div class="sw-section-header__inner">
                     <div>
@@ -673,7 +1041,7 @@
         <!-- ============================================ -->
         <!--   STACKABLE EDGE (2 products)                -->
         <!-- ============================================ -->
-        <section class="featured-products featured-products--alt" id="edge">
+        <section class="featured-products sw-products sw-products--alt" id="edge">
             <div class="sw-section-header">
                 <div class="sw-section-header__inner">
                     <div>
@@ -727,7 +1095,7 @@
         <!-- ============================================ -->
         <!--   SMALL BUSINESS (2 products)                -->
         <!-- ============================================ -->
-        <section class="featured-products" id="smb">
+        <section class="featured-products sw-products" id="smb">
             <div class="sw-section-header">
                 <div class="sw-section-header__inner">
                     <div>
@@ -778,34 +1146,31 @@
             </div>
         </section>
 
-        <!-- Why Allied Telesis Switches -->
-        <section class="from-manufacturer" id="features">
-            <div class="from-manufacturer__background">
-                <div class="from-manufacturer__overlay"></div>
-            </div>
-            <div class="from-manufacturer__content">
+        <!-- Why Allied Telesis Switches - Pure CSS gradient -->
+        <section class="sw-features" id="features">
+            <div class="sw-features__content">
                 <div class="container">
-                    <h2 class="from-manufacturer__title">Why Allied Telesis Switches</h2>
-                    <div class="from-manufacturer__grid">
-                        <div class="from-manufacturer__card">
-                            <span class="from-manufacturer__card-badge">01</span>
-                            <h3 class="from-manufacturer__card-title">VCStack Resilience</h3>
-                            <p class="from-manufacturer__card-text">Virtual chassis stacking creates a unified, fault-tolerant switching fabric across up to 8 units. One management plane, zero single points of failure.</p>
+                    <h2 class="sw-features__title">Why Allied Telesis Switches</h2>
+                    <div class="sw-features__grid">
+                        <div class="sw-feature-card">
+                            <div class="sw-feature-card__badge">01</div>
+                            <h3 class="sw-feature-card__title">VCStack Resilience</h3>
+                            <p class="sw-feature-card__text">Virtual chassis stacking creates a unified, fault-tolerant switching fabric across up to 8 units. One management plane, zero single points of failure.</p>
                         </div>
-                        <div class="from-manufacturer__card">
-                            <span class="from-manufacturer__card-badge">02</span>
-                            <h3 class="from-manufacturer__card-title">AMF Plus Automation</h3>
-                            <p class="from-manufacturer__card-text">Zero-touch provisioning, automated backup and recovery, and seamless firmware management across your entire switching infrastructure.</p>
+                        <div class="sw-feature-card">
+                            <div class="sw-feature-card__badge">02</div>
+                            <h3 class="sw-feature-card__title">AMF Plus Automation</h3>
+                            <p class="sw-feature-card__text">Zero-touch provisioning, automated backup and recovery, and seamless firmware management across your entire switching infrastructure.</p>
                         </div>
-                        <div class="from-manufacturer__card">
-                            <span class="from-manufacturer__card-badge">03</span>
-                            <h3 class="from-manufacturer__card-title">MACSec &amp; FIPS 140-2</h3>
-                            <p class="from-manufacturer__card-text">Hardware-level encryption on every link. FIPS 140-2 certified for government and regulated industry compliance requirements.</p>
+                        <div class="sw-feature-card">
+                            <div class="sw-feature-card__badge">03</div>
+                            <h3 class="sw-feature-card__title">MACSec &amp; FIPS 140-2</h3>
+                            <p class="sw-feature-card__text">Hardware-level encryption on every link. FIPS 140-2 certified for government and regulated industry compliance requirements.</p>
                         </div>
-                        <div class="from-manufacturer__card">
-                            <span class="from-manufacturer__card-badge">04</span>
-                            <h3 class="from-manufacturer__card-title">AlliedWare Plus OS</h3>
-                            <p class="from-manufacturer__card-text">A unified operating system across all switches, routers, and firewalls. Consistent CLI, centralized policy, and automated lifecycle management.</p>
+                        <div class="sw-feature-card">
+                            <div class="sw-feature-card__badge">04</div>
+                            <h3 class="sw-feature-card__title">AlliedWare Plus OS</h3>
+                            <p class="sw-feature-card__text">A unified operating system across all switches, routers, and firewalls. Consistent CLI, centralized policy, and automated lifecycle management.</p>
                         </div>
                     </div>
                 </div>
@@ -813,7 +1178,7 @@
         </section>
 
         <!-- Specs Comparison Table -->
-        <section class="comparison-section" id="specs-comparison">
+        <section class="comparison-section sw-comparison" id="specs-comparison">
             <div class="container">
                 <h2 class="section-title">Switch Comparison</h2>
                 <p class="section-subtitle">Compare key specifications across the Allied Telesis switch lineup</p>
@@ -900,22 +1265,24 @@
             </div>
         </section>
 
-        <!-- Trust Stats -->
-        <section class="stats-section">
-            <div class="container">
-                <h2 class="section-title section-title--white">Trusted Worldwide</h2>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-item__number">1.92 Tbps</div>
-                        <p class="stat-item__desc">Maximum switching fabric capacity in the x950 series flagship switches</p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-item__number">37+</div>
-                        <p class="stat-item__desc">Years of networking innovation since Allied Telesis was founded in 1987</p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-item__number">90+</div>
-                        <p class="stat-item__desc">Countries with Allied Telesis deployments across enterprise and government networks</p>
+        <!-- Trust Stats - Clean gradient -->
+        <section class="stats-section sw-stats">
+            <div class="sw-stats__content">
+                <div class="container">
+                    <h2 class="section-title section-title--white">Trusted Worldwide</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-item__number">1.92 Tbps</div>
+                            <p class="stat-item__desc">Maximum switching fabric capacity in the x950 series flagship switches</p>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-item__number">37+</div>
+                            <p class="stat-item__desc">Years of networking innovation since Allied Telesis was founded in 1987</p>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-item__number">90+</div>
+                            <p class="stat-item__desc">Countries with Allied Telesis deployments across enterprise and government networks</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -946,14 +1313,11 @@
             </div>
         </section>
 
-        <!-- Page CTA -->
-        <section class="contact-cta-section">
-            <div class="contact-cta-section__background">
-                <img src="images/hero/switches-hero.svg" alt="" aria-hidden="true" loading="lazy">
-            </div>
-            <div class="contact-cta">
-                <h2 class="contact-cta__headline">Build Your Switching Fabric</h2>
-                <p class="contact-cta__text">From 100G backbone aggregation to silent desktop switches -- explore the full Allied Telesis switch lineup on Amazon with VCStack resilience and AMF Plus automation built in.</p>
+        <!-- Page CTA - Pure CSS gradient, NO background images -->
+        <section class="sw-cta">
+            <div class="sw-cta__content">
+                <h2 class="sw-cta__headline">Build Your Switching Fabric</h2>
+                <p class="sw-cta__text">From 100G backbone aggregation to silent desktop switches -- explore the full Allied Telesis switch lineup on Amazon with VCStack resilience and AMF Plus automation built in.</p>
                 <div class="hero__ctas">
                     <a href="#campus" class="btn btn--primary btn--large">Browse All Switches</a>
                     <a href="index.html" class="btn btn--secondary btn--large">Explore All Products</a>

@@ -20,7 +20,104 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <style>
-        /* Page-specific styles for network-management */
+        /* ============================================
+           NETWORK MANAGEMENT - PAGE-SPECIFIC STYLES
+           Complete redesign: clean gradients, no background images
+           ============================================ */
+
+        /* --- HERO: Dramatic gradient, no background image --- */
+        .hero[data-section="network-management"] {
+            position: relative;
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #003865 0%, #0a4a7a 35%, #4D738A 70%, #6A8FA6 100%);
+        }
+        .hero[data-section="network-management"] .hero__background,
+        .hero[data-section="network-management"] .hero__overlay {
+            display: none !important;
+        }
+        .hero[data-section="network-management"]::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse 80% 50% at 20% 40%, rgba(255,255,255,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 80% at 80% 60%, rgba(0,56,101,0.3) 0%, transparent 50%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        .hero[data-section="network-management"]::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(to top, #ffffff 0%, transparent 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+        .hero[data-section="network-management"] .hero__content {
+            position: relative;
+            z-index: 3;
+            max-width: 720px;
+            padding: 80px 40px 100px;
+        }
+        .hero[data-section="network-management"] .hero__headline {
+            font-family: 'Roboto', sans-serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .hero[data-section="network-management"] .hero__subtext {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.88);
+            line-height: 1.7;
+            max-width: 580px;
+            margin: 0 auto 32px;
+        }
+        @media (max-width: 768px) {
+            .hero[data-section="network-management"] {
+                min-height: 340px;
+            }
+            .hero[data-section="network-management"] .hero__content {
+                padding: 60px 20px 80px;
+            }
+            .hero[data-section="network-management"] .hero__headline {
+                font-size: 36px;
+            }
+            .hero[data-section="network-management"] .hero__subtext {
+                font-size: 16px;
+            }
+        }
+
+        /* --- Decorative grid dots in hero --- */
+        .nm-hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.08;
+            background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        /* --- PRODUCT GRID: 4-column layout for software --- */
         .product-grid[data-columns="4"] {
             grid-template-columns: repeat(4, 1fr);
         }
@@ -35,89 +132,321 @@
             }
         }
 
+        /* --- Featured products: clean white bg --- */
+        .featured-products {
+            background: #ffffff !important;
+        }
+
+        /* --- Product card feature lists --- */
         .product-card__features {
             list-style: none;
             padding: 0;
-            margin: 8px 0 12px;
+            margin: 12px 0 16px;
             text-align: left;
         }
         .product-card__features li {
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-            color: var(--color-text-secondary);
-            line-height: 1.6;
-            padding-left: 16px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            color: var(--color-text-tertiary);
+            line-height: 1.7;
+            padding-left: 20px;
             position: relative;
+            margin-bottom: 2px;
         }
         .product-card__features li::before {
             content: "\2713";
             position: absolute;
             left: 0;
-            color: var(--color-brand-orange);
+            color: #4D738A;
             font-weight: 700;
+            font-size: 12px;
         }
 
+        /* --- Software type badge on product cards --- */
+        .product-card__type-badge {
+            display: inline-block;
+            font-family: 'Roboto', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #4D738A;
+            background: rgba(77,115,138,0.08);
+            border: 1px solid rgba(77,115,138,0.15);
+            border-radius: 4px;
+            padding: 3px 10px;
+            margin-bottom: 12px;
+        }
+
+        /* --- VIDEO SECTION: clean light gray --- */
+        .video-section {
+            background: #f7f8fa !important;
+        }
+        .video-section .section-title {
+            color: var(--color-text-primary) !important;
+        }
+
+        /* --- FROM MANUFACTURER: gradient background, no image --- */
+        .from-manufacturer {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(160deg, #003865 0%, #0a4a7a 40%, #4D738A 100%) !important;
+        }
+        .from-manufacturer .from-manufacturer__background {
+            display: none !important;
+        }
+        .from-manufacturer .from-manufacturer__overlay {
+            display: none !important;
+        }
+        .from-manufacturer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse 50% 60% at 10% 90%, rgba(255,255,255,0.04) 0%, transparent 50%),
+                radial-gradient(ellipse 40% 40% at 90% 20%, rgba(255,255,255,0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .from-manufacturer .from-manufacturer__content {
+            position: relative;
+            z-index: 1;
+        }
+        .from-manufacturer .from-manufacturer__title {
+            color: #ffffff !important;
+        }
+        .from-manufacturer .from-manufacturer__card {
+            background: rgba(255,255,255,0.07) !important;
+            border: 1px solid rgba(255,255,255,0.12) !important;
+            backdrop-filter: blur(8px);
+        }
+        .from-manufacturer .from-manufacturer__card:hover {
+            background: rgba(255,255,255,0.12) !important;
+            border-color: rgba(255,255,255,0.2) !important;
+        }
+        .from-manufacturer .from-manufacturer__card-badge {
+            color: #6A8FA6 !important;
+            background: rgba(106,143,166,0.15) !important;
+        }
+        .from-manufacturer .from-manufacturer__card-title {
+            color: #ffffff !important;
+        }
+        .from-manufacturer .from-manufacturer__card-text {
+            color: rgba(255,255,255,0.78) !important;
+        }
+
+        /* --- STATS SECTION: solid brand dark, no image --- */
+        .stats-section {
+            background: #003865 !important;
+            position: relative;
+            overflow: hidden;
+        }
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(77,115,138,0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .stats-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(106,143,166,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* --- ABOUT BRAND / INTEGRATION: clean white --- */
+        .about-brand {
+            background: #ffffff !important;
+        }
+        .about-brand__header {
+            background: transparent !important;
+        }
         .about-brand__card-partners {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 32px;
-            margin-bottom: 16px;
-            padding: 16px;
-            background: var(--color-bg-light);
+            gap: 40px;
+            margin-bottom: 20px;
+            padding: 24px 20px;
+            background: #f7f8fa;
             border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
         }
         .about-brand__card-partners img {
             height: 40px;
             width: auto;
-            opacity: 0.8;
+            opacity: 0.7;
             transition: opacity var(--transition-base);
         }
         .about-brand__card-partners img:hover {
             opacity: 1;
         }
 
-        .software-highlight {
+        /* --- CATEGORY TILES: subtle warm gray --- */
+        .category-tiles {
+            background: #f7f8fa !important;
+        }
+
+        /* --- CONTACT CTA: gradient, no image --- */
+        .contact-cta-section {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #003865 0%, #4D738A 60%, #6A8FA6 100%) !important;
+        }
+        .contact-cta-section .contact-cta-section__background {
+            display: none !important;
+        }
+        .contact-cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse 60% 60% at 70% 50%, rgba(255,255,255,0.05) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .contact-cta {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- Capability highlights: alternating text+visual --- */
+        .nm-capabilities {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+        .nm-capabilities .container {
+            max-width: 1100px;
+        }
+        .nm-capability {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 32px;
+            gap: 60px;
             align-items: center;
-            padding: 60px 0;
+            padding: 48px 0;
+            border-bottom: 1px solid #eef0f2;
         }
-        .software-highlight__text {
+        .nm-capability:last-child {
+            border-bottom: none;
+        }
+        .nm-capability--reverse {
+            direction: rtl;
+        }
+        .nm-capability--reverse > * {
+            direction: ltr;
+        }
+        .nm-capability__text {
             font-family: 'Roboto', sans-serif;
         }
-        .software-highlight__text h3 {
+        .nm-capability__label {
+            display: inline-block;
             font-family: 'Roboto', sans-serif;
-            font-size: var(--font-size-5xl);
-            font-weight: var(--font-weight-bold);
-            color: var(--color-text-primary);
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #4D738A;
             margin-bottom: 12px;
-            letter-spacing: 0.3px;
         }
-        .software-highlight__text p {
-            font-size: var(--font-size-lg);
-            color: var(--color-text-secondary);
-            line-height: 1.7;
+        .nm-capability__title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            line-height: 1.2;
             margin-bottom: 16px;
         }
-        .software-highlight__video {
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-xl);
+        .nm-capability__desc {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--color-text-secondary);
+            line-height: 1.75;
+            margin-bottom: 20px;
         }
-        .software-highlight__video iframe {
+        .nm-capability__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nm-capability__list li {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 6px;
+        }
+        .nm-capability__list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #4D738A;
+        }
+        .nm-capability__visual {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,56,101,0.1);
+        }
+        .nm-capability__visual iframe {
             width: 100%;
-            aspect-ratio: 16 / 9;
+            aspect-ratio: 16/9;
             display: block;
             border: none;
         }
+        .nm-capability__visual--placeholder {
+            background: linear-gradient(145deg, #f0f4f7 0%, #e4eaef 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px;
+            min-height: 280px;
+        }
+        .nm-capability__visual--placeholder svg {
+            width: 120px;
+            height: 120px;
+            opacity: 0.3;
+        }
         @media (max-width: 768px) {
-            .software-highlight {
+            .nm-capability {
                 grid-template-columns: 1fr;
-                gap: 24px;
-                padding: 40px 0;
+                gap: 32px;
+                padding: 36px 0;
             }
+            .nm-capability--reverse {
+                direction: ltr;
+            }
+            .nm-capability__title {
+                font-size: 24px;
+            }
+        }
+
+        /* --- Subtle divider between sections --- */
+        .nm-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #e5e7eb 20%, #e5e7eb 80%, transparent 100%);
         }
     </style>
 </head>
@@ -261,12 +590,13 @@
     <!-- Main Content -->
     <main id="main-content" class="main-content">
 
-        <!-- Hero Section -->
+        <!-- ============================================
+             HERO: Clean gradient with subtle grid texture
+             ============================================ -->
         <section class="hero" data-section="network-management">
-            <div class="hero__background">
-                <img src="images/hero/network-management-hero.svg" alt="Network management dashboard visualization" loading="eager">
-            </div>
+            <div class="hero__background"></div>
             <div class="hero__overlay"></div>
+            <div class="nm-hero-grid" aria-hidden="true"></div>
             <div class="hero__content">
                 <h1 class="hero__headline">Network Management</h1>
                 <p class="hero__subtext">Unified visibility and control across your entire Allied Telesis infrastructure. One dashboard for LAN, SD-WAN, wireless, and surveillance.</p>
@@ -277,7 +607,9 @@
             </div>
         </section>
 
-        <!-- Product Grid Section: 4 Software Products -->
+        <!-- ============================================
+             PRODUCT GRID: 4 Software Products on white
+             ============================================ -->
         <section id="product-grid" class="featured-products">
             <div class="container">
                 <h2 class="section-title">Management Software</h2>
@@ -289,6 +621,7 @@
                         <div class="product-card__image">
                             <img src="images/products/software/vista-manager.png" alt="Vista Manager EX unified network management software" loading="lazy">
                         </div>
+                        <span class="product-card__type-badge">On-Premise</span>
                         <a href="#" class="product-card__name">Vista Manager EX</a>
                         <div class="product-card__shipping">Unified LAN / SD-WAN / Wireless Management</div>
                         <ul class="product-card__features">
@@ -309,6 +642,7 @@
                         <div class="product-card__image">
                             <img src="images/products/software/oneconnect.png" alt="OneConnect cloud SaaS network management platform" loading="lazy">
                         </div>
+                        <span class="product-card__type-badge">Cloud SaaS</span>
                         <a href="#" class="product-card__name">OneConnect</a>
                         <div class="product-card__shipping">Cloud SaaS Network Management</div>
                         <ul class="product-card__features">
@@ -329,6 +663,7 @@
                         <div class="product-card__image">
                             <img src="images/products/software/awc.png" alt="AWC Autonomous Wave Control AI-powered wireless controller" loading="lazy">
                         </div>
+                        <span class="product-card__type-badge">AI-Powered</span>
                         <a href="#" class="product-card__name">AWC (Autonomous Wave Control)</a>
                         <div class="product-card__shipping">AI-Powered Wireless Controller</div>
                         <ul class="product-card__features">
@@ -349,6 +684,7 @@
                         <div class="product-card__image">
                             <img src="images/products/software/streamconnect.png" alt="StreamConnect VMS integration and surveillance network management" loading="lazy">
                         </div>
+                        <span class="product-card__type-badge">Surveillance</span>
                         <a href="#" class="product-card__name">StreamConnect</a>
                         <div class="product-card__shipping">VMS Integration &amp; Surveillance</div>
                         <ul class="product-card__features">
@@ -368,7 +704,9 @@
             </div>
         </section>
 
-        <!-- Video Section: AWC Demo -->
+        <!-- ============================================
+             VIDEO SECTION: AWC Demo on light gray
+             ============================================ -->
         <section id="video-section" class="video-section">
             <div class="container">
                 <h2 class="section-title">See It In Action</h2>
@@ -390,12 +728,10 @@
             </div>
         </section>
 
-        <!-- From the Manufacturer: Management Capabilities -->
+        <!-- ============================================
+             FROM MANUFACTURER: Brand gradient cards
+             ============================================ -->
         <section id="features" class="from-manufacturer">
-            <div class="from-manufacturer__background">
-                <img src="images/hero/network-management-hero.svg" alt="" loading="lazy" aria-hidden="true">
-                <div class="from-manufacturer__overlay"></div>
-            </div>
             <div class="from-manufacturer__content container">
                 <h2 class="from-manufacturer__title">Why Allied Telesis Management</h2>
                 <div class="from-manufacturer__grid">
@@ -428,7 +764,9 @@
             </div>
         </section>
 
-        <!-- Stats Section: Social Proof -->
+        <!-- ============================================
+             STATS: Social proof on solid brand blue
+             ============================================ -->
         <section class="stats-section">
             <div class="container">
                 <h2 class="section-title section-title--white">Trusted Worldwide</h2>
@@ -449,7 +787,9 @@
             </div>
         </section>
 
-        <!-- Integration Partners Section -->
+        <!-- ============================================
+             INTEGRATION PARTNERS: Clean white
+             ============================================ -->
         <section id="integration" class="about-brand">
             <div class="about-brand__header">
                 <h2 class="about-brand__title">Integrates With Your Existing Stack</h2>
@@ -475,7 +815,9 @@
             </div>
         </section>
 
-        <!-- Cross-Links: Explore Hardware Categories -->
+        <!-- ============================================
+             CROSS-LINKS: Hardware categories on light gray
+             ============================================ -->
         <section class="category-tiles">
             <div class="container text-center">
                 <h2 class="section-title">Explore Hardware Categories</h2>
@@ -506,11 +848,10 @@
             </div>
         </section>
 
-        <!-- Page CTA -->
+        <!-- ============================================
+             CTA: Clean gradient, no background image
+             ============================================ -->
         <section class="contact-cta-section">
-            <div class="contact-cta-section__background">
-                <img src="images/hero/network-management-hero.svg" alt="" loading="lazy" aria-hidden="true">
-            </div>
             <div class="contact-cta">
                 <h2 class="contact-cta__headline">Ready to Simplify Your Network?</h2>
                 <p class="contact-cta__text">Allied Telesis management software brings unified visibility, cloud control, and AI-driven automation to networks of every size.</p>

@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connectivity Solutions | Allied Telesis Official Store on Amazon</title>
     <meta name="description" content="Media converters for copper-to-fiber bridging and high-speed PCIe network adapters from 100Mbps to 25Gbps. Allied Telesis connectivity solutions on Amazon.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Allied Telesis">
+    <meta property="og:title" content="Connectivity Solutions | Allied Telesis Official Store on Amazon">
+    <meta property="og:description" content="Media converters for copper-to-fiber bridging and high-speed PCIe network adapters from 100Mbps to 25Gbps.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/branding/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Connectivity Solutions | Allied Telesis Official Store on Amazon">
+    <meta name="twitter:description" content="Media converters and 25Gbps PCIe network adapters from Allied Telesis.">
+    <title>Connectivity Solutions | Allied Telesis Official Store on Amazon</title>
     <link rel="icon" href="logos/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,106 +21,369 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <style>
-        /* Page-specific: connectivity comparison table tweaks */
-        .connectivity-intro {
-            background: var(--color-bg-light);
-            padding: var(--space-xl) 0;
+        /* ================================================
+           CONNECTIVITY PAGE - COMPLETE BACKGROUND REDESIGN
+           No background images. Pure CSS. Premium & clean.
+           ================================================ */
+
+        /* --- Hero: Dramatic gradient, no image --- */
+        .hero[data-section="connectivity"] {
+            background: linear-gradient(135deg, #003865 0%, #004a7c 30%, #4D738A 65%, #6A8FA6 100%);
+            min-height: 520px;
+        }
+        .hero[data-section="connectivity"] .hero__background {
+            display: none;
+        }
+        .hero[data-section="connectivity"] .hero__overlay {
+            background: radial-gradient(ellipse at 20% 80%, rgba(0, 56, 101, 0.4) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 20%, rgba(77, 115, 138, 0.3) 0%, transparent 50%);
+        }
+        .hero[data-section="connectivity"] .hero__headline {
+            font-size: 52px;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+        .hero[data-section="connectivity"] .hero__subtext {
+            font-size: 18px;
+            font-weight: 300;
+            max-width: 580px;
+            opacity: 0.95;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* --- Connectivity intro cards --- */
+        .conn-intro {
+            background: #ffffff;
+            padding: 72px 0 64px;
             font-family: 'Roboto', sans-serif;
         }
-        .connectivity-intro__grid {
+        .conn-intro__header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .conn-intro__label {
+            display: inline-block;
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #4D738A;
+            margin-bottom: 12px;
+        }
+        .conn-intro__heading {
+            font-family: 'Roboto', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #020817;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+        .conn-intro__desc {
+            font-size: 16px;
+            font-weight: 300;
+            color: #4b5563;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .conn-intro__grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
-            align-items: start;
+            gap: 32px;
         }
-        .connectivity-intro__card {
-            background: var(--color-bg-white);
-            border-radius: var(--radius-xl);
-            padding: var(--space-lg);
-            box-shadow: var(--shadow-md);
-            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        .conn-intro__card {
+            background: #f7f8fa;
+            border-radius: 12px;
+            padding: 40px 36px;
+            border: 1px solid #e5e7eb;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .connectivity-intro__card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+        .conn-intro__card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
-        .connectivity-intro__card-icon {
-            width: 48px;
-            height: 48px;
+        .conn-intro__card-icon {
+            width: 52px;
+            height: 52px;
             background: rgba(77, 115, 138, 0.1);
-            border-radius: var(--radius-lg);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: var(--space-sm);
+            margin-bottom: 20px;
         }
-        .connectivity-intro__card-title {
+        .conn-intro__card-title {
             font-family: 'Roboto', sans-serif;
-            font-size: var(--font-size-2xl);
-            font-weight: var(--font-weight-semibold);
-            color: var(--color-text-primary);
-            margin-bottom: var(--space-xs);
-            letter-spacing: 0.3px;
+            font-size: 22px;
+            font-weight: 600;
+            color: #020817;
+            margin-bottom: 10px;
+            letter-spacing: 0.2px;
         }
-        .connectivity-intro__card-text {
-            font-size: var(--font-size-md);
-            color: var(--color-text-secondary);
-            line-height: var(--line-height-body);
+        .conn-intro__card-text {
+            font-size: 15px;
+            color: #4b5563;
+            line-height: 1.65;
+            font-weight: 300;
         }
-        .cross-links {
-            background: var(--color-bg-light);
-            padding: var(--space-3xl) 0;
+
+        /* --- "Why Allied Telesis" feature section: clean gradient, no image --- */
+        .conn-features {
+            position: relative;
+            padding: 88px 0;
+            font-family: 'Roboto', sans-serif;
+            overflow: hidden;
+            background: linear-gradient(160deg, #002647 0%, #003865 40%, #1a4a6b 100%);
+        }
+        .conn-features::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(77, 115, 138, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .conn-features::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(77, 115, 138, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .conn-features__content {
+            position: relative;
+            z-index: 2;
+        }
+        .conn-features__title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+        .conn-features__subtitle {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            margin-bottom: 56px;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .conn-features__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .conn-features__card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 32px 28px;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        @supports (backdrop-filter: blur(8px)) {
+            .conn-features__card {
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+            }
+        }
+        .conn-features__card:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .conn-features__card-badge {
+            width: 48px;
+            height: 48px;
+            background: rgba(77, 115, 138, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        .conn-features__card-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 0.2px;
+        }
+        .conn-features__card-text {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.78);
+            line-height: 1.65;
+            font-weight: 300;
+        }
+
+        /* --- Cross-links section --- */
+        .conn-cross-links {
+            background: #f7f8fa;
+            padding: 72px 0;
             font-family: 'Roboto', sans-serif;
         }
-        .cross-links__grid {
+        .conn-cross-links__grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
+            gap: 24px;
+            margin-top: 40px;
         }
-        .cross-link-card {
-            background: var(--color-bg-white);
-            border-radius: var(--radius-xl);
-            padding: var(--space-lg);
+        .conn-cross-link-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 36px 28px;
             text-align: center;
-            box-shadow: var(--shadow-md);
-            transition: transform var(--transition-base), box-shadow var(--transition-base);
+            border: 1px solid #e5e7eb;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             text-decoration: none;
             display: block;
         }
-        .cross-link-card:hover {
+        .conn-cross-link-card:hover {
             transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         }
-        .cross-link-card__icon {
+        .conn-cross-link-card__icon {
             width: 56px;
             height: 56px;
-            margin: 0 auto var(--space-sm);
+            margin: 0 auto 16px;
         }
-        .cross-link-card__icon img {
+        .conn-cross-link-card__icon img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
-        .cross-link-card__title {
+        .conn-cross-link-card__title {
             font-family: 'Roboto', sans-serif;
-            font-size: var(--font-size-xl);
-            font-weight: var(--font-weight-semibold);
-            color: var(--color-text-primary);
-            margin-bottom: var(--space-xs);
+            font-size: 18px;
+            font-weight: 600;
+            color: #020817;
+            margin-bottom: 6px;
         }
-        .cross-link-card__desc {
-            font-size: var(--font-size-base);
-            color: var(--color-text-light);
-            line-height: var(--line-height-loose);
+        .conn-cross-link-card__desc {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.55;
         }
+
+        /* --- Bottom CTA: clean gradient, no image --- */
+        .conn-cta {
+            position: relative;
+            padding: 88px 0;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #003865 0%, #4D738A 60%, #6A8FA6 100%);
+        }
+        .conn-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 30% 100%, rgba(0, 56, 101, 0.5) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 0%, rgba(106, 143, 166, 0.3) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .conn-cta__content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .conn-cta__headline {
+            font-family: 'Roboto', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+            line-height: 1.15;
+            letter-spacing: 0.5px;
+        }
+        .conn-cta__text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 17px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.65;
+            margin-bottom: 32px;
+        }
+
+        /* --- Comparison table overrides for raw th/td fallback --- */
+        .comparison-section .comparison-table thead {
+            background: #003865;
+        }
+        .comparison-section .comparison-table th {
+            padding: 16px 14px;
+            text-align: center;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #4D738A;
+            white-space: nowrap;
+        }
+        .comparison-section .comparison-table td {
+            padding: 14px;
+            text-align: center;
+            border-bottom: 1px solid #e5e7eb;
+            color: #2b333f;
+            font-size: 14px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .comparison-section .comparison-table tbody tr:nth-child(even) {
+            background: #fafbfc;
+        }
+        .comparison-section .comparison-table tbody tr:hover {
+            background: #f0f4f7;
+        }
+        .comparison-section .comparison-table td:first-child {
+            font-weight: 600;
+            color: #003865;
+            text-align: left;
+            white-space: nowrap;
+        }
+        .comparison-section .comparison-table th:first-child {
+            text-align: left;
+        }
+
+        /* --- Responsive --- */
         @media (max-width: 768px) {
-            .connectivity-intro__grid {
+            .conn-intro__grid {
                 grid-template-columns: 1fr;
             }
-            .cross-links__grid {
+            .conn-features__grid {
                 grid-template-columns: 1fr;
+            }
+            .conn-cross-links__grid {
+                grid-template-columns: 1fr;
+            }
+            .hero[data-section="connectivity"] .hero__headline {
+                font-size: 36px;
+            }
+            .hero[data-section="connectivity"] {
+                min-height: 400px;
+            }
+            .conn-cta__headline {
+                font-size: 30px;
+            }
+            .conn-features__title {
+                font-size: 28px;
             }
         }
     </style>
@@ -257,11 +529,9 @@
             </div>
         </nav>
 
-        <!-- Hero Section -->
+        <!-- Hero Section: Pure CSS gradient, no background image -->
         <section class="hero" data-section="connectivity">
-            <div class="hero__background">
-                <img src="images/hero/connectivity-hero.svg" alt="Allied Telesis Connectivity Solutions - Media converters and network adapters" loading="eager" width="1500" height="300">
-            </div>
+            <div class="hero__background"></div>
             <div class="hero__overlay"></div>
             <div class="hero__content">
                 <h1 class="hero__headline">Connectivity Solutions</h1>
@@ -274,28 +544,33 @@
         </section>
 
         <!-- Category Introduction -->
-        <section class="connectivity-intro">
+        <section class="conn-intro">
             <div class="container">
-                <div class="connectivity-intro__grid">
-                    <div class="connectivity-intro__card fade-in-up">
-                        <div class="connectivity-intro__card-icon">
+                <div class="conn-intro__header">
+                    <span class="conn-intro__label">Two Product Lines, One Mission</span>
+                    <h2 class="conn-intro__heading">Connect Every Layer of Your Network</h2>
+                    <p class="conn-intro__desc">From copper-to-fiber media conversion to 25Gbps server-class NICs, Allied Telesis connectivity products bridge every gap in your infrastructure.</p>
+                </div>
+                <div class="conn-intro__grid">
+                    <div class="conn-intro__card fade-in-up">
+                        <div class="conn-intro__card-icon">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                                 <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" stroke="#4D738A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <line x1="4" y1="22" x2="4" y2="15" stroke="#4D738A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h2 class="connectivity-intro__card-title">Media Converters</h2>
-                        <p class="connectivity-intro__card-text">Convert copper to fiber and extend network reach without replacing infrastructure. Industrial-grade converters with DIN-rail mounting, extended temperature ranges, and plug-and-play deployment for demanding environments.</p>
+                        <h3 class="conn-intro__card-title">Media Converters</h3>
+                        <p class="conn-intro__card-text">Convert copper to fiber and extend network reach without replacing infrastructure. Industrial-grade converters with DIN-rail mounting, extended temperature ranges, and plug-and-play deployment for demanding environments.</p>
                     </div>
-                    <div class="connectivity-intro__card fade-in-up">
-                        <div class="connectivity-intro__card-icon">
+                    <div class="conn-intro__card fade-in-up">
+                        <div class="conn-intro__card-icon">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                                 <rect x="4" y="4" width="16" height="16" rx="2" stroke="#4D738A" stroke-width="2"/>
                                 <path d="M9 9h6M9 12h6M9 15h4" stroke="#4D738A" stroke-width="2" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <h2 class="connectivity-intro__card-title">Network Adapters</h2>
-                        <p class="connectivity-intro__card-text">High-performance PCIe NICs from 100Mbps Fast Ethernet to 25Gbps server-class. Hardware acceleration, multi-port configurations, and copper or fiber connectivity for servers, workstations, and data centers.</p>
+                        <h3 class="conn-intro__card-title">Network Adapters</h3>
+                        <p class="conn-intro__card-text">High-performance PCIe NICs from 100Mbps Fast Ethernet to 25Gbps server-class. Hardware acceleration, multi-port configurations, and copper or fiber connectivity for servers, workstations, and data centers.</p>
                     </div>
                 </div>
             </div>
@@ -506,56 +781,53 @@
             </div>
         </section>
 
-        <!-- Why Allied Telesis Connectivity (From Manufacturer) -->
-        <section id="features" class="from-manufacturer">
-            <div class="from-manufacturer__background">
-                <img src="images/hero/connectivity-hero.svg" alt="" aria-hidden="true" loading="lazy">
-            </div>
-            <div class="from-manufacturer__overlay"></div>
-            <div class="from-manufacturer__content container">
-                <h2 class="from-manufacturer__title">Why Allied Telesis Connectivity</h2>
-                <div class="from-manufacturer__grid">
+        <!-- Why Allied Telesis Connectivity: Clean CSS gradient, no background image -->
+        <section class="conn-features" id="features">
+            <div class="conn-features__content container">
+                <h2 class="conn-features__title">Why Allied Telesis Connectivity</h2>
+                <p class="conn-features__subtitle">Enterprise reliability from copper-to-fiber conversion to 25G server performance</p>
+                <div class="conn-features__grid">
 
-                    <div class="from-manufacturer__card fade-in-up">
-                        <div class="from-manufacturer__card-badge">
+                    <div class="conn-features__card fade-in-up">
+                        <div class="conn-features__card-badge">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#4D738A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#6A8FA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h3 class="from-manufacturer__card-title">Plug and Play</h3>
-                        <p class="from-manufacturer__card-text">Auto-negotiation, MDI/MDI-X, and hot-swappable SFP modules for zero-configuration deployment. Unbox, connect, and bridge your network in minutes.</p>
+                        <h3 class="conn-features__card-title">Plug and Play</h3>
+                        <p class="conn-features__card-text">Auto-negotiation, MDI/MDI-X, and hot-swappable SFP modules for zero-configuration deployment. Unbox, connect, and bridge your network in minutes.</p>
                     </div>
 
-                    <div class="from-manufacturer__card fade-in-up">
-                        <div class="from-manufacturer__card-badge">
+                    <div class="conn-features__card fade-in-up">
+                        <div class="conn-features__card-badge">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#4D738A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#6A8FA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h3 class="from-manufacturer__card-title">Industrial-Grade Reliability</h3>
-                        <p class="from-manufacturer__card-text">Extended temperature ranges (-40 to 75C), DIN-rail mounting, and ruggedized enclosures built for factories, utilities, and outdoor deployments.</p>
+                        <h3 class="conn-features__card-title">Industrial-Grade Reliability</h3>
+                        <p class="conn-features__card-text">Extended temperature ranges (-40 to 75C), DIN-rail mounting, and ruggedized enclosures built for factories, utilities, and outdoor deployments.</p>
                     </div>
 
-                    <div class="from-manufacturer__card fade-in-up">
-                        <div class="from-manufacturer__card-badge">
+                    <div class="conn-features__card fade-in-up">
+                        <div class="conn-features__card-badge">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="#4D738A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="#6A8FA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h3 class="from-manufacturer__card-title">25G Server Performance</h3>
-                        <p class="from-manufacturer__card-text">PCIe x8 NICs with hardware acceleration, TCP/UDP offloading, and jumbo frame support for high-throughput data center and virtualization workloads.</p>
+                        <h3 class="conn-features__card-title">25G Server Performance</h3>
+                        <p class="conn-features__card-text">PCIe x8 NICs with hardware acceleration, TCP/UDP offloading, and jumbo frame support for high-throughput data center and virtualization workloads.</p>
                     </div>
 
-                    <div class="from-manufacturer__card fade-in-up">
-                        <div class="from-manufacturer__card-badge">
+                    <div class="conn-features__card fade-in-up">
+                        <div class="conn-features__card-badge">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#4D738A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle cx="9" cy="7" r="4" stroke="#4D738A" stroke-width="2"/>
-                                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#4D738A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#6A8FA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="9" cy="7" r="4" stroke="#6A8FA6" stroke-width="2"/>
+                                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#6A8FA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h3 class="from-manufacturer__card-title">Broad OS Compatibility</h3>
-                        <p class="from-manufacturer__card-text">Certified drivers for Windows, Linux, VMware ESXi, and FreeBSD. Drop-in upgrades for any server or workstation environment without compatibility headaches.</p>
+                        <h3 class="conn-features__card-title">Broad OS Compatibility</h3>
+                        <p class="conn-features__card-text">Certified drivers for Windows, Linux, VMware ESXi, and FreeBSD. Drop-in upgrades for any server or workstation environment without compatibility headaches.</p>
                     </div>
 
                 </div>
@@ -563,44 +835,41 @@
         </section>
 
         <!-- Cross-Links to Other Categories -->
-        <section class="cross-links">
+        <section class="conn-cross-links">
             <div class="container">
                 <h2 class="section-title text-center">Explore More Solutions</h2>
                 <p class="section-subtitle text-center">Complete your Allied Telesis network infrastructure</p>
-                <div class="cross-links__grid">
-                    <a href="switches.html" class="cross-link-card fade-in-up">
-                        <div class="cross-link-card__icon">
+                <div class="conn-cross-links__grid">
+                    <a href="switches.html" class="conn-cross-link-card fade-in-up">
+                        <div class="conn-cross-link-card__icon">
                             <img src="images/nav/icon-switches.svg" alt="" aria-hidden="true" width="56" height="56">
                         </div>
-                        <h3 class="cross-link-card__title">Enterprise Switches</h3>
-                        <p class="cross-link-card__desc">Layer 3 managed switches with VCStack resilience and up to 1.92 Tbps fabric</p>
+                        <h3 class="conn-cross-link-card__title">Enterprise Switches</h3>
+                        <p class="conn-cross-link-card__desc">Layer 3 managed switches with VCStack resilience and up to 1.92 Tbps fabric</p>
                     </a>
-                    <a href="industrial.html" class="cross-link-card fade-in-up">
-                        <div class="cross-link-card__icon">
+                    <a href="industrial.html" class="conn-cross-link-card fade-in-up">
+                        <div class="conn-cross-link-card__icon">
                             <img src="images/nav/icon-industrial.svg" alt="" aria-hidden="true" width="56" height="56">
                         </div>
-                        <h3 class="cross-link-card__title">Industrial Networking</h3>
-                        <p class="cross-link-card__desc">Ruggedized switches and routers for harsh environments and critical infrastructure</p>
+                        <h3 class="conn-cross-link-card__title">Industrial Networking</h3>
+                        <p class="conn-cross-link-card__desc">Ruggedized switches and routers for harsh environments and critical infrastructure</p>
                     </a>
-                    <a href="wireless.html" class="cross-link-card fade-in-up">
-                        <div class="cross-link-card__icon">
+                    <a href="wireless.html" class="conn-cross-link-card fade-in-up">
+                        <div class="conn-cross-link-card__icon">
                             <img src="images/nav/icon-wireless.svg" alt="" aria-hidden="true" width="56" height="56">
                         </div>
-                        <h3 class="cross-link-card__title">Wireless Access Points</h3>
-                        <p class="cross-link-card__desc">Wi-Fi 6 and Wi-Fi 6E access points with AI-powered wireless optimization</p>
+                        <h3 class="conn-cross-link-card__title">Wireless Access Points</h3>
+                        <p class="conn-cross-link-card__desc">Wi-Fi 6 and Wi-Fi 6E access points with AI-powered wireless optimization</p>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Page-Specific CTA -->
-        <section class="contact-cta-section">
-            <div class="contact-cta-section__background">
-                <img src="images/hero/connectivity-hero.svg" alt="" aria-hidden="true" loading="lazy">
-            </div>
-            <div class="contact-cta">
-                <h2 class="contact-cta__headline">Bridge Any Network Gap</h2>
-                <p class="contact-cta__text">From copper-to-fiber media conversion to 25Gbps server NICs, Allied Telesis connectivity products keep your infrastructure connected, fast, and reliable.</p>
+        <!-- Bottom CTA: Pure CSS gradient, no background image -->
+        <section class="conn-cta">
+            <div class="conn-cta__content">
+                <h2 class="conn-cta__headline">Bridge Any Network Gap</h2>
+                <p class="conn-cta__text">From copper-to-fiber media conversion to 25Gbps server NICs, Allied Telesis connectivity products keep your infrastructure connected, fast, and reliable.</p>
                 <div class="hero__ctas">
                     <a href="#product-grid-converters" class="btn btn--modern">Shop Media Converters <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
                     <a href="#product-grid-adapters" class="btn btn--outline-light">Shop Network Adapters</a>

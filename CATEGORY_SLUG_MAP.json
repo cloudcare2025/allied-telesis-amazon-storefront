@@ -1,0 +1,57 @@
+{
+  "categories": {
+    "Switches": {
+      "slug": "switches",
+      "html_page": "switches.html",
+      "data_section": "switches",
+      "image_dir": "images/products/switches/",
+      "description": "Enterprise campus, stackable edge, and SMB managed switches with up to 100G uplinks",
+      "product_count": 17
+    },
+    "Industrial Switches": {
+      "slug": "industrial",
+      "html_page": "industrial.html",
+      "data_section": "industrial",
+      "image_dir": "images/products/industrial/",
+      "description": "Ruggedized fanless DIN-rail switches for factory floors, IIoT, and harsh environments",
+      "product_count": 5
+    },
+    "Wireless Access Points": {
+      "slug": "wireless",
+      "html_page": "wireless.html",
+      "data_section": "wireless",
+      "image_dir": "images/products/wireless/",
+      "description": "Enterprise Wi-Fi 6, 6E, and 7 access points with AWC self-optimization",
+      "product_count": 7
+    },
+    "Firewalls & Security": {
+      "slug": "firewalls",
+      "html_page": "firewalls.html",
+      "data_section": "firewalls",
+      "image_dir": "images/products/firewalls/",
+      "description": "Unified Threat Management appliances with SD-WAN and deep packet inspection",
+      "product_count": 2
+    },
+    "Connectivity": {
+      "slug": "connectivity",
+      "html_page": "connectivity.html",
+      "data_section": "connectivity",
+      "image_dir": "images/products/connectivity/",
+      "description": "Media converters and PCIe network adapters for fiber, copper, and 25G connectivity",
+      "product_count": 9
+    }
+  },
+  "special_pages": {
+    "Homepage": {
+      "slug": "home",
+      "html_page": "index.html",
+      "data_section": "home"
+    },
+    "Network Management": {
+      "slug": "network-management",
+      "html_page": "network-management.html",
+      "data_section": "network-management",
+      "description": "Vista Manager EX, OneConnect, AWC, and StreamConnect software platforms"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="hcBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0f4f8"/>
+      <stop offset="100%" stop-color="#dce4ec"/>
+    </linearGradient>
+    <filter id="hcShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#003865" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" fill="url(#hcBg)"/>
+  <!-- Hospital building -->
+  <g transform="translate(130, 40)" filter="url(#hcShadow)">
+    <rect x="0" y="30" width="140" height="130" fill="#ffffff" stroke="#4D738A" stroke-width="1.5" rx="2"/>
+    <!-- Cross on building -->
+    <rect x="55" y="8" width="30" height="30" rx="2" fill="#ffffff" stroke="#4D738A" stroke-width="1.5"/>
+    <rect x="65" y="12" width="10" height="22" fill="#4D738A" opacity="0.5"/>
+    <rect x="59" y="18" width="22" height="10" fill="#4D738A" opacity="0.5"/>
+    <!-- Windows -->
+    <g fill="#e8eef4" stroke="#4D738A" stroke-width="0.8">
+      <rect x="12" y="45" width="20" height="14" rx="1"/>
+      <rect x="42" y="45" width="20" height="14" rx="1"/>
+      <rect x="78" y="45" width="20" height="14" rx="1"/>
+      <rect x="108" y="45" width="20" height="14" rx="1"/>
+      <rect x="12" y="70" width="20" height="14" rx="1"/>
+      <rect x="42" y="70" width="20" height="14" rx="1"/>
+      <rect x="78" y="70" width="20" height="14" rx="1"/>
+      <rect x="108" y="70" width="20" height="14" rx="1"/>
+    </g>
+    <!-- Entrance -->
+    <rect x="50" y="120" width="40" height="40" fill="#e8eef4" stroke="#4D738A" stroke-width="1"/>
+  </g>
+  <!-- Medical monitor (left) -->
+  <g transform="translate(55, 100)" filter="url(#hcShadow)">
+    <rect x="0" y="0" width="50" height="40" rx="3" fill="#ffffff" stroke="#4D738A" stroke-width="1.2"/>
+    <!-- EKG line -->
+    <polyline points="5,22 12,22 15,12 18,30 21,22 30,22 33,18 36,26 39,22 45,22" fill="none" stroke="#2ecc71" stroke-width="1.2" opacity="0.7"/>
+    <!-- Stand -->
+    <line x1="25" y1="40" x2="25" y2="50" stroke="#4D738A" stroke-width="1.2"/>
+    <line x1="15" y1="50" x2="35" y2="50" stroke="#4D738A" stroke-width="1.2" stroke-linecap="round"/>
+  </g>
+  <!-- IV Pump (right side) -->
+  <g transform="translate(320, 90)">
+    <line x1="15" y1="0" x2="15" y2="80" stroke="#4D738A" stroke-width="1.5"/>
+    <rect x="5" y="20" width="20" height="25" rx="2" fill="#ffffff" stroke="#4D738A" stroke-width="1.2"/>
+    <rect x="8" y="24" width="14" height="8" fill="#e8eef4" stroke="#4D738A" stroke-width="0.5"/>
+    <circle cx="15" cy="38" r="2" fill="#2ecc71" opacity="0.6"/>
+    <!-- IV bag -->
+    <rect x="8" y="2" width="14" height="16" rx="3" fill="none" stroke="#4D738A" stroke-width="1"/>
+    <!-- Base -->
+    <circle cx="8" cy="80" r="3" fill="none" stroke="#4D738A" stroke-width="1"/>
+    <circle cx="22" cy="80" r="3" fill="none" stroke="#4D738A" stroke-width="1"/>
+  </g>
+  <!-- Wireless AP on ceiling -->
+  <g transform="translate(200, 35)">
+    <ellipse cx="0" cy="0" rx="15" ry="5" fill="#ffffff" stroke="#4D738A" stroke-width="1"/>
+    <circle cx="0" cy="-1" r="2" fill="#4D738A" opacity="0.4"/>
+    <g fill="none" stroke="#4D738A" stroke-width="0.8" opacity="0.2">
+      <ellipse cx="0" cy="3" rx="30" ry="12"/>
+      <ellipse cx="0" cy="3" rx="50" ry="20"/>
+    </g>
+  </g>
+  <!-- Network connections -->
+  <g stroke="#4D738A" stroke-width="0.8" opacity="0.2" stroke-dasharray="4,3">
+    <line x1="80" y1="120" x2="140" y2="100"/>
+    <line x1="320" y1="115" x2="270" y2="100"/>
+    <line x1="200" y1="45" x2="200" y2="70"/>
+  </g>
+  <!-- Subtle green accent for healthcare -->
+  <rect x="0" y="288" width="400" height="4" fill="#2ecc71" opacity="0.15"/>
+  <!-- Label -->
+  <text x="200" y="275" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="14" fill="#003865" letter-spacing="3">HEALTHCARE</text>
+</svg>

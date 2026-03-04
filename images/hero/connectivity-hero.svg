@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 300" width="1500" height="300">
+  <defs>
+    <linearGradient id="connBg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#003865"/>
+      <stop offset="50%" stop-color="#1a4f7a"/>
+      <stop offset="100%" stop-color="#4D738A"/>
+    </linearGradient>
+    <linearGradient id="fiberGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4D738A" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#4D738A" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="connGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1500" height="300" fill="url(#connBg)"/>
+  <!-- Fiber optic strands (left side) -->
+  <g opacity="0.6">
+    <!-- Individual fiber strands -->
+    <path d="M0,80 Q200,80 350,100 Q500,120 650,130" fill="none" stroke="#4D738A" stroke-width="2" opacity="0.4"/>
+    <path d="M0,100 Q200,100 350,115 Q500,130 650,135" fill="none" stroke="#4D738A" stroke-width="2" opacity="0.5"/>
+    <path d="M0,120 Q200,120 350,130 Q500,140 650,140" fill="none" stroke="#4D738A" stroke-width="2" opacity="0.6"/>
+    <path d="M0,140 Q200,140 350,145 Q500,150 650,148" fill="none" stroke="#4D738A" stroke-width="2" opacity="0.5"/>
+    <path d="M0,160 Q200,160 350,158 Q500,156 650,155" fill="none" stroke="#4D738A" stroke-width="2" opacity="0.4"/>
+    <path d="M0,180 Q200,175 350,170 Q500,165 650,162" fill="none" stroke="#4D738A" stroke-width="2" opacity="0.3"/>
+    <!-- Light pulses on fiber -->
+    <circle cx="150" cy="95" r="3" fill="#ffffff" opacity="0.6"/>
+    <circle cx="300" cy="125" r="2.5" fill="#ffffff" opacity="0.5"/>
+    <circle cx="450" cy="142" r="3" fill="#ffffff" opacity="0.4"/>
+    <circle cx="200" cy="145" r="2" fill="#ffffff" opacity="0.5"/>
+    <circle cx="500" cy="132" r="2.5" fill="#ffffff" opacity="0.3"/>
+  </g>
+  <!-- Central media converter -->
+  <g transform="translate(700, 110)" filter="url(#connGlow)">
+    <rect x="0" y="0" width="100" height="70" rx="4" fill="#1a2a3a" stroke="#4D738A" stroke-width="1.5"/>
+    <!-- Fiber port (left) -->
+    <rect x="5" y="20" width="15" height="12" rx="2" fill="#003865" stroke="#4D738A" stroke-width="0.8"/>
+    <circle cx="12" cy="26" r="3" fill="#4D738A" opacity="0.6"/>
+    <!-- Copper port (right) -->
+    <rect x="80" y="18" width="15" height="16" rx="1" fill="#0d1b28" stroke="#4D738A" stroke-width="0.8"/>
+    <g fill="#4D738A" opacity="0.4">
+      <rect x="83" y="21" width="3" height="3"/>
+      <rect x="88" y="21" width="3" height="3"/>
+      <rect x="83" y="26" width="3" height="3"/>
+      <rect x="88" y="26" width="3" height="3"/>
+    </g>
+    <!-- Status LEDs -->
+    <circle cx="35" cy="15" r="2.5" fill="#2ecc71" opacity="0.8"/>
+    <circle cx="50" cy="15" r="2.5" fill="#2ecc71" opacity="0.7"/>
+    <circle cx="65" cy="15" r="2.5" fill="#f39c12" opacity="0.6"/>
+    <!-- Label -->
+    <text x="50" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#4D738A" opacity="0.6">MC-1000</text>
+    <!-- Conversion arrows -->
+    <path d="M25,35 L40,35" stroke="#4D738A" stroke-width="1" fill="none" marker-end="url(#arr)"/>
+    <path d="M60,35 L75,35" stroke="#4D738A" stroke-width="1" fill="none" marker-end="url(#arr)"/>
+  </g>
+  <!-- Copper cables (right side) -->
+  <g opacity="0.6">
+    <path d="M850,130 Q1000,125 1150,100 Q1300,80 1500,80" fill="none" stroke="#8B7355" stroke-width="3" opacity="0.3"/>
+    <path d="M850,138 Q1000,135 1150,120 Q1300,105 1500,100" fill="none" stroke="#8B7355" stroke-width="3" opacity="0.4"/>
+    <path d="M850,145 Q1000,145 1150,140 Q1300,135 1500,130" fill="none" stroke="#8B7355" stroke-width="3" opacity="0.5"/>
+    <path d="M850,152 Q1000,155 1150,158 Q1300,160 1500,160" fill="none" stroke="#8B7355" stroke-width="3" opacity="0.4"/>
+    <path d="M850,160 Q1000,163 1150,175 Q1300,185 1500,190" fill="none" stroke="#8B7355" stroke-width="3" opacity="0.3"/>
+    <!-- RJ45 connector hints -->
+    <rect x="1350" y="76" width="14" height="18" rx="1" fill="none" stroke="#8B7355" stroke-width="1" opacity="0.4"/>
+    <rect x="1350" y="116" width="14" height="18" rx="1" fill="none" stroke="#8B7355" stroke-width="1" opacity="0.4"/>
+    <rect x="1350" y="155" width="14" height="18" rx="1" fill="none" stroke="#8B7355" stroke-width="1" opacity="0.4"/>
+  </g>
+  <!-- Labels -->
+  <text x="250" y="230" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="300" font-size="14" fill="#4D738A" letter-spacing="3" opacity="0.6">FIBER OPTIC</text>
+  <text x="1250" y="230" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="300" font-size="14" fill="#8B7355" letter-spacing="3" opacity="0.5">COPPER</text>
+  <!-- Title -->
+  <text x="750" y="270" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="300" font-size="22" fill="#ffffff" letter-spacing="6" opacity="0.9">MEDIA CONVERTERS &amp; CONNECTIVITY</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Link/chain icon -->
+  <path d="M26 32 L38 32" stroke="#4D738A" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Left link -->
+  <rect x="10" y="24" width="20" height="16" rx="8" fill="none" stroke="#4D738A" stroke-width="2.5"/>
+  <!-- Right link -->
+  <rect x="34" y="24" width="20" height="16" rx="8" fill="none" stroke="#4D738A" stroke-width="2.5"/>
+  <!-- Fiber strand accents -->
+  <line x1="8" y1="48" x2="20" y2="48" stroke="#4D738A" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+  <line x1="44" y1="48" x2="56" y2="48" stroke="#4D738A" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+  <circle cx="14" cy="48" r="2" fill="#4D738A" opacity="0.3"/>
+  <circle cx="50" cy="48" r="2" fill="#4D738A" opacity="0.3"/>
+</svg>

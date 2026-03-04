@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 300" width="1500" height="300">
+  <defs>
+    <linearGradient id="indBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#003865"/>
+      <stop offset="100%" stop-color="#4D738A"/>
+    </linearGradient>
+    <linearGradient id="metalGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a6a7a"/>
+      <stop offset="100%" stop-color="#3a4a5a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="300" fill="url(#indBg)"/>
+  <!-- Factory building silhouette -->
+  <g fill="#002a4a" opacity="0.5">
+    <!-- Main building -->
+    <rect x="100" y="120" width="300" height="180"/>
+    <!-- Sawtooth roof -->
+    <polygon points="100,120 175,70 250,120 325,70 400,120"/>
+    <!-- Chimney -->
+    <rect x="360" y="50" width="25" height="70"/>
+    <!-- Second building -->
+    <rect x="450" y="140" width="200" height="160"/>
+    <rect x="450" y="140" width="200" height="10" fill="#003050" opacity="0.6"/>
+  </g>
+  <!-- DIN Rail -->
+  <g transform="translate(700, 60)">
+    <!-- Rail -->
+    <rect x="0" y="0" width="600" height="8" rx="1" fill="url(#metalGrad)" opacity="0.9"/>
+    <rect x="0" y="170" width="600" height="8" rx="1" fill="url(#metalGrad)" opacity="0.9"/>
+    <!-- DIN rail mounting clips -->
+    <rect x="50" y="-5" width="10" height="18" rx="1" fill="#4a5a6a" opacity="0.6"/>
+    <rect x="150" y="-5" width="10" height="18" rx="1" fill="#4a5a6a" opacity="0.6"/>
+    <rect x="280" y="-5" width="10" height="18" rx="1" fill="#4a5a6a" opacity="0.6"/>
+    <rect x="410" y="-5" width="10" height="18" rx="1" fill="#4a5a6a" opacity="0.6"/>
+    <rect x="540" y="-5" width="10" height="18" rx="1" fill="#4a5a6a" opacity="0.6"/>
+    <!-- Industrial Switch 1 -->
+    <g transform="translate(30, 15)">
+      <rect x="0" y="0" width="90" height="148" rx="3" fill="#1a2535" stroke="#2a4560" stroke-width="1.5"/>
+      <rect x="8" y="10" width="74" height="20" rx="2" fill="#0d1b28"/>
+      <!-- Ports -->
+      <rect x="12" y="14" width="10" height="12" rx="1" fill="#0a1520" stroke="#1e3347" stroke-width="0.5"/>
+      <rect x="26" y="14" width="10" height="12" rx="1" fill="#0a1520" stroke="#1e3347" stroke-width="0.5"/>
+      <rect x="40" y="14" width="10" height="12" rx="1" fill="#0a1520" stroke="#1e3347" stroke-width="0.5"/>
+      <rect x="54" y="14" width="10" height="12" rx="1" fill="#0a1520" stroke="#1e3347" stroke-width="0.5"/>
+      <rect x="68" y="14" width="10" height="12" rx="1" fill="#0a1520" stroke="#1e3347" stroke-width="0.5"/>
+      <!-- LEDs -->
+      <circle cx="17" cy="42" r="2.5" fill="#2ecc71" opacity="0.8"/>
+      <circle cx="31" cy="42" r="2.5" fill="#2ecc71" opacity="0.7"/>
+      <circle cx="45" cy="42" r="2.5" fill="#2ecc71" opacity="0.9"/>
+      <circle cx="59" cy="42" r="2.5" fill="#f39c12" opacity="0.7"/>
+      <circle cx="73" cy="42" r="2.5" fill="#4D738A" opacity="0.4"/>
+      <!-- Label area -->
+      <rect x="10" y="55" width="70" height="85" rx="2" fill="#152535"/>
+      <text x="45" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#4D738A" opacity="0.7">AT-IS230</text>
+      <text x="45" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#4D738A" opacity="0.5">Industrial</text>
+      <text x="45" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#4D738A" opacity="0.5">Managed</text>
+      <!-- Status indicator -->
+      <circle cx="45" cy="125" r="4" fill="none" stroke="#2ecc71" stroke-width="1" opacity="0.6"/>
+      <circle cx="45" cy="125" r="2" fill="#2ecc71" opacity="0.7"/>
+    </g>
+    <!-- Industrial Switch 2 -->
+    <g transform="translate(160, 15)">
+      <rect x="0" y="0" width="90" height="148" rx="3" fill="#1a2535" stroke="#2a4560" stroke-width="1.5"/>
+      <rect x="8" y="10" width="74" height="20" rx="2" fill="#0d1b28"/>
+      <rect x="12" y="14" width="10" height="12" rx="1" fill="#0a1520" stroke="#1e3347" stroke-width="0.5"/>
+      <rect x="26" y="14" width="10" height="12" rx="1" fill="#0a1520" stroke="#1e3347" stroke-width="0.5"/>
+      <rect x="40" y="14" width="10" height="12" rx="1" fill="#0a1520" stroke="#1e3347" stroke-width="0.5"/>
+      <rect x="54" y="14" width="10" height="12" rx="1" fill="#0a1520" stroke="#1e3347" stroke-width="0.5"/>
+      <rect x="68" y="14" width="10" height="12" rx="1" fill="#0a1520" stroke="#1e3347" stroke-width="0.5"/>
+      <circle cx="17" cy="42" r="2.5" fill="#2ecc71" opacity="0.9"/>
+      <circle cx="31" cy="42" r="2.5" fill="#2ecc71" opacity="0.8"/>
+      <circle cx="45" cy="42" r="2.5" fill="#2ecc71" opacity="0.7"/>
+      <circle cx="59" cy="42" r="2.5" fill="#2ecc71" opacity="0.8"/>
+      <circle cx="73" cy="42" r="2.5" fill="#2ecc71" opacity="0.6"/>
+      <rect x="10" y="55" width="70" height="85" rx="2" fill="#152535"/>
+      <text x="45" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#4D738A" opacity="0.7">AT-IE340</text>
+      <circle cx="45" cy="125" r="4" fill="none" stroke="#2ecc71" stroke-width="1" opacity="0.6"/>
+      <circle cx="45" cy="125" r="2" fill="#2ecc71" opacity="0.7"/>
+    </g>
+    <!-- Industrial Switch 3 -->
+    <g transform="translate(290, 15)">
+      <rect x="0" y="0" width="90" height="148" rx="3" fill="#1a2535" stroke="#2a4560" stroke-width="1.5"/>
+      <rect x="8" y="10" width="74" height="20" rx="2" fill="#0d1b28"/>
+      <rect x="12" y="14" width="10" height="12" rx="1" fill="#0a1520" stroke="#1e3347" stroke-width="0.5"/>
+      <rect x="26" y="14" width="10" height="12" rx="1" fill="#0a1520" stroke="#1e3347" stroke-width="0.5"/>
+      <rect x="40" y="14" width="10" height="12" rx="1" fill="#0a1520" stroke="#1e3347" stroke-width="0.5"/>
+      <rect x="54" y="14" width="10" height="12" rx="1" fill="#0a1520" stroke="#1e3347" stroke-width="0.5"/>
+      <rect x="68" y="14" width="10" height="12" rx="1" fill="#0a1520" stroke="#1e3347" stroke-width="0.5"/>
+      <circle cx="17" cy="42" r="2.5" fill="#2ecc71" opacity="0.8"/>
+      <circle cx="31" cy="42" r="2.5" fill="#f39c12" opacity="0.7"/>
+      <circle cx="45" cy="42" r="2.5" fill="#2ecc71" opacity="0.9"/>
+      <circle cx="59" cy="42" r="2.5" fill="#2ecc71" opacity="0.8"/>
+      <circle cx="73" cy="42" r="2.5" fill="#2ecc71" opacity="0.7"/>
+      <rect x="10" y="55" width="70" height="85" rx="2" fill="#152535"/>
+      <text x="45" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#4D738A" opacity="0.7">AT-IE210L</text>
+      <circle cx="45" cy="125" r="4" fill="none" stroke="#2ecc71" stroke-width="1" opacity="0.6"/>
+      <circle cx="45" cy="125" r="2" fill="#2ecc71" opacity="0.7"/>
+    </g>
+    <!-- Power supply unit -->
+    <g transform="translate(430, 15)">
+      <rect x="0" y="0" width="60" height="148" rx="3" fill="#2a2a2a" stroke="#444" stroke-width="1"/>
+      <text x="30" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#888" transform="rotate(-90, 30, 80)">48V DC PSU</text>
+      <circle cx="30" cy="130" r="3" fill="#2ecc71" opacity="0.6"/>
+    </g>
+  </g>
+  <!-- Gear icons -->
+  <g transform="translate(170, 90)" fill="#4D738A" opacity="0.15">
+    <path d="M30,0 L34,10 L45,10 L36,17 L39,28 L30,21 L21,28 L24,17 L15,10 L26,10 Z" transform="scale(2)"/>
+  </g>
+  <g transform="translate(500, 50)" fill="#4D738A" opacity="0.1">
+    <path d="M30,0 L34,10 L45,10 L36,17 L39,28 L30,21 L21,28 L24,17 L15,10 L26,10 Z" transform="scale(1.5)"/>
+  </g>
+  <!-- Title -->
+  <text x="750" y="275" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="300" font-size="22" fill="#ffffff" letter-spacing="6" opacity="0.9">INDUSTRIAL NETWORKING</text>
+</svg>

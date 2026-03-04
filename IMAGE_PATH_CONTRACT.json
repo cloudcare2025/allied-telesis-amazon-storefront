@@ -1,0 +1,589 @@
+{
+  "_contract_version": "1.0",
+  "_description": "Binding image path contract. Phase 4 saves to these paths. Phase 5 references these paths. NO EXCEPTIONS.",
+  "hero": {
+    "homepage": {
+      "target_path": "images/hero/hero-poster.svg",
+      "actual_path": "images/hero/hero-poster.svg",
+      "status": "acquired",
+      "file_size": 6775,
+      "checksum": "b924e180b2d3b3f77c21ab508426bf78"
+    },
+    "switches": {
+      "target_path": "images/hero/switches-hero.svg",
+      "actual_path": "images/hero/switches-hero.svg",
+      "status": "acquired",
+      "file_size": 14225,
+      "checksum": "86451be7c11b68c1cb9379acfe13bece"
+    },
+    "industrial": {
+      "target_path": "images/hero/industrial-hero.svg",
+      "actual_path": "images/hero/industrial-hero.svg",
+      "status": "acquired",
+      "file_size": 7735,
+      "checksum": "b644f4ff78407def88687e4c5432cd63"
+    },
+    "wireless": {
+      "target_path": "images/hero/wireless-hero.svg",
+      "actual_path": "images/hero/wireless-hero.svg",
+      "status": "acquired",
+      "file_size": 5290,
+      "checksum": "df88242ea69f37e719a28ceaa0a0e047"
+    },
+    "firewalls": {
+      "target_path": "images/hero/firewalls-hero.svg",
+      "actual_path": "images/hero/firewalls-hero.svg",
+      "status": "acquired",
+      "file_size": 5807,
+      "checksum": "dc8671a1842c6eb8703ddd2d4d01fd2a"
+    },
+    "connectivity": {
+      "target_path": "images/hero/connectivity-hero.svg",
+      "actual_path": "images/hero/connectivity-hero.svg",
+      "status": "acquired",
+      "file_size": 5167,
+      "checksum": "d242b3f84681cf8123d0d950675eac05"
+    },
+    "network-management": {
+      "target_path": "images/hero/network-management-hero.svg",
+      "actual_path": "images/hero/network-management-hero.svg",
+      "status": "acquired",
+      "file_size": 6801,
+      "checksum": "bd10dbf584b26390fecbe085d374a1c9"
+    }
+  },
+  "nav_icons": {
+    "home": {
+      "target_path": "images/nav/icon-home.svg",
+      "actual_path": "images/nav/icon-home.svg",
+      "status": "acquired",
+      "file_size": 276,
+      "checksum": "b5b8217a420d9e34a3d8067ec15d674c"
+    },
+    "switches": {
+      "target_path": "images/nav/icon-switches.svg",
+      "actual_path": "images/nav/icon-switches.svg",
+      "status": "acquired",
+      "file_size": 1253,
+      "checksum": "d79134e04310a22af3cd512e0e604b61"
+    },
+    "industrial": {
+      "target_path": "images/nav/icon-industrial.svg",
+      "actual_path": "images/nav/icon-industrial.svg",
+      "status": "acquired",
+      "file_size": 820,
+      "checksum": "6cd453a34c52d02cfed678424ca90778"
+    },
+    "wireless": {
+      "target_path": "images/nav/icon-wireless.svg",
+      "actual_path": "images/nav/icon-wireless.svg",
+      "status": "acquired",
+      "file_size": 520,
+      "checksum": "506501a41da443652223cc8c12b81217"
+    },
+    "firewalls": {
+      "target_path": "images/nav/icon-firewalls.svg",
+      "actual_path": "images/nav/icon-firewalls.svg",
+      "status": "acquired",
+      "file_size": 425,
+      "checksum": "04e70389a34b30a14d85a78dba1689e2"
+    },
+    "connectivity": {
+      "target_path": "images/nav/icon-connectivity.svg",
+      "actual_path": "images/nav/icon-connectivity.svg",
+      "status": "acquired",
+      "file_size": 838,
+      "checksum": "b5b151a73ca2542211e3e34a3af66208"
+    },
+    "network-management": {
+      "target_path": "images/nav/icon-network-management.svg",
+      "actual_path": "images/nav/icon-network-management.svg",
+      "status": "acquired",
+      "file_size": 833,
+      "checksum": "89903be462f51e9e53d2040c7a74f797"
+    }
+  },
+  "branding": {
+    "brand-logo": {
+      "target_path": "images/branding/brand-logo.svg",
+      "actual_path": "images/branding/brand-logo.svg",
+      "status": "acquired",
+      "file_size": 4445,
+      "checksum": "7d492b51545c58c7adb9ef2f2f89b8cf"
+    },
+    "brand-logo-white": {
+      "target_path": "images/branding/brand-logo-white.svg",
+      "actual_path": "images/branding/brand-logo-white.svg",
+      "status": "acquired",
+      "file_size": 4682,
+      "checksum": "02a211ff0c3c9c24cef51586c11cb7b8"
+    },
+    "about-brand": {
+      "target_path": "images/branding/about-brand.svg",
+      "actual_path": "images/branding/about-brand.svg",
+      "status": "acquired",
+      "file_size": 8013,
+      "checksum": "33400957eeed3d05a0a074c2a99aeeb9"
+    },
+    "icon-reliability": {
+      "target_path": "images/branding/icon-reliability.svg",
+      "actual_path": "images/branding/icon-reliability.svg",
+      "status": "acquired",
+      "file_size": 417,
+      "checksum": "d1f41b0deae9f99a45f7c307f38e39bd"
+    },
+    "icon-performance": {
+      "target_path": "images/branding/icon-performance.svg",
+      "actual_path": "images/branding/icon-performance.svg",
+      "status": "acquired",
+      "file_size": 639,
+      "checksum": "0ea18775f4dedcd36f1784e5aa495ab9"
+    },
+    "icon-security": {
+      "target_path": "images/branding/icon-security.svg",
+      "actual_path": "images/branding/icon-security.svg",
+      "status": "acquired",
+      "file_size": 667,
+      "checksum": "b382f06b62542b2ced8de817efb9a902"
+    },
+    "icon-automation": {
+      "target_path": "images/branding/icon-automation.svg",
+      "actual_path": "images/branding/icon-automation.svg",
+      "status": "acquired",
+      "file_size": 1061,
+      "checksum": "99e99c8cdcf237b0cc4f46e9d4baf368"
+    },
+    "quote-mark": {
+      "target_path": "images/branding/quote-mark.svg",
+      "actual_path": "images/branding/quote-mark.svg",
+      "status": "acquired",
+      "file_size": 212,
+      "checksum": "4ae4bd302c665799ad8974d365c65132"
+    },
+    "partner-sinclair": {
+      "target_path": "images/branding/partner-sinclair.svg",
+      "actual_path": "images/branding/partner-sinclair.svg",
+      "status": "acquired",
+      "file_size": 481,
+      "checksum": "7d8a810e190251f2fa2562100a802ab8"
+    },
+    "partner-hanwha": {
+      "target_path": "images/branding/partner-hanwha.svg",
+      "actual_path": "images/branding/partner-hanwha.svg",
+      "status": "acquired",
+      "file_size": 478,
+      "checksum": "d26da0e3f34a6db95adc7e0f74ca5815"
+    },
+    "partner-milestone": {
+      "target_path": "images/branding/partner-milestone.svg",
+      "actual_path": "images/branding/partner-milestone.svg",
+      "status": "acquired",
+      "file_size": 482,
+      "checksum": "912a279b3f1a489c4b26889224501d24"
+    },
+    "og-image": {
+      "target_path": "images/branding/og-image.jpg",
+      "actual_path": "images/branding/og-image.svg",
+      "status": "acquired",
+      "file_size": 1266,
+      "checksum": "9f660f3bfd3a93654423c63b5b9c687b"
+    }
+  },
+  "products": {
+    "x950-28xsq": {
+      "target_path": "images/products/switches/x950-28xsq.png",
+      "actual_path": "images/products/switches/x950-28xsq.png",
+      "status": "acquired",
+      "file_size": 100566,
+      "checksum": "8aa64ecbfd84290f4c875df7dab75856"
+    },
+    "x950-28xtqm": {
+      "target_path": "images/products/switches/x950-28xtqm.png",
+      "actual_path": "images/products/switches/x950-28xtqm.png",
+      "status": "acquired",
+      "file_size": 104337,
+      "checksum": "2c1bf83ad32d1b0e498be528220557f5"
+    },
+    "x950-52xsq": {
+      "target_path": "images/products/switches/x950-52xsq.png",
+      "actual_path": "images/products/switches/x950-52xsq.png",
+      "status": "acquired",
+      "file_size": 102845,
+      "checksum": "83a2d0f9609d185aa1e4f287feff4ce9"
+    },
+    "x950-52xtqm": {
+      "target_path": "images/products/switches/x950-52xtqm.png",
+      "actual_path": "images/products/switches/x950-52xtqm.png",
+      "status": "acquired",
+      "file_size": 108003,
+      "checksum": "aec2f3ac60a3758a18a0e3caf28f8710"
+    },
+    "x560-28ysq": {
+      "target_path": "images/products/switches/x560-28ysq.png",
+      "actual_path": "images/products/switches/x560-28ysq.png",
+      "status": "acquired",
+      "file_size": 94734,
+      "checksum": "ffa1ac4131f71c61fe5da6b62cbdf0fd"
+    },
+    "x540l-28xtm": {
+      "target_path": "images/products/switches/x540l-28xtm.png",
+      "actual_path": "images/products/switches/x540l-28xtm.png",
+      "status": "acquired",
+      "file_size": 71937,
+      "checksum": "d8f8cc3fdaed1298b7bc3fa4f0d661f2"
+    },
+    "x540l-28xs": {
+      "target_path": "images/products/switches/x540l-28xs.png",
+      "actual_path": "images/products/switches/x540l-28xs.png",
+      "status": "acquired",
+      "file_size": 83814,
+      "checksum": "fac5c11f7fa3e0c6bf353afb26b0c99c"
+    },
+    "x250-28xtm": {
+      "target_path": "images/products/switches/x250-28xtm.png",
+      "actual_path": "images/products/switches/x250-28xtm.png",
+      "status": "acquired",
+      "file_size": 1021906,
+      "checksum": "755bcacb151572c2160a3409cd0b3654"
+    },
+    "x250-28xs": {
+      "target_path": "images/products/switches/x250-28xs.png",
+      "actual_path": "images/products/switches/x250-28xs.png",
+      "status": "acquired",
+      "file_size": 82470,
+      "checksum": "3b14b93dfc2e72d661508b6e5e72ecfe"
+    },
+    "x250-18xtm": {
+      "target_path": "images/products/switches/x250-18xtm.png",
+      "actual_path": "images/products/switches/x250-18xtm.png",
+      "status": "acquired",
+      "file_size": 115758,
+      "checksum": "4a9f8781faeb9a649ef7904bc5bb4310"
+    },
+    "x250-18xs": {
+      "target_path": "images/products/switches/x250-18xs.png",
+      "actual_path": "images/products/switches/x250-18xs.png",
+      "status": "acquired",
+      "file_size": 132467,
+      "checksum": "fe8e221e817bdae3f6aa1d5318d5a7e1"
+    },
+    "sbx908-gen3": {
+      "target_path": "images/products/switches/sbx908-gen3.png",
+      "actual_path": "images/products/switches/sbx908-gen3.png",
+      "status": "acquired",
+      "file_size": 333053,
+      "checksum": "c90e29a461dbe4a4a59fc0726a12cbb7"
+    },
+    "x240-26ghxm": {
+      "target_path": "images/products/switches/x240-26ghxm.png",
+      "actual_path": "images/products/switches/x240-26ghxm.png",
+      "status": "acquired",
+      "file_size": 96444,
+      "checksum": "d92a7adc9f42eb3604e08f50c9e9ca83"
+    },
+    "se540l-28xtm": {
+      "target_path": "images/products/switches/se540l-28xtm.png",
+      "actual_path": "images/products/switches/se540l-28xtm.png",
+      "status": "acquired",
+      "file_size": 70846,
+      "checksum": "2a6473234c4f976103c0c79d51ef826e"
+    },
+    "se250-28xtm": {
+      "target_path": "images/products/switches/se250-28xtm.png",
+      "actual_path": "images/products/switches/se250-28xtm.png",
+      "status": "acquired",
+      "file_size": 76183,
+      "checksum": "cc92acb22bbcaaf3f353c900aeca0f81"
+    },
+    "gs950-28-v2": {
+      "target_path": "images/products/switches/gs950-28-v2.png",
+      "actual_path": "images/products/switches/gs950-28-v2.png",
+      "status": "acquired",
+      "file_size": 106943,
+      "checksum": "c0f29d8bd5320719eb62c9ec94408e7f"
+    },
+    "gs950-28ps-v2": {
+      "target_path": "images/products/switches/gs950-28ps-v2.png",
+      "actual_path": "images/products/switches/gs950-28ps-v2.png",
+      "status": "acquired",
+      "file_size": 106943,
+      "checksum": "c0f29d8bd5320719eb62c9ec94408e7f"
+    },
+    "ie360-12ghx": {
+      "target_path": "images/products/industrial/ie360-12ghx.png",
+      "actual_path": "images/products/industrial/ie360-12ghx.png",
+      "status": "acquired",
+      "file_size": 113167,
+      "checksum": "83f5eaf551476a41f26d111dbf0cbc2f"
+    },
+    "ie360-12gtx": {
+      "target_path": "images/products/industrial/ie360-12gtx.png",
+      "actual_path": "images/products/industrial/ie360-12gtx.png",
+      "status": "acquired",
+      "file_size": 119224,
+      "checksum": "b0188bef58c54f7b862484aff1cb50ff"
+    },
+    "ie560-12gsx": {
+      "target_path": "images/products/industrial/ie560-12gsx.png",
+      "actual_path": "images/products/industrial/ie560-12gsx.png",
+      "status": "acquired",
+      "file_size": 140322,
+      "checksum": "3d19b28795c88470061115084fa398d3"
+    },
+    "igs950-10ps": {
+      "target_path": "images/products/industrial/igs950-10ps.png",
+      "actual_path": "images/products/industrial/igs950-10ps.png",
+      "status": "acquired",
+      "file_size": 89566,
+      "checksum": "a320aefc33a4ddb8d65be4c1ee399f3a"
+    },
+    "igs950-28ps": {
+      "target_path": "images/products/industrial/igs950-28ps.png",
+      "actual_path": "images/products/industrial/igs950-28ps.png",
+      "status": "acquired",
+      "file_size": 89837,
+      "checksum": "05b7d4e94fdb4020e6ca858664337f0f"
+    },
+    "tq7613-r": {
+      "target_path": "images/products/wireless/tq7613-r.png",
+      "actual_path": "images/products/wireless/tq7613-r.png",
+      "status": "acquired",
+      "file_size": 54966,
+      "checksum": "619198c60dee48d3d06cb5da9a2afa75"
+    },
+    "tq6403-gen2": {
+      "target_path": "images/products/wireless/tq6403-gen2.png",
+      "actual_path": "images/products/wireless/tq6403-gen2.png",
+      "status": "acquired",
+      "file_size": 64869,
+      "checksum": "224d5e18f5e3e1ec22f495e3d4c533cb"
+    },
+    "tqm6403-gen2": {
+      "target_path": "images/products/wireless/tqm6403-gen2.png",
+      "actual_path": "images/products/wireless/tqm6403-gen2.png",
+      "status": "acquired",
+      "file_size": 64869,
+      "checksum": "224d5e18f5e3e1ec22f495e3d4c533cb"
+    },
+    "tq3403": {
+      "target_path": "images/products/wireless/tq3403.png",
+      "actual_path": "images/products/wireless/tq3403.png",
+      "status": "acquired",
+      "file_size": 71801,
+      "checksum": "bc93102c082814df15e1be559175588b"
+    },
+    "tq7403-r": {
+      "target_path": "images/products/wireless/tq7403-r.png",
+      "actual_path": "images/products/wireless/tq7403-r.png",
+      "status": "acquired",
+      "file_size": 71801,
+      "checksum": "bc93102c082814df15e1be559175588b"
+    },
+    "tq6702e-gen2-r": {
+      "target_path": "images/products/wireless/tq6702e-gen2-r.png",
+      "actual_path": "images/products/wireless/tq6702e-gen2-r.png",
+      "status": "acquired",
+      "file_size": 78154,
+      "checksum": "48d0dab67d4b5306ba650108675597d9"
+    },
+    "tq3403-r": {
+      "target_path": "images/products/wireless/tq3403-r.png",
+      "actual_path": "images/products/wireless/tq3403-r.png",
+      "status": "acquired",
+      "file_size": 71801,
+      "checksum": "bc93102c082814df15e1be559175588b"
+    },
+    "arx200s-gtx": {
+      "target_path": "images/products/firewalls/arx200s-gtx.png",
+      "actual_path": "images/products/firewalls/arx200s-gtx.png",
+      "status": "acquired",
+      "file_size": 139293,
+      "checksum": "ada4b8de4d1b3f98a6cfcacaedcf30e2"
+    },
+    "arx200s-gt": {
+      "target_path": "images/products/firewalls/arx200s-gt.png",
+      "actual_path": "images/products/firewalls/arx200s-gt.png",
+      "status": "acquired",
+      "file_size": 139293,
+      "checksum": "ada4b8de4d1b3f98a6cfcacaedcf30e2"
+    },
+    "mmc2000i-sp": {
+      "target_path": "images/products/connectivity/mmc2000i-sp.png",
+      "actual_path": "images/products/connectivity/mmc2000i-sp.png",
+      "status": "acquired",
+      "file_size": 149815,
+      "checksum": "79ef43c02cd9e2315621f920fce86487"
+    },
+    "pc2000t2-sp": {
+      "target_path": "images/products/connectivity/pc2000t2-sp.png",
+      "actual_path": "images/products/connectivity/pc2000t2-sp.png",
+      "status": "acquired",
+      "file_size": 138432,
+      "checksum": "ff842c47ffacf9476c14011c3d9bed0e"
+    },
+    "mmc6000": {
+      "target_path": "images/products/connectivity/mmc6000.png",
+      "actual_path": "images/products/connectivity/mmc6000.png",
+      "status": "acquired",
+      "file_size": 135372,
+      "checksum": "b9da31bcfaa91e68f98ab43bab70bd95"
+    },
+    "anc25sp": {
+      "target_path": "images/products/connectivity/anc25sp.png",
+      "actual_path": "images/products/connectivity/anc25sp.png",
+      "status": "acquired",
+      "file_size": 244142,
+      "checksum": "8ffcda890ef042628797210d2213a9a3"
+    },
+    "anc25sp-2": {
+      "target_path": "images/products/connectivity/anc25sp-2.png",
+      "actual_path": "images/products/connectivity/anc25sp-2.png",
+      "status": "acquired",
+      "file_size": 244142,
+      "checksum": "8ffcda890ef042628797210d2213a9a3"
+    },
+    "at-2911ta-2": {
+      "target_path": "images/products/connectivity/at-2911ta-2.png",
+      "actual_path": "images/products/connectivity/at-2911ta-2.png",
+      "status": "acquired",
+      "file_size": 475696,
+      "checksum": "a46a6a7e176bacac470c66b689bb5f42"
+    },
+    "at-2911sfpa-2": {
+      "target_path": "images/products/connectivity/at-2911sfpa-2.png",
+      "actual_path": "images/products/connectivity/at-2911sfpa-2.png",
+      "status": "acquired",
+      "file_size": 202476,
+      "checksum": "aea84650cf8d5a2882ebc7c96224b4d3"
+    },
+    "at-2911sxa-lc": {
+      "target_path": "images/products/connectivity/at-2911sxa-lc.png",
+      "actual_path": "images/products/connectivity/at-2911sxa-lc.png",
+      "status": "acquired",
+      "file_size": 208237,
+      "checksum": "79bf02a67db484ecf40b510203616708"
+    },
+    "at-2711fxa-sc": {
+      "target_path": "images/products/connectivity/at-2711fxa-sc.png",
+      "actual_path": "images/products/connectivity/at-2711fxa-sc.png",
+      "status": "acquired",
+      "file_size": 301771,
+      "checksum": "a621a458e02a183f9391ae5f1864665f"
+    },
+    "vista-manager": {
+      "target_path": "images/products/software/vista-manager.png",
+      "actual_path": "images/products/software/vista-manager.png",
+      "status": "acquired",
+      "file_size": 102027,
+      "checksum": "182382aacfcbe6230d3ae92d1d47ac37"
+    },
+    "oneconnect": {
+      "target_path": "images/products/software/oneconnect.png",
+      "actual_path": "images/products/software/oneconnect.png",
+      "status": "acquired",
+      "file_size": 227674,
+      "checksum": "a321e5cb9839ea1b96306d5586ca66ee"
+    },
+    "awc": {
+      "target_path": "images/products/software/awc.png",
+      "actual_path": "images/products/software/awc.png",
+      "status": "acquired",
+      "file_size": 197890,
+      "checksum": "a9923c874af1b5a292a0bbc3c86e3fe7"
+    },
+    "streamconnect": {
+      "target_path": "images/products/software/streamconnect.png",
+      "actual_path": "images/products/software/streamconnect.png",
+      "status": "acquired",
+      "file_size": 61389,
+      "checksum": "029c953d258410fcabb237852c5121ac"
+    }
+  },
+  "industries": {
+    "education": {
+      "target_path": "images/industries/education.svg",
+      "actual_path": "images/industries/education.svg",
+      "status": "acquired",
+      "file_size": 4472,
+      "checksum": "7895b04289ac47c99a5c6441d39c0abd"
+    },
+    "healthcare": {
+      "target_path": "images/industries/healthcare.svg",
+      "actual_path": "images/industries/healthcare.svg",
+      "status": "acquired",
+      "file_size": 3952,
+      "checksum": "ecc9b12ea539a931f878b15616ee84e7"
+    },
+    "government": {
+      "target_path": "images/industries/government.svg",
+      "actual_path": "images/industries/government.svg",
+      "status": "acquired",
+      "file_size": 3208,
+      "checksum": "a54cf21afd61489d2f5f688f16c44cf2"
+    },
+    "manufacturing": {
+      "target_path": "images/industries/manufacturing.svg",
+      "actual_path": "images/industries/manufacturing.svg",
+      "status": "acquired",
+      "file_size": 5881,
+      "checksum": "24c21a3b119452578b49b7eb7306b68e"
+    },
+    "transportation": {
+      "target_path": "images/industries/transportation.svg",
+      "actual_path": "images/industries/transportation.svg",
+      "status": "acquired",
+      "file_size": 5801,
+      "checksum": "a8480e7e4115e414fba4a230d98f9409"
+    }
+  },
+  "videos": {
+    "hero-background": {
+      "path": "hero-video-web.webm",
+      "type": "direct-webm",
+      "source_url": "https://www.alliedtelesis.com/sites/default/files/video/2025-09/cityscape.webm",
+      "poster": "images/hero/hero-poster.svg",
+      "autoplay": true,
+      "muted": true,
+      "loop": true,
+      "status": "acquired",
+      "file_size": 855525
+    },
+    "grey-background": {
+      "path": "grey-background.webm",
+      "type": "direct-webm",
+      "source_url": "https://www.alliedtelesis.com/sites/default/files/video/2025-09/grey-background.webm",
+      "poster": null,
+      "autoplay": true,
+      "muted": true,
+      "loop": true,
+      "status": "acquired",
+      "file_size": 115760
+    },
+    "embed-awc-wireless": {
+      "path": null,
+      "type": "vimeo",
+      "embed_url": "https://player.vimeo.com/video/516758202",
+      "title": "AWC Wireless Solutions"
+    },
+    "embed-wireless-solutions": {
+      "path": null,
+      "type": "vimeo",
+      "embed_url": "https://player.vimeo.com/video/324894758",
+      "title": "Wireless Solutions Overview"
+    },
+    "embed-security-overview": {
+      "path": null,
+      "type": "vimeo",
+      "embed_url": "https://player.vimeo.com/video/721250694",
+      "title": "Security Overview"
+    },
+    "embed-arx-security": {
+      "path": null,
+      "type": "vimeo",
+      "embed_url": "https://player.vimeo.com/video/830053308",
+      "title": "ARX Security Feature"
+    }
+  },
+  "updated_by": "phase4",
+  "phase4_completed": true
+}

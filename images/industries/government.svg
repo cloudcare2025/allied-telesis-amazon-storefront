@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="govBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8eef4"/>
+      <stop offset="100%" stop-color="#d0dae6"/>
+    </linearGradient>
+    <filter id="govShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#003865" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" fill="url(#govBg)"/>
+  <!-- Government building -->
+  <g transform="translate(100, 50)" filter="url(#govShadow)">
+    <!-- Base building -->
+    <rect x="0" y="70" width="200" height="120" fill="#ffffff" stroke="#003865" stroke-width="1.5" rx="1"/>
+    <!-- Steps -->
+    <rect x="-10" y="190" width="220" height="8" fill="#ffffff" stroke="#003865" stroke-width="1" rx="1"/>
+    <rect x="-5" y="185" width="210" height="8" fill="#ffffff" stroke="#003865" stroke-width="1" rx="1"/>
+    <!-- Pediment -->
+    <polygon points="0,70 100,30 200,70" fill="#ffffff" stroke="#003865" stroke-width="1.5"/>
+    <!-- Dome -->
+    <ellipse cx="100" cy="30" rx="25" ry="20" fill="#ffffff" stroke="#003865" stroke-width="1.2"/>
+    <rect x="96" y="10" width="8" height="12" fill="#ffffff" stroke="#003865" stroke-width="1"/>
+    <circle cx="100" cy="8" r="4" fill="none" stroke="#003865" stroke-width="1"/>
+    <!-- Columns -->
+    <g stroke="#003865" stroke-width="2.5" opacity="0.4">
+      <line x1="25" y1="70" x2="25" y2="190"/>
+      <line x1="60" y1="70" x2="60" y2="190"/>
+      <line x1="100" y1="70" x2="100" y2="190"/>
+      <line x1="140" y1="70" x2="140" y2="190"/>
+      <line x1="175" y1="70" x2="175" y2="190"/>
+    </g>
+    <!-- Windows -->
+    <g fill="#d0dae6" stroke="#003865" stroke-width="0.6" opacity="0.5">
+      <rect x="15" y="90" width="14" height="20" rx="1"/>
+      <rect x="45" y="90" width="14" height="20" rx="1"/>
+      <rect x="85" y="90" width="14" height="20" rx="1"/>
+      <rect x="130" y="90" width="14" height="20" rx="1"/>
+      <rect x="165" y="90" width="14" height="20" rx="1"/>
+    </g>
+    <!-- Entrance -->
+    <rect x="80" y="145" width="40" height="45" fill="#d0dae6" stroke="#003865" stroke-width="1" rx="1"/>
+  </g>
+  <!-- Security shield overlay -->
+  <g transform="translate(200, 55)" opacity="0.12">
+    <path d="M0,-50 L60,-30 L60,15 C60,50 30,70 0,85 C-30,70 -60,50 -60,15 L-60,-30 Z" fill="none" stroke="#003865" stroke-width="3"/>
+  </g>
+  <!-- Secure network indicators -->
+  <g fill="none" stroke="#003865" stroke-width="1" opacity="0.15">
+    <circle cx="200" cy="140" r="60"/>
+    <circle cx="200" cy="140" r="90"/>
+    <circle cx="200" cy="140" r="120"/>
+  </g>
+  <!-- Lock icon -->
+  <g transform="translate(350, 50)" opacity="0.3">
+    <rect x="0" y="8" width="16" height="12" rx="2" fill="none" stroke="#003865" stroke-width="1.5"/>
+    <path d="M3,8 L3,3 C3,-3 13,-3 13,3 L13,8" fill="none" stroke="#003865" stroke-width="1.5"/>
+    <circle cx="8" cy="14" r="2" fill="#003865"/>
+  </g>
+  <!-- Label -->
+  <text x="200" y="280" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="14" fill="#003865" letter-spacing="3">GOVERNMENT</text>
+</svg>

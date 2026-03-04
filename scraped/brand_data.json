@@ -1,0 +1,207 @@
+{
+  "brand": {
+    "legal_name": "Allied Telesis, Inc.",
+    "common_name": "Allied Telesis",
+    "tagline": "Network smarter.",
+    "mission": "At the heart of our company lies a simple yet powerful belief: technology should elevate performance, empower people, and create lasting value.",
+    "founded": 1987,
+    "headquarters": {
+      "primary": "Tokyo, Japan",
+      "us": "San Jose, California"
+    },
+    "ceo": "Dr Sachie Oshima",
+    "employees": 1900,
+    "market_category": "Enterprise Network Infrastructure",
+    "price_tier": "Mid-Market",
+    "sales_motion": "Hybrid",
+    "writing_style": "Professional-Accessible",
+    "on_amazon": false,
+    "website": "https://www.alliedtelesis.com/"
+  },
+  "visual_identity": {
+    "colors": {
+      "primary": "#4D738A",
+      "secondary": "#003865",
+      "accent": "#983222",
+      "primary_red": "#BE3A34",
+      "gold": "#EFBD47",
+      "logo_red": "#DF3127",
+      "body_text": "#333333",
+      "body_bg": "#F7F7F7",
+      "primary_black": "#25282A",
+      "success": "#008542"
+    },
+    "typography": {
+      "primary_font": "Roboto",
+      "font_weights": [300, 400, 500, 700],
+      "body_weight": 300,
+      "body_size": "17px",
+      "body_line_height": 1.4,
+      "h1_size": "51px",
+      "h1_weight": 300,
+      "h2_size": "34px",
+      "h2_weight": 400,
+      "h3_size": "25.5px",
+      "h3_weight": 500,
+      "border_radius": "0.25rem"
+    },
+    "logos": {
+      "color_svg": "https://www.alliedtelesis.com/themes/custom/themekit/dist/svg/logo_color.svg",
+      "black_svg": "https://www.alliedtelesis.com/themes/custom/themekit/dist/svg/logo_text_black.svg",
+      "white_svg": "https://www.alliedtelesis.com/themes/custom/themekit/dist/svg/logo_text_white.svg",
+      "favicon": "https://www.alliedtelesis.com/themes/custom/themekit/favicon.ico",
+      "local_files": [
+        "scraped/logo_color.svg",
+        "scraped/logo_text_black.svg",
+        "scraped/logo_text_white.svg"
+      ]
+    },
+    "hero_style": "video",
+    "hero_video": "https://www.alliedtelesis.com/sites/default/files/video/2025-09/cityscape.webm"
+  },
+  "cdn": {
+    "domain": "www.alliedtelesis.com",
+    "image_pattern": "/sites/default/files/styles/{style}/public/image/{YYYY-MM}/{slug}-3840.png",
+    "original_pattern": "/sites/default/files/image/{YYYY-MM}/{slug}-3840.png",
+    "image_styles": ["small_hq", "medium_hq", "x_large_hq", "xx_large_hq"],
+    "hotlink_protection": false,
+    "product_image_resolution": "3840px wide"
+  },
+  "products": {
+    "total_count": 44,
+    "categories": [
+      {
+        "name": "Enterprise Campus Switches",
+        "slug": "enterprise-campus-switches",
+        "count": 13,
+        "url": "https://www.alliedtelesis.com/us/en/products/switches/Enterprise-Campus",
+        "products": ["x950-28XSQ", "x950-28XTQm", "x950-52XSQ", "x950-52XTQm", "x560-28YSQ", "x540L-28XTm", "x540L-28XS", "x250-28XTm", "x250-28XS", "x250-18XTm", "x250-18XS", "SBx908 GEN3", "x240-26GHXM"]
+      },
+      {
+        "name": "Wireless Access Points",
+        "slug": "wireless-access-points",
+        "count": 7,
+        "url": "https://www.alliedtelesis.com/us/en/products/wireless/access-points",
+        "products": ["TQ7613-R", "TQ6403 GEN2", "TQm6403 GEN2", "TQ3403", "TQ7403-R", "TQ6702e GEN2-R", "TQ3403-R"]
+      },
+      {
+        "name": "Firewalls & Security",
+        "slug": "firewalls-security",
+        "count": 2,
+        "url": "https://www.alliedtelesis.com/us/en/products/security-appliances",
+        "products": ["ARX200S-GTX", "ARX200S-GT"]
+      },
+      {
+        "name": "Industrial Switches",
+        "slug": "industrial-switches",
+        "count": 5,
+        "url": "https://www.alliedtelesis.com/us/en/products/switches/Industrial",
+        "products": ["IE360-12GHX", "IE360-12GTX", "IE560-12GSX", "iGS950/10PS", "iGS950/28PS"]
+      },
+      {
+        "name": "SMB Switches",
+        "slug": "smb-switches",
+        "count": 2,
+        "url": "https://www.alliedtelesis.com/us/en/products/switches/Small-Business",
+        "products": ["GS950/28 V2", "GS950/28PS V2"]
+      },
+      {
+        "name": "Stackable Edge Switches",
+        "slug": "stackable-edge-switches",
+        "count": 2,
+        "url": "https://www.alliedtelesis.com/us/en/products/switches",
+        "products": ["SE540L-28XTm", "SE250-28XTm"]
+      },
+      {
+        "name": "Media Converters",
+        "slug": "media-converters",
+        "count": 3,
+        "url": "https://www.alliedtelesis.com/us/en/products/media-converters",
+        "products": ["MMC2000I/SP", "PC2000T2/SP", "MMC6000 Series"]
+      },
+      {
+        "name": "Network Adapters",
+        "slug": "network-adapters",
+        "count": 6,
+        "url": "https://www.alliedtelesis.com/us/en/products/network-adapters",
+        "products": ["ANC25SP", "ANC25SP/2", "AT-2911Ta/2", "AT-2911SFPa/2", "AT-2911SXa/LC", "AT-2711FXa/SC"]
+      },
+      {
+        "name": "Network Management",
+        "slug": "network-management",
+        "count": 4,
+        "url": "https://www.alliedtelesis.com/us/en/products/network-management",
+        "products": ["Vista Manager EX", "OneConnect", "AWC", "StreamConnect"]
+      }
+    ]
+  },
+  "competitive": {
+    "market_position": "Niche Player (Gartner MQ for Wired and Wireless LAN Access Infrastructure)",
+    "market_share_ethernet": "~0.1%",
+    "market_share_telecom": "~6.5%",
+    "competitors": [
+      {
+        "name": "Cisco Systems",
+        "url": "https://www.cisco.com/",
+        "overlap": "Enterprise infrastructure, core switching, SDN",
+        "differentiation": "Allied Telesis offers lower TCO with easier AMF management vs Cisco's complex ecosystem"
+      },
+      {
+        "name": "HPE / Aruba",
+        "url": "https://www.arubanetworks.com/",
+        "overlap": "Enterprise wired/wireless LAN, campus networks",
+        "differentiation": "Allied Telesis emphasizes on-premise automation (AMF) vs Aruba's cloud-first (Aruba Central)"
+      },
+      {
+        "name": "Juniper Networks",
+        "url": "https://www.juniper.net/",
+        "overlap": "Large enterprises, service providers",
+        "differentiation": "Allied Telesis focuses on mid-market/industrial with ruggedized hardware vs Juniper's AI-driven large-scale"
+      }
+    ]
+  },
+  "testimonials_count": 9,
+  "case_studies_count": 3,
+  "awards_count": 28,
+  "industries": [
+    "Education",
+    "Healthcare",
+    "Federal Government",
+    "Manufacturing / Industrial IoT",
+    "Transportation",
+    "Smart Cities",
+    "Local/State Government",
+    "Energy / Utilities",
+    "Hospitality / Sport",
+    "Retail",
+    "Datacenter"
+  ],
+  "compliance": {
+    "ndaa_889": true,
+    "taa": true,
+    "fips_140_2": true
+  },
+  "videos": [
+    {
+      "title": "Cityscape Hero",
+      "url": "https://www.alliedtelesis.com/sites/default/files/video/2025-09/cityscape.webm",
+      "type": "hero-bg",
+      "platform": "Direct WebM",
+      "downloadable": true,
+      "size_kb": 855
+    },
+    {
+      "title": "Grey Background",
+      "url": "https://www.alliedtelesis.com/sites/default/files/video/2025-09/grey-background.webm",
+      "type": "hero-bg",
+      "platform": "Direct WebM",
+      "downloadable": true,
+      "size_kb": 116
+    }
+  ],
+  "social": {
+    "youtube": "https://www.youtube.com/@AlliedTelesisIntl",
+    "vimeo": "https://vimeo.com/alliedtelesis",
+    "linkedin": true
+  }
+}

@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="trBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0f4f8"/>
+      <stop offset="100%" stop-color="#dce4ec"/>
+    </linearGradient>
+    <filter id="trShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#003865" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" fill="url(#trBg)"/>
+  <!-- Rail tracks -->
+  <g stroke="#4D738A" opacity="0.3">
+    <!-- Left rail -->
+    <line x1="0" y1="195" x2="400" y2="195" stroke-width="2"/>
+    <!-- Right rail -->
+    <line x1="0" y1="205" x2="400" y2="205" stroke-width="2"/>
+    <!-- Ties -->
+    <g stroke-width="1.5">
+      <line x1="20" y1="192" x2="20" y2="208"/>
+      <line x1="50" y1="192" x2="50" y2="208"/>
+      <line x1="80" y1="192" x2="80" y2="208"/>
+      <line x1="110" y1="192" x2="110" y2="208"/>
+      <line x1="140" y1="192" x2="140" y2="208"/>
+      <line x1="170" y1="192" x2="170" y2="208"/>
+      <line x1="200" y1="192" x2="200" y2="208"/>
+      <line x1="230" y1="192" x2="230" y2="208"/>
+      <line x1="260" y1="192" x2="260" y2="208"/>
+      <line x1="290" y1="192" x2="290" y2="208"/>
+      <line x1="320" y1="192" x2="320" y2="208"/>
+      <line x1="350" y1="192" x2="350" y2="208"/>
+      <line x1="380" y1="192" x2="380" y2="208"/>
+    </g>
+  </g>
+  <!-- Train -->
+  <g transform="translate(80, 140)" filter="url(#trShadow)">
+    <!-- Engine -->
+    <rect x="0" y="0" width="100" height="50" rx="5" fill="#ffffff" stroke="#003865" stroke-width="2"/>
+    <rect x="90" y="5" width="15" height="40" rx="3" fill="#003865" opacity="0.3"/>
+    <!-- Front nose -->
+    <path d="M0,0 C-20,0 -25,20 -25,25 C-25,30 -20,50 0,50" fill="#ffffff" stroke="#003865" stroke-width="2"/>
+    <!-- Windows -->
+    <rect x="10" y="8" width="20" height="16" rx="2" fill="#e8eef4" stroke="#003865" stroke-width="1"/>
+    <rect x="35" y="8" width="20" height="16" rx="2" fill="#e8eef4" stroke="#003865" stroke-width="1"/>
+    <rect x="60" y="8" width="20" height="16" rx="2" fill="#e8eef4" stroke="#003865" stroke-width="1"/>
+    <!-- Door -->
+    <rect x="40" y="30" width="18" height="20" rx="1" fill="#e8eef4" stroke="#003865" stroke-width="1"/>
+    <!-- Headlight -->
+    <circle cx="-20" cy="25" r="4" fill="#f4d03f" opacity="0.5" stroke="#003865" stroke-width="0.5"/>
+    <!-- Car 2 -->
+    <rect x="108" y="0" width="90" height="50" rx="3" fill="#ffffff" stroke="#003865" stroke-width="1.5"/>
+    <rect x="115" y="8" width="18" height="14" rx="2" fill="#e8eef4" stroke="#003865" stroke-width="0.8"/>
+    <rect x="138" y="8" width="18" height="14" rx="2" fill="#e8eef4" stroke="#003865" stroke-width="0.8"/>
+    <rect x="161" y="8" width="18" height="14" rx="2" fill="#e8eef4" stroke="#003865" stroke-width="0.8"/>
+    <rect x="140" y="30" width="16" height="20" rx="1" fill="#e8eef4" stroke="#003865" stroke-width="0.8"/>
+    <!-- Car 3 -->
+    <rect x="205" y="0" width="90" height="50" rx="3" fill="#ffffff" stroke="#003865" stroke-width="1.5"/>
+    <rect x="212" y="8" width="18" height="14" rx="2" fill="#e8eef4" stroke="#003865" stroke-width="0.8"/>
+    <rect x="235" y="8" width="18" height="14" rx="2" fill="#e8eef4" stroke="#003865" stroke-width="0.8"/>
+    <rect x="258" y="8" width="18" height="14" rx="2" fill="#e8eef4" stroke="#003865" stroke-width="0.8"/>
+    <rect x="237" y="30" width="16" height="20" rx="1" fill="#e8eef4" stroke="#003865" stroke-width="0.8"/>
+  </g>
+  <!-- Network nodes along route -->
+  <g>
+    <circle cx="50" cy="230" r="6" fill="#ffffff" stroke="#4D738A" stroke-width="1.5"/>
+    <circle cx="50" cy="230" r="2.5" fill="#4D738A" opacity="0.5"/>
+    <circle cx="150" cy="230" r="6" fill="#ffffff" stroke="#4D738A" stroke-width="1.5"/>
+    <circle cx="150" cy="230" r="2.5" fill="#4D738A" opacity="0.5"/>
+    <circle cx="250" cy="230" r="6" fill="#ffffff" stroke="#4D738A" stroke-width="1.5"/>
+    <circle cx="250" cy="230" r="2.5" fill="#4D738A" opacity="0.5"/>
+    <circle cx="350" cy="230" r="6" fill="#ffffff" stroke="#4D738A" stroke-width="1.5"/>
+    <circle cx="350" cy="230" r="2.5" fill="#4D738A" opacity="0.5"/>
+  </g>
+  <!-- Fiber connections between nodes -->
+  <g stroke="#4D738A" stroke-width="1.5" opacity="0.25">
+    <line x1="56" y1="230" x2="144" y2="230"/>
+    <line x1="156" y1="230" x2="244" y2="230"/>
+    <line x1="256" y1="230" x2="344" y2="230"/>
+  </g>
+  <!-- Connections up to track -->
+  <g stroke="#4D738A" stroke-width="0.8" opacity="0.15" stroke-dasharray="3,3">
+    <line x1="50" y1="224" x2="50" y2="210"/>
+    <line x1="150" y1="224" x2="150" y2="210"/>
+    <line x1="250" y1="224" x2="250" y2="210"/>
+    <line x1="350" y1="224" x2="350" y2="210"/>
+  </g>
+  <!-- Station labels -->
+  <g font-family="Arial, sans-serif" font-size="7" fill="#4D738A" text-anchor="middle" opacity="0.5">
+    <text x="50" y="248">Station A</text>
+    <text x="150" y="248">Station B</text>
+    <text x="250" y="248">Station C</text>
+    <text x="350" y="248">Station D</text>
+  </g>
+  <!-- Signal tower -->
+  <g transform="translate(370, 80)">
+    <line x1="0" y1="0" x2="0" y2="60" stroke="#4D738A" stroke-width="1.5" opacity="0.4"/>
+    <line x1="-8" y1="60" x2="8" y2="60" stroke="#4D738A" stroke-width="1.5" opacity="0.4"/>
+    <!-- Antenna -->
+    <g fill="none" stroke="#4D738A" stroke-width="0.8" opacity="0.2">
+      <path d="M-10,5 C-10,-5 10,-5 10,5"/>
+      <path d="M-16,10 C-16,-5 16,-5 16,10"/>
+    </g>
+    <circle cx="0" cy="8" r="2" fill="#4D738A" opacity="0.3"/>
+  </g>
+  <!-- Label -->
+  <text x="200" y="278" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="14" fill="#003865" letter-spacing="3">TRANSPORTATION</text>
+</svg>

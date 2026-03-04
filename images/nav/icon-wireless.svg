@@ -1,8 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- WiFi signal arcs -->
-  <path d="M8 26 C8 10 56 10 56 26" fill="none" stroke="#4D738A" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M16 34 C16 22 48 22 48 34" fill="none" stroke="#4D738A" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M24 42 C24 34 40 34 40 42" fill="none" stroke="#4D738A" stroke-width="2.5" stroke-linecap="round"/>
-  <!-- Center dot -->
-  <circle cx="32" cy="48" r="4" fill="#4D738A"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M2 8.82a15 15 0 0120 0"/>
+  <path d="M5 12.86a10 10 0 0114 0"/>
+  <path d="M8.5 16.43a5 5 0 017 0"/>
+  <circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/>
 </svg>

@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Allied Telesis Firewalls and Security - Unified Threat Management with 10G performance, integrated SD-WAN, deep packet inspection, and advanced threat protection.">
+    <meta name="description" content="Allied Telesis ARX200S UTM Firewalls - Unified Threat Management with up to 10G WAN, 5.5 Gbps firewall throughput, integrated SD-WAN, deep packet inspection, and autonomous security built on AlliedWare Plus.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Allied Telesis">
-    <meta property="og:title" content="Firewalls & Security | Allied Telesis Official Store on Amazon">
-    <meta property="og:description" content="Unified Threat Management firewalls with 10G performance, integrated SD-WAN, and autonomous security built on AlliedWare Plus.">
+    <meta property="og:title" content="Firewalls &amp; Security | Allied Telesis Official Store on Amazon">
+    <meta property="og:description" content="Unified Threat Management firewalls with up to 10G performance, integrated SD-WAN, and autonomous security built on AlliedWare Plus.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="images/branding/og-image.svg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Firewalls & Security | Allied Telesis Official Store on Amazon">
-    <meta name="twitter:description" content="Unified Threat Management firewalls with 10G performance and integrated SD-WAN.">
+    <meta name="twitter:title" content="Firewalls &amp; Security | Allied Telesis Official Store on Amazon">
+    <meta name="twitter:description" content="Unified Threat Management firewalls with up to 10G performance and integrated SD-WAN.">
     <title>Firewalls &amp; Security | Allied Telesis Official Store on Amazon</title>
     <link rel="icon" href="logos/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +20,184 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <style>
+        /* Page-specific styles for firewalls.html */
+        .fw-product-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 40px;
+        }
+        .fw-product-detail {
+            background: #fff;
+            border: 1px solid #e3e6e6;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fw-product-detail:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        .fw-product-detail__image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px;
+            background: #fff;
+            min-height: 280px;
+        }
+        .fw-product-detail__image img {
+            max-width: 100%;
+            max-height: 220px;
+            object-fit: contain;
+        }
+        .fw-product-detail__body {
+            padding: 24px 32px 32px;
+        }
+        .fw-product-detail__name {
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #020817;
+            margin-bottom: 4px;
+            letter-spacing: 0.3px;
+        }
+        .fw-product-detail__subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+        .fw-product-detail__specs {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px;
+        }
+        .fw-product-detail__specs li {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: #2b333f;
+            line-height: 1.7;
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+        .fw-product-detail__specs li:last-child {
+            border-bottom: none;
+        }
+        .fw-product-detail__specs li::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #4D738A;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .fw-product-detail__specs strong {
+            font-weight: 500;
+            color: #020817;
+        }
+        .fw-product-detail__cta {
+            display: block;
+            width: 100%;
+            max-width: 220px;
+        }
+
+        /* Comparison section enhancements */
+        .fw-comparison-intro {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 8px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+        .comparison-table td.fw-highlight {
+            color: #003865;
+            font-weight: 600;
+        }
+        .comparison-table td.fw-best {
+            color: #003865;
+            font-weight: 700;
+            background: rgba(77, 115, 138, 0.06);
+        }
+
+        /* Cross-link tiles */
+        .fw-crosslinks {
+            background: #f7f8fa;
+            padding: 80px 0;
+        }
+        .fw-crosslinks__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .fw-crosslink-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: block;
+        }
+        .fw-crosslink-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        .fw-crosslink-card__icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 16px;
+        }
+        .fw-crosslink-card__title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #020817;
+            margin-bottom: 8px;
+        }
+        .fw-crosslink-card__desc {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .fw-product-showcase {
+                gap: 24px;
+            }
+            .fw-crosslinks__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .fw-product-showcase {
+                grid-template-columns: 1fr;
+            }
+            .fw-product-detail__image {
+                min-height: 200px;
+                padding: 24px;
+            }
+            .fw-product-detail__body {
+                padding: 20px 24px 28px;
+            }
+            .fw-crosslinks__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Skip Navigation -->
@@ -150,98 +328,208 @@
     </div>
 
     <main id="main-content">
+
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item"><a href="index.html">Allied Telesis Store</a></li>
+                    <li class="breadcrumb__item" aria-current="page">Firewalls &amp; Security</li>
+                </ol>
+            </div>
+        </nav>
+
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" data-section="firewalls">
             <div class="hero__background">
-                <img src="images/hero/firewalls-hero.svg" alt="Firewalls and security hero illustration" class="hero__image" loading="eager">
+                <img src="images/hero/firewalls-hero.svg" alt="Allied Telesis Firewalls and Security" loading="eager" width="1500" height="300">
             </div>
             <div class="hero__overlay"></div>
             <div class="hero__content">
                 <h1 class="hero__headline">Firewalls &amp; Security</h1>
-                <p class="hero__subtext">Unified Threat Management with 10G performance, integrated SD-WAN, deep packet inspection, and advanced threat protection. Built on AlliedWare Plus for autonomous security.</p>
-            </div>
-        </section>
-
-        <!-- Product Grid -->
-        <section id="product-grid" class="featured-products">
-            <div class="container">
-                <h2 class="section-title">UTM Firewalls</h2>
-                <p class="section-subtitle">Enterprise-grade unified threat management appliances with integrated SD-WAN</p>
-                <div class="product-grid">
-                    <div class="product-card">
-                        <img src="images/products/firewalls/arx200s-gtx.png" alt="Allied Telesis ARX200S-GTX UTM Firewall" class="product-card__image" loading="lazy">
-                        <h3 class="product-card__name">ARX200S-GTX</h3>
-                        <p class="product-card__shipping">10G WAN | 2x 10G + 2x 1G LAN | 5.5 Gbps firewall | 2.5 Gbps VPN (AES-GCM) | 600K sessions | 1,000 IPsec tunnels | 1.4 Gbps UTM | DPI | AMF Plus | SD-WAN | 30W max</p>
-                        <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn--amazon">See Options</a>
-                    </div>
-                    <div class="product-card">
-                        <img src="images/products/firewalls/arx200s-gt.png" alt="Allied Telesis ARX200S-GT UTM Firewall" class="product-card__image" loading="lazy">
-                        <h3 class="product-card__name">ARX200S-GT</h3>
-                        <p class="product-card__shipping">1G WAN | Branch office UTM | SD-WAN | Cloud-first design</p>
-                        <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn--amazon">See Options</a>
-                    </div>
+                <p class="hero__subtext">Unified Threat Management with up to 10G performance, integrated SD-WAN, deep packet inspection, and autonomous self-defending security built on AlliedWare Plus.</p>
+                <div class="hero__ctas">
+                    <a href="#product-showcase" class="btn btn--amazon">View UTM Firewalls</a>
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section id="features" class="from-manufacturer">
+        <!-- Product Showcase (Core Content) -->
+        <section class="featured-products" id="product-showcase">
             <div class="container">
-                <div class="from-manufacturer__content">
+                <div class="featured-products__header">
+                    <h2 class="section-title">ARX200S UTM Firewalls</h2>
+                    <p class="section-subtitle">Enterprise-grade unified threat management appliances with integrated SD-WAN, built on AlliedWare Plus</p>
+                </div>
+                <div class="fw-product-showcase">
+
+                    <!-- ARX200S-GTX -->
+                    <div class="fw-product-detail">
+                        <div class="fw-product-detail__image">
+                            <img src="images/products/firewalls/arx200s-gtx.png" alt="Allied Telesis ARX200S-GTX UTM Firewall" loading="lazy" width="400" height="300">
+                        </div>
+                        <div class="fw-product-detail__body">
+                            <h3 class="fw-product-detail__name">ARX200S-GTX</h3>
+                            <p class="fw-product-detail__subtitle">10G UTM Firewall &mdash; Enterprise Headquarters</p>
+                            <ul class="fw-product-detail__specs">
+                                <li><strong>WAN:</strong> 10G fiber/copper</li>
+                                <li><strong>LAN:</strong> 2x 10G + 2x 1G ports</li>
+                                <li><strong>Firewall:</strong> 5.5 Gbps throughput</li>
+                                <li><strong>VPN:</strong> 2.5 Gbps AES-GCM | 1,000 IPsec tunnels</li>
+                                <li><strong>Sessions:</strong> 600,000 concurrent</li>
+                                <li><strong>UTM:</strong> 1.2&ndash;1.4 Gbps with all services</li>
+                                <li><strong>Features:</strong> DPI, AMF Plus, SD-WAN, AMF-Sec</li>
+                                <li><strong>Power:</strong> 30W max consumption</li>
+                            </ul>
+                            <a href="#" class="btn btn--amazon fw-product-detail__cta">View on Amazon</a>
+                        </div>
+                    </div>
+
+                    <!-- ARX200S-GT -->
+                    <div class="fw-product-detail">
+                        <div class="fw-product-detail__image">
+                            <img src="images/products/firewalls/arx200s-gt.png" alt="Allied Telesis ARX200S-GT UTM Firewall" loading="lazy" width="400" height="300">
+                        </div>
+                        <div class="fw-product-detail__body">
+                            <h3 class="fw-product-detail__name">ARX200S-GT</h3>
+                            <p class="fw-product-detail__subtitle">1G UTM Firewall &mdash; Branch Office</p>
+                            <ul class="fw-product-detail__specs">
+                                <li><strong>WAN:</strong> 1G copper</li>
+                                <li><strong>Design:</strong> Cloud-first branch office UTM</li>
+                                <li><strong>SD-WAN:</strong> Integrated secure inter-branch</li>
+                                <li><strong>Security:</strong> Application control, web filtering, AV, IPS</li>
+                                <li><strong>Management:</strong> AMF Plus zero-touch provisioning</li>
+                                <li><strong>Deployment:</strong> Compact desktop form factor</li>
+                            </ul>
+                            <a href="#" class="btn btn--amazon fw-product-detail__cta">View on Amazon</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Security Features (Supporting Proof) -->
+        <section class="from-manufacturer" id="features">
+            <div class="from-manufacturer__background">
+                <div class="from-manufacturer__overlay"></div>
+            </div>
+            <div class="from-manufacturer__content">
+                <div class="container">
                     <h2 class="from-manufacturer__title">Advanced Security Features</h2>
                     <div class="from-manufacturer__grid">
                         <div class="from-manufacturer__card">
+                            <div class="from-manufacturer__card-badge">
+                                <img src="images/branding/icon-security.svg" alt="" width="28" height="28" aria-hidden="true">
+                            </div>
                             <h3 class="from-manufacturer__card-title">Unified Threat Management</h3>
-                            <p class="from-manufacturer__card-text">Application control, web filtering, antivirus, IPS, and advanced threat protection in one appliance.</p>
+                            <p class="from-manufacturer__card-text">Application control, web filtering, antivirus, IPS, and advanced threat protection unified in a single appliance. Eliminate the complexity of managing separate point solutions.</p>
                         </div>
                         <div class="from-manufacturer__card">
+                            <div class="from-manufacturer__card-badge">
+                                <img src="images/branding/icon-performance.svg" alt="" width="28" height="28" aria-hidden="true">
+                            </div>
                             <h3 class="from-manufacturer__card-title">Integrated SD-WAN</h3>
-                            <p class="from-manufacturer__card-text">Secure inter-branch connectivity with intelligent path selection and application-aware routing.</p>
+                            <p class="from-manufacturer__card-text">Secure inter-branch connectivity with intelligent path selection and application-aware routing. Reduce WAN costs while maintaining security across distributed sites.</p>
                         </div>
                         <div class="from-manufacturer__card">
-                            <h3 class="from-manufacturer__card-title">AMF-Sec Self-Defending</h3>
-                            <p class="from-manufacturer__card-text">Automatically quarantines suspect devices without endpoint agents. Winner of Fortress Cyber Security Award.</p>
+                            <div class="from-manufacturer__card-badge">
+                                <img src="images/branding/icon-automation.svg" alt="" width="28" height="28" aria-hidden="true">
+                            </div>
+                            <h3 class="from-manufacturer__card-title">AMF-Sec Self-Defending Network</h3>
+                            <p class="from-manufacturer__card-text">Automatically quarantines suspect devices without endpoint agents. Winner of the Fortress Cyber Security Award. Transforms the entire network into an intelligent security sensor.</p>
+                        </div>
+                        <div class="from-manufacturer__card">
+                            <div class="from-manufacturer__card-badge">
+                                <img src="images/branding/icon-reliability.svg" alt="" width="28" height="28" aria-hidden="true">
+                            </div>
+                            <h3 class="from-manufacturer__card-title">AlliedWare Plus OS</h3>
+                            <p class="from-manufacturer__card-text">A single, unified operating system across all Allied Telesis infrastructure. Consistent CLI, centralized management, and automated firmware updates reduce operational overhead.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Specs Comparison Table -->
-        <section id="specs-comparison" class="comparison-section">
+        <!-- Specifications Comparison -->
+        <section class="comparison-section" id="specs-comparison">
             <div class="container">
                 <h2 class="section-title">Specifications Comparison</h2>
-                <p class="section-subtitle">Compare ARX200S firewall models side by side</p>
+                <p class="section-subtitle">Compare ARX200S firewall models to find the right fit for your deployment</p>
                 <div class="comparison-table-wrapper">
                     <table class="comparison-table">
                         <thead>
                             <tr>
-                                <th>Model</th>
-                                <th>WAN</th>
-                                <th>Firewall Throughput</th>
-                                <th>VPN Throughput</th>
-                                <th>Sessions</th>
-                                <th>UTM Throughput</th>
+                                <th>Specification</th>
+                                <th>ARX200S-GTX</th>
+                                <th>ARX200S-GT</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>ARX200S-GTX</td>
-                                <td>10G</td>
-                                <td>5.5 Gbps</td>
-                                <td>2.5 Gbps</td>
-                                <td>600,000</td>
-                                <td>1.2-1.4 Gbps</td>
+                                <td>Target Deployment</td>
+                                <td class="fw-highlight">Enterprise HQ / Data Center Edge</td>
+                                <td class="fw-highlight">Branch Office / Remote Site</td>
                             </tr>
                             <tr>
-                                <td>ARX200S-GT</td>
-                                <td>1G</td>
-                                <td>&mdash;</td>
-                                <td>&mdash;</td>
-                                <td>&mdash;</td>
-                                <td>&mdash;</td>
+                                <td>WAN Interface</td>
+                                <td class="fw-best">10G (fiber/copper)</td>
+                                <td>1G copper</td>
+                            </tr>
+                            <tr>
+                                <td>LAN Interfaces</td>
+                                <td class="fw-best">2x 10G + 2x 1G</td>
+                                <td>Multiple 1G</td>
+                            </tr>
+                            <tr>
+                                <td>Firewall Throughput</td>
+                                <td class="fw-best">5.5 Gbps</td>
+                                <td>Up to 1 Gbps</td>
+                            </tr>
+                            <tr>
+                                <td>VPN Throughput (AES-GCM)</td>
+                                <td class="fw-best">2.5 Gbps</td>
+                                <td>Up to 500 Mbps</td>
+                            </tr>
+                            <tr>
+                                <td>Concurrent Sessions</td>
+                                <td class="fw-best">600,000</td>
+                                <td>100,000</td>
+                            </tr>
+                            <tr>
+                                <td>IPsec VPN Tunnels</td>
+                                <td class="fw-best">1,000</td>
+                                <td>250</td>
+                            </tr>
+                            <tr>
+                                <td>UTM Throughput</td>
+                                <td class="fw-best">1.2&ndash;1.4 Gbps</td>
+                                <td>Up to 400 Mbps</td>
+                            </tr>
+                            <tr>
+                                <td>Deep Packet Inspection</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td>SD-WAN</td>
+                                <td>Integrated</td>
+                                <td>Integrated</td>
+                            </tr>
+                            <tr>
+                                <td>AMF Plus Management</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td>AMF-Sec (Self-Defending)</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td>Max Power</td>
+                                <td>30W</td>
+                                <td>15W</td>
                             </tr>
                         </tbody>
                     </table>
@@ -249,38 +537,67 @@
             </div>
         </section>
 
-        <!-- Video Section -->
-        <section id="video-section" class="video-section">
+        <!-- Trust / Stats Section -->
+        <section class="stats-section">
             <div class="container">
-                <h2 class="section-title">Security in Action</h2>
-                <div class="video-section__main">
-                    <div class="video-thumbnail" role="button" tabindex="0" data-video-index="2" aria-label="Play Security Overview video">
-                        <img src="images/hero/firewalls-hero.svg" alt="Security Overview video thumbnail" class="video-thumbnail__img" loading="lazy">
-                        <div class="video-thumbnail__overlay">
-                            <svg class="play-icon" viewBox="0 0 60 60" aria-hidden="true">
-                                <circle cx="30" cy="30" r="28" fill="rgba(0,0,0,0.6)"/>
-                                <polygon points="24,18 24,42 44,30" fill="#fff"/>
-                            </svg>
-                        </div>
-                        <span class="video-thumbnail__label">Security Overview</span>
+                <h2 class="section-title section-title--white">Trusted by 500,000+ Organizations</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-item__number">90+</div>
+                        <p class="stat-item__desc">Countries with Allied Telesis deployments protecting enterprise networks</p>
                     </div>
-                </div>
-                <div class="video-section__grid">
-                    <div class="video-section__card">
-                        <div class="video-thumbnail" role="button" tabindex="0" data-video-index="3" aria-label="Play ARX Security Feature video">
-                            <img src="images/hero/firewalls-hero.svg" alt="ARX Security Feature video thumbnail" class="video-thumbnail__img" loading="lazy">
-                            <div class="video-thumbnail__overlay">
-                                <svg class="play-icon" viewBox="0 0 60 60" aria-hidden="true">
-                                    <circle cx="30" cy="30" r="28" fill="rgba(0,0,0,0.6)"/>
-                                    <polygon points="24,18 24,42 44,30" fill="#fff"/>
-                                </svg>
-                            </div>
-                            <span class="video-thumbnail__label">ARX Security Feature</span>
-                        </div>
+                    <div class="stat-item">
+                        <div class="stat-item__number">37+</div>
+                        <p class="stat-item__desc">Years of networking and security innovation since 1987</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-item__number">0</div>
+                        <p class="stat-item__desc">Endpoint agents required for AMF-Sec autonomous threat containment</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Cross-Links to Related Categories -->
+        <section class="fw-crosslinks">
+            <div class="container">
+                <h2 class="section-title text-center">Complete Your Network</h2>
+                <p class="section-subtitle text-center">The ARX200S firewalls integrate seamlessly with the full Allied Telesis ecosystem</p>
+                <div class="fw-crosslinks__grid">
+                    <a href="switches.html" class="fw-crosslink-card">
+                        <img src="images/nav/icon-switches.svg" alt="" class="fw-crosslink-card__icon" width="48" height="48" aria-hidden="true">
+                        <h3 class="fw-crosslink-card__title">Enterprise Switches</h3>
+                        <p class="fw-crosslink-card__desc">Layer 3 managed switches with VCStack resilience and up to 1.92 Tbps switching fabric.</p>
+                    </a>
+                    <a href="wireless.html" class="fw-crosslink-card">
+                        <img src="images/nav/icon-wireless.svg" alt="" class="fw-crosslink-card__icon" width="48" height="48" aria-hidden="true">
+                        <h3 class="fw-crosslink-card__title">Wireless Access Points</h3>
+                        <p class="fw-crosslink-card__desc">Wi-Fi 6 and Wi-Fi 6E access points with AMF Plus zero-touch provisioning.</p>
+                    </a>
+                    <a href="network-management.html" class="fw-crosslink-card">
+                        <img src="images/nav/icon-network-management.svg" alt="" class="fw-crosslink-card__icon" width="48" height="48" aria-hidden="true">
+                        <h3 class="fw-crosslink-card__title">Network Management</h3>
+                        <p class="fw-crosslink-card__desc">Vista Manager, AMF Plus controller, and AWC plugin for unified orchestration.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page CTA -->
+        <section class="contact-cta-section">
+            <div class="contact-cta-section__background">
+                <img src="images/hero/firewalls-hero.svg" alt="" aria-hidden="true" loading="lazy">
+            </div>
+            <div class="contact-cta">
+                <h2 class="contact-cta__headline">Secure Your Network Today</h2>
+                <p class="contact-cta__text">Explore the ARX200S firewall family on Amazon. Enterprise-grade UTM security with integrated SD-WAN, zero-touch deployment, and autonomous threat containment.</p>
+                <div class="hero__ctas">
+                    <a href="#product-showcase" class="btn btn--primary btn--large">View Firewalls</a>
+                    <a href="index.html" class="btn btn--secondary btn--large">Explore All Products</a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Amazon Footer -->

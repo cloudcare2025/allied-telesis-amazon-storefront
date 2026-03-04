@@ -11,17 +11,254 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <style>
+        /* Page-specific styles for industrial.html */
+        .industrial-hero-badge {
+            display: inline-block;
+            background: rgba(77, 115, 138, 0.15);
+            border: 1px solid rgba(77, 115, 138, 0.3);
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 18px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+
+        .spec-highlights {
+            background: var(--color-bg-light);
+            padding: var(--space-xl) 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .spec-highlights__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-md);
+        }
+
+        .spec-highlight {
+            text-align: center;
+            padding: var(--space-md) var(--space-sm);
+        }
+
+        .spec-highlight__value {
+            font-family: 'Roboto', sans-serif;
+            font-size: var(--font-size-8xl);
+            font-weight: 700;
+            color: var(--color-brand-orange);
+            line-height: 1.1;
+            margin-bottom: 6px;
+        }
+
+        .spec-highlight__label {
+            font-family: 'Roboto', sans-serif;
+            font-size: var(--font-size-sm);
+            color: var(--color-text-tertiary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-card__features {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 12px;
+            text-align: left;
+        }
+
+        .product-card__features li {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+            padding: 2px 0 2px 16px;
+            position: relative;
+        }
+
+        .product-card__features li::before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            color: var(--color-brand-orange);
+            font-weight: 700;
+            font-size: 11px;
+        }
+
+        .industrial-series-intro {
+            padding: var(--space-xl) 0 0;
+        }
+
+        .industrial-series-intro__content {
+            display: flex;
+            gap: var(--space-xl);
+            align-items: center;
+            margin-top: var(--space-lg);
+        }
+
+        .industrial-series-intro__text {
+            flex: 1;
+        }
+
+        .industrial-series-intro__text p {
+            font-family: 'Roboto', sans-serif;
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-md);
+            max-width: var(--reading-width);
+        }
+
+        .industrial-series-intro__text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .industrial-series-intro__image {
+            flex: 0 0 auto;
+            text-align: center;
+        }
+
+        .industrial-series-intro__image img {
+            max-width: 320px;
+            max-height: 240px;
+        }
+
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .use-case-card {
+            background: var(--color-bg-white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .use-case-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .use-case-card__image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .use-case-card__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .use-case-card:hover .use-case-card__image img {
+            transform: scale(1.05);
+        }
+
+        .use-case-card__body {
+            padding: var(--space-md);
+        }
+
+        .use-case-card__title {
+            font-family: 'Roboto', sans-serif;
+            font-size: var(--font-size-2xl);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-xs);
+            letter-spacing: 0.3px;
+        }
+
+        .use-case-card__desc {
+            font-family: 'Roboto', sans-serif;
+            font-size: var(--font-size-md);
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--space-sm);
+        }
+
+        .use-case-card__link {
+            display: inline-block;
+            color: var(--color-brand-orange);
+            font-weight: 600;
+            font-size: var(--font-size-base);
+            text-decoration: none;
+            transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .use-case-card__link:hover {
+            color: var(--color-brand-orange-hover);
+            text-decoration: underline;
+        }
+
+        .use-case-card__link::after {
+            content: " \2192";
+            display: inline-block;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .use-case-card__link:hover::after {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 1024px) {
+            .spec-highlights__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .use-case-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .industrial-series-intro__content {
+                flex-direction: column;
+            }
+            .industrial-series-intro__image img {
+                max-width: 260px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .spec-highlights__grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-sm);
+            }
+            .spec-highlight__value {
+                font-size: var(--font-size-6xl);
+            }
+            .use-case-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .spec-highlights__grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .spec-highlight {
+                padding: var(--space-sm) var(--space-xs);
+            }
+            .spec-highlight__value {
+                font-size: var(--font-size-5xl);
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Skip Navigation -->
-    <a href="#product-grid" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Amazon Header Bar -->
     <header class="amazon-header" role="banner">
         <div class="amazon-header__top">
             <div class="amazon-header__container">
                 <a href="#" class="amazon-header__logo" aria-label="Amazon Home">
-                    <img src="logos/amazon-logo-white.svg" alt="Amazon" class="amazon-logo-svg" width="108" height="33">
+                    <img src="logos/amazon-logo-white.svg" alt="Amazon" class="amazon-logo-svg" width="108" height="33" loading="eager">
                 </a>
                 <div class="amazon-header__deliver">
                     <span class="amazon-header__deliver-label">Deliver to</span>
@@ -140,88 +377,136 @@
         </nav>
     </div>
 
-    <main>
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb__list">
+                <li class="breadcrumb__item"><a href="index.html">Allied Telesis</a></li>
+                <li class="breadcrumb__item" aria-current="page">Industrial Switches</li>
+            </ol>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" data-section="industrial">
             <div class="hero__background">
-                <img src="images/hero/industrial-hero.svg" alt="Allied Telesis industrial networking switches for harsh environments" loading="eager">
+                <img src="images/hero/industrial-hero.svg" alt="Allied Telesis industrial networking switches for harsh environments" loading="eager" width="1500" height="600">
             </div>
             <div class="hero__overlay"></div>
             <div class="hero__content">
+                <span class="industrial-hero-badge">Industrial Grade</span>
                 <h1 class="hero__headline">Industrial Networking</h1>
                 <p class="hero__subtext">Ruggedized, fanless switches built for factory floors, outdoor environments, and critical infrastructure. DIN-rail mount, IP30-rated, industrial temperature range.</p>
+                <div class="hero__ctas">
+                    <a href="#product-grid" class="btn btn--amazon">View All Industrial Switches</a>
+                    <a href="#specs-comparison" class="btn btn--secondary">Compare Models</a>
+                </div>
             </div>
         </section>
 
-        <!-- Product Grid -->
-        <section id="product-grid" class="featured-products">
+        <!-- Spec Highlights Bar -->
+        <section class="spec-highlights" aria-label="Key industrial specifications">
             <div class="container">
-                <h2 class="section-title text-center">Industrial Switches</h2>
-                <p class="section-subtitle text-center">Hardened Ethernet switches engineered to operate in extreme temperatures, dust, humidity, and vibration.</p>
+                <div class="spec-highlights__grid">
+                    <div class="spec-highlight fade-in-up">
+                        <div class="spec-highlight__value">IP30</div>
+                        <div class="spec-highlight__label">Ingress Protection</div>
+                    </div>
+                    <div class="spec-highlight fade-in-up">
+                        <div class="spec-highlight__value">-40&deg;C</div>
+                        <div class="spec-highlight__label">Min Operating Temp</div>
+                    </div>
+                    <div class="spec-highlight fade-in-up">
+                        <div class="spec-highlight__value">360W</div>
+                        <div class="spec-highlight__label">Max PoE Budget</div>
+                    </div>
+                    <div class="spec-highlight fade-in-up">
+                        <div class="spec-highlight__value">60Gbps</div>
+                        <div class="spec-highlight__label">Switching Capacity</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Series Introduction -->
+        <section class="industrial-series-intro">
+            <div class="container">
+                <h2 class="section-title text-center">Built for Extremes</h2>
+                <p class="section-subtitle text-center">Allied Telesis industrial switches are engineered to operate where standard equipment fails -- in extreme temperatures, dust, humidity, and vibration.</p>
+                <div class="industrial-series-intro__content fade-in-up">
+                    <div class="industrial-series-intro__text">
+                        <p>The IE series delivers Layer 3 managed switching with advanced features like MACsec encryption, 10G SFP+ uplinks, and PoE++ (up to 95W per port) in a compact, fanless DIN-rail enclosure. Every unit is designed for zero-maintenance deployment in uncontrolled environments.</p>
+                        <p>The iGS950 series provides cost-effective industrial PoE+ switching for sensor networks, surveillance cameras, and edge devices across manufacturing floors, transit systems, and utility substations.</p>
+                    </div>
+                    <div class="industrial-series-intro__image">
+                        <img src="images/products/industrial/ie360-12ghx.png" alt="Allied Telesis IE360 Series Industrial Switch" loading="lazy" width="320" height="240">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IE Series Product Grid (3 products) -->
+        <section class="featured-products" id="product-grid">
+            <div class="container">
+                <div class="featured-products__header">
+                    <h2 class="section-title">IE Series</h2>
+                    <p class="section-subtitle">Layer 3 managed industrial switches with 10G uplinks and advanced security</p>
+                </div>
                 <div class="product-grid">
 
                     <!-- Product 1: IE360-12GHX -->
                     <div class="product-card fade-in-up">
                         <div class="product-card__image">
-                            <img src="images/products/industrial/ie360-12ghx.png" alt="Allied Telesis IE360-12GHX Industrial PoE++ Switch" loading="lazy">
+                            <img src="images/products/industrial/ie360-12ghx.png" alt="Allied Telesis IE360-12GHX Industrial PoE++ Switch" loading="lazy" width="300" height="300">
                         </div>
-                        <a href="#" class="product-card__name">Allied Telesis IE360-12GHX Industrial Ethernet Layer 3 Switch</a>
-                        <p class="product-card__shipping"><strong>8-port GbE PoE++ (up to 95W/port)</strong> | 2x SFP | 2x 10G SFP+ MACsec | 360W PoE budget | 60 Gbps | 44.6 Mpps | Fanless IP30 | DIN rail/wall mount</p>
-                        <div class="product-card__price-line">
-                            <span class="product-card__price">See Options</span>
-                        </div>
+                        <a href="#" class="product-card__name">IE360-12GHX</a>
+                        <p class="product-card__shipping">8-port GbE PoE++ with 2x SFP + 2x 10G SFP+ MACsec</p>
+                        <ul class="product-card__features">
+                            <li>PoE++ up to 95W per port</li>
+                            <li>360W total PoE budget</li>
+                            <li>60 Gbps switching, 44.6 Mpps</li>
+                            <li>MACsec hardware encryption</li>
+                            <li>Fanless IP30, DIN-rail/wall mount</li>
+                        </ul>
+                        <span class="product-card__price">See Options</span>
                         <a href="#" class="btn btn--amazon">View on Amazon</a>
                     </div>
 
                     <!-- Product 2: IE360-12GTX -->
                     <div class="product-card fade-in-up">
                         <div class="product-card__image">
-                            <img src="images/products/industrial/ie360-12gtx.png" alt="Allied Telesis IE360-12GTX Industrial Switch" loading="lazy">
+                            <img src="images/products/industrial/ie360-12gtx.png" alt="Allied Telesis IE360-12GTX Industrial Switch" loading="lazy" width="300" height="300">
                         </div>
-                        <a href="#" class="product-card__name">Allied Telesis IE360-12GTX Industrial Ethernet Layer 3 Switch</a>
-                        <p class="product-card__shipping"><strong>8-port GbE (non-PoE)</strong> | 2x SFP | 2x 10G SFP+ MACsec | 60 Gbps | 44.6 Mpps | Fanless IP30 | 25W max</p>
-                        <div class="product-card__price-line">
-                            <span class="product-card__price">See Options</span>
-                        </div>
+                        <a href="#" class="product-card__name">IE360-12GTX</a>
+                        <p class="product-card__shipping">8-port GbE (non-PoE) with 2x SFP + 2x 10G SFP+ MACsec</p>
+                        <ul class="product-card__features">
+                            <li>Layer 3 managed, non-PoE model</li>
+                            <li>60 Gbps switching, 44.6 Mpps</li>
+                            <li>MACsec hardware encryption</li>
+                            <li>25W max power consumption</li>
+                            <li>Fanless IP30, DIN-rail/wall mount</li>
+                        </ul>
+                        <span class="product-card__price">See Options</span>
                         <a href="#" class="btn btn--amazon">View on Amazon</a>
                     </div>
 
                     <!-- Product 3: IE560-12GSX -->
                     <div class="product-card fade-in-up">
                         <div class="product-card__image">
-                            <img src="images/products/industrial/ie560-12gsx.png" alt="Allied Telesis IE560-12GSX All-Fiber Industrial Switch" loading="lazy">
+                            <img src="images/products/industrial/ie560-12gsx.png" alt="Allied Telesis IE560-12GSX All-Fiber Industrial Switch" loading="lazy" width="300" height="300">
                         </div>
-                        <a href="#" class="product-card__name">Allied Telesis IE560-12GSX Industrial All-Fiber Ethernet Switch</a>
-                        <p class="product-card__shipping"><strong>8x 100/1000X SFP</strong> | 4x 1G/10G SFP+ | All-fiber industrial design | Fanless IP30 | DIN rail mount</p>
-                        <div class="product-card__price-line">
-                            <span class="product-card__price">See Options</span>
-                        </div>
-                        <a href="#" class="btn btn--amazon">View on Amazon</a>
-                    </div>
-
-                    <!-- Product 4: iGS950/10PS -->
-                    <div class="product-card fade-in-up">
-                        <div class="product-card__image">
-                            <img src="images/products/industrial/igs950-10ps.png" alt="Allied Telesis iGS950/10PS Industrial PoE+ Switch" loading="lazy">
-                        </div>
-                        <a href="#" class="product-card__name">Allied Telesis iGS950/10PS Industrial Gigabit PoE+ Switch</a>
-                        <p class="product-card__shipping"><strong>8-port GbE PoE+</strong> | 2x SFP | 130W PoE budget | 20 Gbps | 14.9 Mpps | Fanless | DIN rail mount</p>
-                        <div class="product-card__price-line">
-                            <span class="product-card__price">See Options</span>
-                        </div>
-                        <a href="#" class="btn btn--amazon">View on Amazon</a>
-                    </div>
-
-                    <!-- Product 5: iGS950/28PS -->
-                    <div class="product-card fade-in-up">
-                        <div class="product-card__image">
-                            <img src="images/products/industrial/igs950-28ps.png" alt="Allied Telesis iGS950/28PS Industrial PoE+ Switch" loading="lazy">
-                        </div>
-                        <a href="#" class="product-card__name">Allied Telesis iGS950/28PS Industrial 24-Port Gigabit PoE+ Switch</a>
-                        <p class="product-card__shipping"><strong>24-port GbE PoE+</strong> | 4x combo uplinks | 370W PoE budget | 56 Gbps | 41.7 Mpps | Industrial-grade</p>
-                        <div class="product-card__price-line">
-                            <span class="product-card__price">See Options</span>
-                        </div>
+                        <a href="#" class="product-card__name">IE560-12GSX</a>
+                        <p class="product-card__shipping">8x 100/1000X SFP + 4x 1G/10G SFP+ all-fiber</p>
+                        <ul class="product-card__features">
+                            <li>All-fiber industrial design</li>
+                            <li>4x 10G SFP+ uplinks</li>
+                            <li>Immune to EMI/RFI interference</li>
+                            <li>Long-distance fiber connectivity</li>
+                            <li>Fanless IP30, DIN-rail mount</li>
+                        </ul>
+                        <span class="product-card__price">See Options</span>
                         <a href="#" class="btn btn--amazon">View on Amazon</a>
                     </div>
 
@@ -229,14 +514,61 @@
             </div>
         </section>
 
-        <!-- Features Section: Built for Harsh Environments -->
-        <section id="features" class="from-manufacturer">
+        <!-- iGS950 Series Product Grid (2 products) -->
+        <section class="featured-products" id="product-grid-igs">
+            <div class="container">
+                <div class="featured-products__header">
+                    <h2 class="section-title">iGS950 Series</h2>
+                    <p class="section-subtitle">Cost-effective industrial PoE+ switches for edge deployments</p>
+                </div>
+                <div class="product-grid">
+
+                    <!-- Product 4: iGS950/10PS -->
+                    <div class="product-card fade-in-up">
+                        <div class="product-card__image">
+                            <img src="images/products/industrial/igs950-10ps.png" alt="Allied Telesis iGS950/10PS Industrial PoE+ Switch" loading="lazy" width="300" height="300">
+                        </div>
+                        <a href="#" class="product-card__name">iGS950/10PS</a>
+                        <p class="product-card__shipping">8-port GbE PoE+ with 2x SFP uplinks</p>
+                        <ul class="product-card__features">
+                            <li>130W PoE+ budget</li>
+                            <li>20 Gbps switching, 14.9 Mpps</li>
+                            <li>Fanless, compact DIN-rail</li>
+                            <li>Smart managed with web GUI</li>
+                        </ul>
+                        <span class="product-card__price">See Options</span>
+                        <a href="#" class="btn btn--amazon">View on Amazon</a>
+                    </div>
+
+                    <!-- Product 5: iGS950/28PS -->
+                    <div class="product-card fade-in-up">
+                        <div class="product-card__image">
+                            <img src="images/products/industrial/igs950-28ps.png" alt="Allied Telesis iGS950/28PS Industrial PoE+ Switch" loading="lazy" width="300" height="300">
+                        </div>
+                        <a href="#" class="product-card__name">iGS950/28PS</a>
+                        <p class="product-card__shipping">24-port GbE PoE+ with 4x combo uplinks</p>
+                        <ul class="product-card__features">
+                            <li>370W PoE+ budget</li>
+                            <li>56 Gbps switching, 41.7 Mpps</li>
+                            <li>24-port high-density industrial</li>
+                            <li>Smart managed with web GUI</li>
+                        </ul>
+                        <span class="product-card__price">See Options</span>
+                        <a href="#" class="btn btn--amazon">View on Amazon</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Industrial Switches (From Manufacturer) -->
+        <section class="from-manufacturer" id="features">
             <div class="from-manufacturer__background">
                 <img src="images/hero/industrial-hero.svg" alt="" loading="lazy" aria-hidden="true">
             </div>
             <div class="from-manufacturer__overlay"></div>
             <div class="from-manufacturer__content container">
-                <h2 class="from-manufacturer__title">Built for Harsh Environments</h2>
+                <h2 class="from-manufacturer__title">Why Allied Telesis Industrial</h2>
                 <div class="from-manufacturer__grid">
 
                     <div class="from-manufacturer__card fade-in-up">
@@ -246,7 +578,7 @@
                             </svg>
                         </div>
                         <h3 class="from-manufacturer__card-title">Fanless IP30 Design</h3>
-                        <p class="from-manufacturer__card-text">Convection-cooled enclosures with IP30 protection and -40&deg;C to +75&deg;C operation range.</p>
+                        <p class="from-manufacturer__card-text">Convection-cooled enclosures with IP30 ingress protection. Operates from -40&deg;C to +75&deg;C without fans, moving parts, or air filters -- zero maintenance in dusty, humid environments.</p>
                     </div>
 
                     <div class="from-manufacturer__card fade-in-up">
@@ -256,7 +588,7 @@
                             </svg>
                         </div>
                         <h3 class="from-manufacturer__card-title">DIN-Rail &amp; Wall Mount</h3>
-                        <p class="from-manufacturer__card-text">Flexible mounting for industrial cabinets, factory walls, and outdoor enclosures.</p>
+                        <p class="from-manufacturer__card-text">Standard 35mm DIN-rail mounting fits directly into industrial control cabinets. Optional wall-mount brackets for outdoor enclosures and traffic cabinets.</p>
                     </div>
 
                     <div class="from-manufacturer__card fade-in-up">
@@ -265,53 +597,149 @@
                                 <path d="M16.01 7L16 3h-2v4h-4V3H8v4H2v13h8v-4h4v4h8V7h-5.99zM10 19H4V9h6v10zm8 0h-6v-6h2v-2h-2V9h6v10z" fill="rgba(77,115,138,0.9)"/>
                             </svg>
                         </div>
-                        <h3 class="from-manufacturer__card-title">PoE++ (90W per port)</h3>
-                        <p class="from-manufacturer__card-text">Power cameras, sensors, and edge devices directly over Ethernet with up to 360W total budget.</p>
+                        <h3 class="from-manufacturer__card-title">PoE++ (95W per port)</h3>
+                        <p class="from-manufacturer__card-text">IEEE 802.3bt PoE++ delivers up to 95W per port and 360W total budget. Power PTZ cameras, industrial sensors, wireless APs, and edge compute devices over a single cable.</p>
+                    </div>
+
+                    <div class="from-manufacturer__card fade-in-up">
+                        <div class="from-manufacturer__card-badge">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" fill="rgba(77,115,138,0.9)"/>
+                            </svg>
+                        </div>
+                        <h3 class="from-manufacturer__card-title">MACsec Encryption</h3>
+                        <p class="from-manufacturer__card-text">Hardware-level MACsec (IEEE 802.1AE) encryption on 10G SFP+ uplinks protects data in transit across the industrial network without impacting throughput or latency.</p>
                     </div>
 
                 </div>
             </div>
         </section>
 
-        <!-- Use Cases Section: Industrial Applications -->
-        <section id="use-cases" class="brand-story">
+        <!-- Specs Comparison Table -->
+        <section class="comparison-section" id="specs-comparison">
+            <div class="container">
+                <h2 class="section-title">Industrial Switch Comparison</h2>
+                <p class="section-subtitle">Compare specifications across the Allied Telesis industrial switch lineup</p>
+                <div class="comparison-table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Ports</th>
+                                <th>Uplinks</th>
+                                <th>Switching</th>
+                                <th>PoE Budget</th>
+                                <th>Key Feature</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>IE360-12GHX</td>
+                                <td>8x GbE PoE++</td>
+                                <td>2x SFP + 2x 10G SFP+</td>
+                                <td>60 Gbps / 44.6 Mpps</td>
+                                <td>360W</td>
+                                <td>PoE++ 95W/port + MACsec</td>
+                            </tr>
+                            <tr>
+                                <td>IE360-12GTX</td>
+                                <td>8x GbE</td>
+                                <td>2x SFP + 2x 10G SFP+</td>
+                                <td>60 Gbps / 44.6 Mpps</td>
+                                <td>N/A</td>
+                                <td>Non-PoE, 25W total</td>
+                            </tr>
+                            <tr>
+                                <td>IE560-12GSX</td>
+                                <td>8x 100/1000X SFP</td>
+                                <td>4x 1G/10G SFP+</td>
+                                <td>60 Gbps / 44.6 Mpps</td>
+                                <td>N/A</td>
+                                <td>All-fiber, EMI immune</td>
+                            </tr>
+                            <tr>
+                                <td>iGS950/10PS</td>
+                                <td>8x GbE PoE+</td>
+                                <td>2x SFP</td>
+                                <td>20 Gbps / 14.9 Mpps</td>
+                                <td>130W</td>
+                                <td>Compact DIN-rail PoE+</td>
+                            </tr>
+                            <tr>
+                                <td>iGS950/28PS</td>
+                                <td>24x GbE PoE+</td>
+                                <td>4x combo</td>
+                                <td>56 Gbps / 41.7 Mpps</td>
+                                <td>370W</td>
+                                <td>High-density 24-port</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industrial Applications (Use Cases) -->
+        <section class="brand-story" id="use-cases">
             <div class="container">
                 <div class="brand-story__header">
                     <h2 class="section-title">Industrial Applications</h2>
                     <p class="section-subtitle">Purpose-built networking for the most demanding environments across manufacturing, transportation, and energy sectors.</p>
                 </div>
-                <div class="brand-story__cards">
+                <div class="use-case-grid">
 
-                    <div class="story-card fade-in-up">
-                        <div class="story-card__image">
-                            <img src="images/hero/industrial-hero.svg" alt="Manufacturing and Industrial IoT networking" loading="lazy">
+                    <div class="use-case-card fade-in-up">
+                        <div class="use-case-card__image">
+                            <img src="images/industries/manufacturing.svg" alt="Manufacturing floor with networked industrial equipment" loading="lazy">
                         </div>
-                        <h3 class="story-card__title">Manufacturing &amp; IIoT</h3>
-                        <p class="story-card__desc">Secure, reliable industrial IoT networks enabling edge computing and big data analysis on factory floors. PTP and CIP/IO protocol support.</p>
-                        <a href="#product-grid" class="story-card__link">Explore Industrial Switches</a>
+                        <div class="use-case-card__body">
+                            <h3 class="use-case-card__title">Manufacturing &amp; IIoT</h3>
+                            <p class="use-case-card__desc">Secure, reliable industrial IoT networks enabling edge computing and big data analysis on factory floors. PTP and CIP/IO protocol support for real-time automation.</p>
+                            <a href="#product-grid" class="use-case-card__link">Explore IE Series</a>
+                        </div>
                     </div>
 
-                    <div class="story-card fade-in-up">
-                        <div class="story-card__image">
-                            <img src="images/hero/industrial-hero.svg" alt="Transportation network infrastructure" loading="lazy">
+                    <div class="use-case-card fade-in-up">
+                        <div class="use-case-card__image">
+                            <img src="images/industries/transportation.svg" alt="Transportation network infrastructure with connected systems" loading="lazy">
                         </div>
-                        <h3 class="story-card__title">Transportation</h3>
-                        <p class="story-card__desc">Fast, efficient, and safe transit network infrastructure for rail, road, and fleet management.</p>
-                        <a href="#product-grid" class="story-card__link">Explore Industrial Switches</a>
+                        <div class="use-case-card__body">
+                            <h3 class="use-case-card__title">Transportation</h3>
+                            <p class="use-case-card__desc">Fast, efficient transit network infrastructure for rail, road, and fleet management. Ruggedized enclosures withstand vibration, temperature swings, and outdoor exposure.</p>
+                            <a href="#product-grid" class="use-case-card__link">Explore Industrial Switches</a>
+                        </div>
                     </div>
 
-                    <div class="story-card fade-in-up">
-                        <div class="story-card__image">
-                            <img src="images/hero/industrial-hero.svg" alt="Energy and utilities critical infrastructure networking" loading="lazy">
+                    <div class="use-case-card fade-in-up">
+                        <div class="use-case-card__image">
+                            <img src="images/industries/government.svg" alt="Critical infrastructure energy and utilities networking" loading="lazy">
                         </div>
-                        <h3 class="story-card__title">Energy &amp; Utilities</h3>
-                        <p class="story-card__desc">Industrial-grade networking for critical infrastructure with ruggedized enclosures and extended lifecycle support.</p>
-                        <a href="#product-grid" class="story-card__link">Explore Industrial Switches</a>
+                        <div class="use-case-card__body">
+                            <h3 class="use-case-card__title">Energy &amp; Utilities</h3>
+                            <p class="use-case-card__desc">Industrial-grade networking for substations, power plants, and water treatment facilities. Extended lifecycle support and ruggedized enclosures for critical infrastructure.</p>
+                            <a href="#product-grid-igs" class="use-case-card__link">Explore iGS950 Series</a>
+                        </div>
                     </div>
 
                 </div>
             </div>
         </section>
+
+        <!-- Page-Level CTA -->
+        <section class="contact-cta-section">
+            <div class="contact-cta-section__background">
+                <img src="images/hero/industrial-hero.svg" alt="" loading="lazy" aria-hidden="true">
+            </div>
+            <div class="contact-cta">
+                <h2 class="contact-cta__headline">Network Without Compromise</h2>
+                <p class="contact-cta__text">Deploy industrial-grade networking that operates where standard equipment fails. From -40&deg;C factory floors to outdoor substations, Allied Telesis industrial switches deliver.</p>
+                <div class="hero__ctas">
+                    <a href="#product-grid" class="btn btn--primary btn--large">View Industrial Switches</a>
+                    <a href="index.html" class="btn btn--secondary">Back to Store</a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Amazon Footer -->

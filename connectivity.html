@@ -8,9 +8,113 @@
     <link rel="icon" href="logos/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <style>
+        /* Page-specific: connectivity comparison table tweaks */
+        .connectivity-intro {
+            background: var(--color-bg-light);
+            padding: var(--space-xl) 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .connectivity-intro__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: start;
+        }
+        .connectivity-intro__card {
+            background: var(--color-bg-white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        }
+        .connectivity-intro__card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        .connectivity-intro__card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(77, 115, 138, 0.1);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-sm);
+        }
+        .connectivity-intro__card-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-xs);
+            letter-spacing: 0.3px;
+        }
+        .connectivity-intro__card-text {
+            font-size: var(--font-size-md);
+            color: var(--color-text-secondary);
+            line-height: var(--line-height-body);
+        }
+        .cross-links {
+            background: var(--color-bg-light);
+            padding: var(--space-3xl) 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .cross-links__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+        .cross-link-card {
+            background: var(--color-bg-white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-lg);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+        .cross-link-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+        .cross-link-card__icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto var(--space-sm);
+        }
+        .cross-link-card__icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .cross-link-card__title {
+            font-family: 'Roboto', sans-serif;
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-xs);
+        }
+        .cross-link-card__desc {
+            font-size: var(--font-size-base);
+            color: var(--color-text-light);
+            line-height: var(--line-height-loose);
+        }
+        @media (max-width: 768px) {
+            .connectivity-intro__grid {
+                grid-template-columns: 1fr;
+            }
+            .cross-links__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Skip Navigation -->
@@ -21,7 +125,7 @@
         <div class="amazon-header__top">
             <div class="amazon-header__container">
                 <a href="#" class="amazon-header__logo" aria-label="Amazon Home">
-                    <img src="logos/amazon-logo-white.svg" alt="Amazon" class="amazon-logo-svg" width="108" height="33">
+                    <img src="logos/amazon-logo-white.svg" alt="Amazon" class="amazon-logo-svg" width="108" height="33" loading="eager">
                 </a>
                 <div class="amazon-header__deliver">
                     <span class="amazon-header__deliver-label">Deliver to</span>
@@ -143,15 +247,57 @@
     <!-- Main Content -->
     <main id="main-content">
 
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item"><a href="index.html">Allied Telesis</a></li>
+                    <li class="breadcrumb__item" aria-current="page">Connectivity Solutions</li>
+                </ol>
+            </div>
+        </nav>
+
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" data-section="connectivity">
             <div class="hero__background">
-                <img src="images/hero/connectivity-hero.svg" alt="Allied Telesis Connectivity Solutions - Media converters and network adapters" loading="eager">
+                <img src="images/hero/connectivity-hero.svg" alt="Allied Telesis Connectivity Solutions - Media converters and network adapters" loading="eager" width="1500" height="300">
             </div>
             <div class="hero__overlay"></div>
             <div class="hero__content">
                 <h1 class="hero__headline">Connectivity Solutions</h1>
                 <p class="hero__subtext">Media converters for copper-to-fiber bridging and high-speed PCIe network adapters from 100Mbps to 25Gbps. Bridge any network gap.</p>
+                <div class="hero__ctas">
+                    <a href="#product-grid-converters" class="btn btn--amazon">View Media Converters</a>
+                    <a href="#product-grid-adapters" class="btn btn--secondary">View Network Adapters</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Introduction -->
+        <section class="connectivity-intro">
+            <div class="container">
+                <div class="connectivity-intro__grid">
+                    <div class="connectivity-intro__card fade-in-up">
+                        <div class="connectivity-intro__card-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" stroke="#4D738A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <line x1="4" y1="22" x2="4" y2="15" stroke="#4D738A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h2 class="connectivity-intro__card-title">Media Converters</h2>
+                        <p class="connectivity-intro__card-text">Convert copper to fiber and extend network reach without replacing infrastructure. Industrial-grade converters with DIN-rail mounting, extended temperature ranges, and plug-and-play deployment for demanding environments.</p>
+                    </div>
+                    <div class="connectivity-intro__card fade-in-up">
+                        <div class="connectivity-intro__card-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                                <rect x="4" y="4" width="16" height="16" rx="2" stroke="#4D738A" stroke-width="2"/>
+                                <path d="M9 9h6M9 12h6M9 15h4" stroke="#4D738A" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h2 class="connectivity-intro__card-title">Network Adapters</h2>
+                        <p class="connectivity-intro__card-text">High-performance PCIe NICs from 100Mbps Fast Ethernet to 25Gbps server-class. Hardware acceleration, multi-port configurations, and copper or fiber connectivity for servers, workstations, and data centers.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -161,6 +307,7 @@
                 <div class="container">
                     <div class="featured-products__header-content">
                         <h2 class="featured-products__series">Media Converters</h2>
+                        <p class="featured-products__series-subtitle">Copper-to-fiber bridging and VDSL2 distance extension</p>
                     </div>
                 </div>
             </div>
@@ -168,37 +315,37 @@
                 <div class="product-grid">
 
                     <!-- Product 1: MMC2000I/SP -->
-                    <article class="product-card fade-in-up">
+                    <div class="product-card fade-in-up">
                         <div class="product-card__image">
-                            <img src="images/products/connectivity/mmc2000i-sp.png" alt="Allied Telesis MMC2000I/SP Media Converter" loading="lazy">
+                            <img src="images/products/connectivity/mmc2000i-sp.png" alt="Allied Telesis MMC2000I/SP Media Converter" loading="lazy" width="300" height="300">
                         </div>
-                        <h3 class="product-card__name">Allied Telesis MMC2000I/SP</h3>
+                        <a href="#" class="product-card__name">MMC2000I/SP</a>
                         <p class="product-card__shipping">10/100/1000T to 100/1000 SFP | Industrial temp | Mini form factor | Plug-and-play</p>
                         <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn btn--amazon" aria-label="See options for MMC2000I/SP">See Options</a>
-                    </article>
+                        <a href="#" class="btn btn--amazon" aria-label="View MMC2000I/SP on Amazon">View on Amazon</a>
+                    </div>
 
                     <!-- Product 2: PC2000T2/SP -->
-                    <article class="product-card fade-in-up">
+                    <div class="product-card fade-in-up">
                         <div class="product-card__image">
-                            <img src="images/products/connectivity/pc2000t2-sp.png" alt="Allied Telesis PC2000T2/SP Media Converter" loading="lazy">
+                            <img src="images/products/connectivity/pc2000t2-sp.png" alt="Allied Telesis PC2000T2/SP Media Converter" loading="lazy" width="300" height="300">
                         </div>
-                        <h3 class="product-card__name">Allied Telesis PC2000T2/SP</h3>
+                        <a href="#" class="product-card__name">PC2000T2/SP</a>
                         <p class="product-card__shipping">Dual-port | 2x RJ45 + 2x SFP | DIN rail mount | Auto-negotiation</p>
                         <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn btn--amazon" aria-label="See options for PC2000T2/SP">See Options</a>
-                    </article>
+                        <a href="#" class="btn btn--amazon" aria-label="View PC2000T2/SP on Amazon">View on Amazon</a>
+                    </div>
 
                     <!-- Product 3: MMC6000 Series -->
-                    <article class="product-card fade-in-up">
+                    <div class="product-card fade-in-up">
                         <div class="product-card__image">
-                            <img src="images/products/connectivity/mmc6000.png" alt="Allied Telesis MMC6000 Series Media Converter" loading="lazy">
+                            <img src="images/products/connectivity/mmc6000.png" alt="Allied Telesis MMC6000 Series Media Converter" loading="lazy" width="300" height="300">
                         </div>
-                        <h3 class="product-card__name">Allied Telesis MMC6000 Series</h3>
-                        <p class="product-card__shipping">VDSL2 distance extender | Existing copper reuse</p>
+                        <a href="#" class="product-card__name">MMC6000 Series</a>
+                        <p class="product-card__shipping">VDSL2 distance extender | Existing copper reuse | Up to 100Mbps over phone line</p>
                         <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn btn--amazon" aria-label="See options for MMC6000 Series">See Options</a>
-                    </article>
+                        <a href="#" class="btn btn--amazon" aria-label="View MMC6000 Series on Amazon">View on Amazon</a>
+                    </div>
 
                 </div>
             </div>
@@ -210,6 +357,7 @@
                 <div class="container">
                     <div class="featured-products__header-content">
                         <h2 class="featured-products__series">Network Adapters</h2>
+                        <p class="featured-products__series-subtitle">PCIe NICs from Fast Ethernet to 25Gbps server-class</p>
                     </div>
                 </div>
             </div>
@@ -217,83 +365,155 @@
                 <div class="product-grid">
 
                     <!-- Product 4: ANC25SP -->
-                    <article class="product-card fade-in-up">
+                    <div class="product-card fade-in-up">
                         <div class="product-card__image">
-                            <img src="images/products/connectivity/anc25sp.png" alt="Allied Telesis ANC25SP 25Gbps Network Adapter" loading="lazy">
+                            <img src="images/products/connectivity/anc25sp.png" alt="Allied Telesis ANC25SP 25Gbps Network Adapter" loading="lazy" width="300" height="300">
                         </div>
-                        <h3 class="product-card__name">Allied Telesis ANC25SP</h3>
+                        <a href="#" class="product-card__name">ANC25SP</a>
                         <p class="product-card__shipping">25 Gbps single-port | PCIe x8 | Server NIC | Hardware acceleration</p>
                         <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn btn--amazon" aria-label="See options for ANC25SP">See Options</a>
-                    </article>
+                        <a href="#" class="btn btn--amazon" aria-label="View ANC25SP on Amazon">View on Amazon</a>
+                    </div>
 
                     <!-- Product 5: ANC25SP/2 -->
-                    <article class="product-card fade-in-up">
+                    <div class="product-card fade-in-up">
                         <div class="product-card__image">
-                            <img src="images/products/connectivity/anc25sp-2.png" alt="Allied Telesis ANC25SP/2 25Gbps Dual-Port Network Adapter" loading="lazy">
+                            <img src="images/products/connectivity/anc25sp-2.png" alt="Allied Telesis ANC25SP/2 25Gbps Dual-Port Network Adapter" loading="lazy" width="300" height="300">
                         </div>
-                        <h3 class="product-card__name">Allied Telesis ANC25SP/2</h3>
-                        <p class="product-card__shipping">25 Gbps dual-port | PCIe x8 | High availability</p>
+                        <a href="#" class="product-card__name">ANC25SP/2</a>
+                        <p class="product-card__shipping">25 Gbps dual-port | PCIe x8 | High availability | Hardware acceleration</p>
                         <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn btn--amazon" aria-label="See options for ANC25SP/2">See Options</a>
-                    </article>
+                        <a href="#" class="btn btn--amazon" aria-label="View ANC25SP/2 on Amazon">View on Amazon</a>
+                    </div>
 
                     <!-- Product 6: AT-2911Ta/2 -->
-                    <article class="product-card fade-in-up">
+                    <div class="product-card fade-in-up">
                         <div class="product-card__image">
-                            <img src="images/products/connectivity/at-2911ta-2.png" alt="Allied Telesis AT-2911Ta/2 Dual GbE Copper Network Adapter" loading="lazy">
+                            <img src="images/products/connectivity/at-2911ta-2.png" alt="Allied Telesis AT-2911Ta/2 Dual GbE Copper Network Adapter" loading="lazy" width="300" height="300">
                         </div>
-                        <h3 class="product-card__name">Allied Telesis AT-2911Ta/2</h3>
-                        <p class="product-card__shipping">Dual GbE copper | PCIe | Desktop NIC</p>
+                        <a href="#" class="product-card__name">AT-2911Ta/2</a>
+                        <p class="product-card__shipping">Dual GbE copper | PCIe x4 | Desktop &amp; server NIC | Low-profile bracket</p>
                         <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn btn--amazon" aria-label="See options for AT-2911Ta/2">See Options</a>
-                    </article>
+                        <a href="#" class="btn btn--amazon" aria-label="View AT-2911Ta/2 on Amazon">View on Amazon</a>
+                    </div>
 
                     <!-- Product 7: AT-2911SFPa/2 -->
-                    <article class="product-card fade-in-up">
+                    <div class="product-card fade-in-up">
                         <div class="product-card__image">
-                            <img src="images/products/connectivity/at-2911sfpa-2.png" alt="Allied Telesis AT-2911SFPa/2 Dual SFP Fiber Network Adapter" loading="lazy">
+                            <img src="images/products/connectivity/at-2911sfpa-2.png" alt="Allied Telesis AT-2911SFPa/2 Dual SFP Fiber Network Adapter" loading="lazy" width="300" height="300">
                         </div>
-                        <h3 class="product-card__name">Allied Telesis AT-2911SFPa/2</h3>
-                        <p class="product-card__shipping">Dual SFP 1G | PCIe | Fiber NIC</p>
+                        <a href="#" class="product-card__name">AT-2911SFPa/2</a>
+                        <p class="product-card__shipping">Dual SFP 1G fiber | PCIe x4 | Server &amp; workstation | Low-profile bracket</p>
                         <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn btn--amazon" aria-label="See options for AT-2911SFPa/2">See Options</a>
-                    </article>
+                        <a href="#" class="btn btn--amazon" aria-label="View AT-2911SFPa/2 on Amazon">View on Amazon</a>
+                    </div>
 
                     <!-- Product 8: AT-2911SXa/LC -->
-                    <article class="product-card fade-in-up">
+                    <div class="product-card fade-in-up">
                         <div class="product-card__image">
-                            <img src="images/products/connectivity/at-2911sxa-lc.png" alt="Allied Telesis AT-2911SXa/LC Multimode Fiber Network Adapter" loading="lazy">
+                            <img src="images/products/connectivity/at-2911sxa-lc.png" alt="Allied Telesis AT-2911SXa/LC Multimode Fiber Network Adapter" loading="lazy" width="300" height="300">
                         </div>
-                        <h3 class="product-card__name">Allied Telesis AT-2911SXa/LC</h3>
-                        <p class="product-card__shipping">1000BASE-SX/LC | PCIe | Multimode fiber</p>
+                        <a href="#" class="product-card__name">AT-2911SXa/LC</a>
+                        <p class="product-card__shipping">1000BASE-SX/LC | PCIe x1 | Multimode fiber | Up to 550m reach</p>
                         <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn btn--amazon" aria-label="See options for AT-2911SXa/LC">See Options</a>
-                    </article>
+                        <a href="#" class="btn btn--amazon" aria-label="View AT-2911SXa/LC on Amazon">View on Amazon</a>
+                    </div>
 
                     <!-- Product 9: AT-2711FXa/SC -->
-                    <article class="product-card fade-in-up">
+                    <div class="product-card fade-in-up">
                         <div class="product-card__image">
-                            <img src="images/products/connectivity/at-2711fxa-sc.png" alt="Allied Telesis AT-2711FXa/SC Fast Ethernet Fiber Network Adapter" loading="lazy">
+                            <img src="images/products/connectivity/at-2711fxa-sc.png" alt="Allied Telesis AT-2711FXa/SC Fast Ethernet Fiber Network Adapter" loading="lazy" width="300" height="300">
                         </div>
-                        <h3 class="product-card__name">Allied Telesis AT-2711FXa/SC</h3>
-                        <p class="product-card__shipping">100FX/SC | PCIe | Fast Ethernet fiber</p>
+                        <a href="#" class="product-card__name">AT-2711FXa/SC</a>
+                        <p class="product-card__shipping">100FX/SC fiber | PCIe x1 | Fast Ethernet | Up to 2km multimode reach</p>
                         <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn btn--amazon" aria-label="See options for AT-2711FXa/SC">See Options</a>
-                    </article>
+                        <a href="#" class="btn btn--amazon" aria-label="View AT-2711FXa/SC on Amazon">View on Amazon</a>
+                    </div>
 
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
+        <!-- Adapter Comparison Table -->
+        <section class="comparison-section" id="adapter-comparison">
+            <div class="container">
+                <h2 class="section-title">Adapter Comparison</h2>
+                <p class="section-subtitle">Compare key specifications across Allied Telesis network adapters</p>
+                <div class="comparison-table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Speed</th>
+                                <th>Ports</th>
+                                <th>Interface</th>
+                                <th>Media</th>
+                                <th>Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ANC25SP</td>
+                                <td>25 Gbps</td>
+                                <td>1x SFP28</td>
+                                <td>PCIe x8</td>
+                                <td>Fiber</td>
+                                <td>Data center servers</td>
+                            </tr>
+                            <tr>
+                                <td>ANC25SP/2</td>
+                                <td>25 Gbps</td>
+                                <td>2x SFP28</td>
+                                <td>PCIe x8</td>
+                                <td>Fiber</td>
+                                <td>HA / virtualization</td>
+                            </tr>
+                            <tr>
+                                <td>AT-2911Ta/2</td>
+                                <td>1 Gbps</td>
+                                <td>2x RJ45</td>
+                                <td>PCIe x4</td>
+                                <td>Copper</td>
+                                <td>Desktops / servers</td>
+                            </tr>
+                            <tr>
+                                <td>AT-2911SFPa/2</td>
+                                <td>1 Gbps</td>
+                                <td>2x SFP</td>
+                                <td>PCIe x4</td>
+                                <td>Fiber</td>
+                                <td>Fiber workstations</td>
+                            </tr>
+                            <tr>
+                                <td>AT-2911SXa/LC</td>
+                                <td>1 Gbps</td>
+                                <td>1x LC</td>
+                                <td>PCIe x1</td>
+                                <td>MM Fiber</td>
+                                <td>Short-range fiber</td>
+                            </tr>
+                            <tr>
+                                <td>AT-2711FXa/SC</td>
+                                <td>100 Mbps</td>
+                                <td>1x SC</td>
+                                <td>PCIe x1</td>
+                                <td>MM Fiber</td>
+                                <td>Legacy fiber links</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Allied Telesis Connectivity (From Manufacturer) -->
         <section id="features" class="from-manufacturer">
             <div class="from-manufacturer__background">
                 <img src="images/hero/connectivity-hero.svg" alt="" aria-hidden="true" loading="lazy">
             </div>
             <div class="from-manufacturer__overlay"></div>
             <div class="from-manufacturer__content container">
-                <h2 class="from-manufacturer__title">Connectivity Features</h2>
+                <h2 class="from-manufacturer__title">Why Allied Telesis Connectivity</h2>
                 <div class="from-manufacturer__grid">
 
                     <div class="from-manufacturer__card fade-in-up">
@@ -303,7 +523,7 @@
                             </svg>
                         </div>
                         <h3 class="from-manufacturer__card-title">Plug and Play</h3>
-                        <p class="from-manufacturer__card-text">Auto-negotiation, MDI/MDI-X, and hot-swappable SFP modules for zero-configuration deployment.</p>
+                        <p class="from-manufacturer__card-text">Auto-negotiation, MDI/MDI-X, and hot-swappable SFP modules for zero-configuration deployment. Unbox, connect, and bridge your network in minutes.</p>
                     </div>
 
                     <div class="from-manufacturer__card fade-in-up">
@@ -312,8 +532,8 @@
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#4D738A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h3 class="from-manufacturer__card-title">Industrial-Grade</h3>
-                        <p class="from-manufacturer__card-text">Extended temperature ranges, DIN-rail mounting, and ruggedized enclosures for demanding environments.</p>
+                        <h3 class="from-manufacturer__card-title">Industrial-Grade Reliability</h3>
+                        <p class="from-manufacturer__card-text">Extended temperature ranges (-40 to 75C), DIN-rail mounting, and ruggedized enclosures built for factories, utilities, and outdoor deployments.</p>
                     </div>
 
                     <div class="from-manufacturer__card fade-in-up">
@@ -323,9 +543,67 @@
                             </svg>
                         </div>
                         <h3 class="from-manufacturer__card-title">25G Server Performance</h3>
-                        <p class="from-manufacturer__card-text">PCIe x8 NICs with hardware acceleration for high-throughput data center and virtualization workloads.</p>
+                        <p class="from-manufacturer__card-text">PCIe x8 NICs with hardware acceleration, TCP/UDP offloading, and jumbo frame support for high-throughput data center and virtualization workloads.</p>
                     </div>
 
+                    <div class="from-manufacturer__card fade-in-up">
+                        <div class="from-manufacturer__card-badge">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#4D738A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="9" cy="7" r="4" stroke="#4D738A" stroke-width="2"/>
+                                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#4D738A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="from-manufacturer__card-title">Broad OS Compatibility</h3>
+                        <p class="from-manufacturer__card-text">Certified drivers for Windows, Linux, VMware ESXi, and FreeBSD. Drop-in upgrades for any server or workstation environment without compatibility headaches.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Cross-Links to Other Categories -->
+        <section class="cross-links">
+            <div class="container">
+                <h2 class="section-title text-center">Explore More Solutions</h2>
+                <p class="section-subtitle text-center">Complete your Allied Telesis network infrastructure</p>
+                <div class="cross-links__grid">
+                    <a href="switches.html" class="cross-link-card fade-in-up">
+                        <div class="cross-link-card__icon">
+                            <img src="images/nav/icon-switches.svg" alt="" aria-hidden="true" width="56" height="56">
+                        </div>
+                        <h3 class="cross-link-card__title">Enterprise Switches</h3>
+                        <p class="cross-link-card__desc">Layer 3 managed switches with VCStack resilience and up to 1.92 Tbps fabric</p>
+                    </a>
+                    <a href="industrial.html" class="cross-link-card fade-in-up">
+                        <div class="cross-link-card__icon">
+                            <img src="images/nav/icon-industrial.svg" alt="" aria-hidden="true" width="56" height="56">
+                        </div>
+                        <h3 class="cross-link-card__title">Industrial Networking</h3>
+                        <p class="cross-link-card__desc">Ruggedized switches and routers for harsh environments and critical infrastructure</p>
+                    </a>
+                    <a href="wireless.html" class="cross-link-card fade-in-up">
+                        <div class="cross-link-card__icon">
+                            <img src="images/nav/icon-wireless.svg" alt="" aria-hidden="true" width="56" height="56">
+                        </div>
+                        <h3 class="cross-link-card__title">Wireless Access Points</h3>
+                        <p class="cross-link-card__desc">Wi-Fi 6 and Wi-Fi 6E access points with AI-powered wireless optimization</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page-Specific CTA -->
+        <section class="contact-cta-section">
+            <div class="contact-cta-section__background">
+                <img src="images/hero/connectivity-hero.svg" alt="" aria-hidden="true" loading="lazy">
+            </div>
+            <div class="contact-cta">
+                <h2 class="contact-cta__headline">Bridge Any Network Gap</h2>
+                <p class="contact-cta__text">From copper-to-fiber media conversion to 25Gbps server NICs, Allied Telesis connectivity products keep your infrastructure connected, fast, and reliable.</p>
+                <div class="hero__ctas">
+                    <a href="#product-grid-converters" class="btn btn--modern">Shop Media Converters <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
+                    <a href="#product-grid-adapters" class="btn btn--outline-light">Shop Network Adapters</a>
                 </div>
             </div>
         </section>

@@ -16,6 +16,158 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <style>
+        /* Homepage-specific inline styles for elements that need minor adjustments
+           beyond the existing SCSS classes */
+        .hero__trust-bar {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        .hero__trust-item {
+            text-align: center;
+            color: #fff;
+        }
+        .hero__trust-number {
+            font-family: 'Roboto', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #4D738A;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+        .hero__trust-label {
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.8);
+            margin-top: 4px;
+            letter-spacing: 0.3px;
+        }
+        .featured-strip {
+            background: #fff;
+            padding: 80px 0 60px;
+        }
+        .featured-strip__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+        .featured-strip__card {
+            background: #fff;
+            border: 1px solid #e3e6e6;
+            border-radius: 12px;
+            padding: 32px 24px 24px;
+            text-align: center;
+            transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s cubic-bezier(0.4,0,0.2,1);
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+        .featured-strip__card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .featured-strip__card-img {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .featured-strip__card-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .featured-strip__card-name {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #020817;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+        .featured-strip__card-desc {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+        .featured-strip__card-category {
+            display: inline-block;
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #4D738A;
+            margin-bottom: 12px;
+        }
+        .industries-bar {
+            background: #f7f8fa;
+            padding: 48px 0;
+            border-top: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .industries-bar__inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 56px;
+            flex-wrap: wrap;
+        }
+        .industries-bar__label {
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #6b7280;
+        }
+        .industries-bar__item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .industries-bar__item img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .industries-bar__item span {
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: #2b333f;
+        }
+        @media (max-width: 1024px) {
+            .hero__trust-bar { gap: 32px; }
+            .featured-strip__grid { grid-template-columns: repeat(2, 1fr); }
+            .industries-bar__inner { gap: 32px; }
+        }
+        @media (max-width: 768px) {
+            .hero__trust-bar {
+                flex-wrap: wrap;
+                gap: 24px;
+                justify-content: center;
+            }
+            .hero__trust-item { min-width: 80px; }
+            .hero__trust-number { font-size: 24px; }
+            .featured-strip__grid { grid-template-columns: 1fr; }
+            .industries-bar__inner {
+                flex-direction: column;
+                gap: 16px;
+                align-items: center;
+            }
+            .featured-strip { padding: 48px 0 32px; }
+        }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -147,7 +299,7 @@
     <!-- Main Content -->
     <main id="main-content">
 
-        <!-- Hero Section -->
+        <!-- SECTION 1: Hero — Outcome-Driven Value Proposition (0-3s) -->
         <section class="hero" aria-label="Allied Telesis hero">
             <div class="hero__background">
                 <video class="hero__bg-video" autoplay muted loop playsinline preload="none" poster="images/hero/hero-poster.svg">
@@ -156,203 +308,87 @@
             </div>
             <div class="hero__overlay"></div>
             <div class="hero__content">
-                <h1 class="hero__headline">Allied Telesis — Network Smarter.</h1>
-                <p class="hero__subtext">Enterprise-grade switches, wireless, and security trusted by organizations in 90+ countries. Engineered in Japan since 1987.</p>
+                <h1 class="hero__headline">Enterprise Networking.<br>Zero Compromise.</h1>
+                <p class="hero__subtext">Switches, wireless, firewalls, and industrial networking trusted in 90+ countries. Tier 1 performance at a fraction of the cost.</p>
                 <div class="hero__ctas">
-                    <a href="#category-preview" class="btn btn--primary btn--large">Explore Solutions</a>
+                    <a href="#category-preview" class="btn btn--primary btn--large">Browse All Products</a>
+                    <a href="#why-allied-telesis" class="btn btn--secondary btn--large">Why Allied Telesis</a>
                 </div>
-            </div>
-        </section>
-
-        <!-- About Brand Section -->
-        <section class="about-brand" aria-label="About Allied Telesis">
-            <div class="container">
-                <div class="about-brand__header">
-                    <h2 class="about-brand__title">About Allied Telesis</h2>
-                </div>
-                <div class="about-brand__content">
-                    <div class="about-brand__card">
-                        <div class="about-brand__card-icon">
-                            <img src="images/branding/about-brand.svg" alt="Allied Telesis global operations" width="80" height="80" loading="lazy">
-                        </div>
-                        <h3 class="about-brand__card-title">Our Mission</h3>
-                        <p class="about-brand__card-text">At the heart of Allied Telesis lies a simple yet powerful belief: technology should elevate performance, empower people, and create lasting value. From our headquarters in Tokyo and San Jose, we serve organizations across education, healthcare, government, and manufacturing.</p>
+                <!-- Trust Bar: Compact social proof integrated into hero -->
+                <div class="hero__trust-bar">
+                    <div class="hero__trust-item">
+                        <div class="hero__trust-number">1987</div>
+                        <div class="hero__trust-label">Founded</div>
                     </div>
-                    <div class="about-brand__card">
-                        <div class="about-brand__card-icon">
-                            <img src="images/branding/icon-performance.svg" alt="Enterprise networking performance" width="48" height="48" loading="lazy">
-                        </div>
-                        <h3 class="about-brand__card-title">Enterprise Value</h3>
-                        <p class="about-brand__card-text">With nearly 1,900 employees worldwide, Allied Telesis delivers enterprise-grade networking at a fraction of the cost of Tier 1 competitors — backed by autonomous management, self-defending security, and non-stop resilience.</p>
+                    <div class="hero__trust-item">
+                        <div class="hero__trust-number">90+</div>
+                        <div class="hero__trust-label">Countries</div>
+                    </div>
+                    <div class="hero__trust-item">
+                        <div class="hero__trust-number">44</div>
+                        <div class="hero__trust-label">Products</div>
+                    </div>
+                    <div class="hero__trust-item">
+                        <div class="hero__trust-number">1,900</div>
+                        <div class="hero__trust-label">Employees</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Category Preview Section -->
+        <!-- SECTION 2: Category Tiles — Primary Conversion Architecture (3-10s) -->
         <section class="category-tiles" id="category-preview" aria-label="Product categories">
             <div class="container">
-                <h2 class="section-title">Explore Our Solutions</h2>
-                <p class="section-subtitle">From enterprise campus switches to ruggedized industrial networking, Allied Telesis has the right solution for your organization.</p>
+                <h2 class="section-title text-center">Shop by Category</h2>
+                <p class="section-subtitle text-center">44 enterprise networking products across 6 categories.</p>
                 <div class="category-grid">
-                    <a href="switches.html" class="category-tile" aria-label="Browse Switches">
-                        <div class="category-tile__image category-tile__image--icon">
-                            <img src="images/nav/icon-switches.svg" alt="Switches" width="64" height="64" loading="lazy">
+                    <a href="switches.html" class="category-tile" aria-label="Browse Switches — 17 products">
+                        <div class="category-tile__image">
+                            <img src="images/products/switches/x950-28xsq.png" alt="Allied Telesis x950 Series Switch" width="300" height="180" loading="lazy">
                         </div>
                         <h3 class="category-tile__title">Switches</h3>
-                        <p class="category-tile__desc">Enterprise campus, stackable edge, and SMB switches with up to 100G uplinks</p>
+                        <p class="category-tile__desc">17 models &mdash; campus, stackable, and SMB switches with up to 100G uplinks</p>
                     </a>
-                    <a href="industrial.html" class="category-tile" aria-label="Browse Industrial">
-                        <div class="category-tile__image category-tile__image--icon">
-                            <img src="images/nav/icon-industrial.svg" alt="Industrial" width="64" height="64" loading="lazy">
+                    <a href="industrial.html" class="category-tile" aria-label="Browse Industrial — 5 products">
+                        <div class="category-tile__image">
+                            <img src="images/products/industrial/ie560-12gsx.png" alt="Allied Telesis IE560 Industrial Switch" width="300" height="180" loading="lazy">
                         </div>
                         <h3 class="category-tile__title">Industrial</h3>
-                        <p class="category-tile__desc">Ruggedized DIN-rail switches for factory floors, IIoT, and harsh environments</p>
+                        <p class="category-tile__desc">5 models &mdash; ruggedized DIN-rail switches for factory floors and harsh environments</p>
                     </a>
-                    <a href="wireless.html" class="category-tile" aria-label="Browse Wireless">
-                        <div class="category-tile__image category-tile__image--icon">
-                            <img src="images/nav/icon-wireless.svg" alt="Wireless" width="64" height="64" loading="lazy">
+                    <a href="wireless.html" class="category-tile" aria-label="Browse Wireless — 7 products">
+                        <div class="category-tile__image">
+                            <img src="images/products/wireless/tq6702e-gen2-r.png" alt="Allied Telesis TQ6702e Wireless Access Point" width="300" height="180" loading="lazy">
                         </div>
                         <h3 class="category-tile__title">Wireless</h3>
-                        <p class="category-tile__desc">Wi-Fi 6, 6E, and 7 access points with AI-powered wireless optimization</p>
+                        <p class="category-tile__desc">7 models &mdash; Wi-Fi 6, 6E, and 7 access points with AI-powered optimization</p>
                     </a>
-                    <a href="firewalls.html" class="category-tile" aria-label="Browse Firewalls">
-                        <div class="category-tile__image category-tile__image--icon">
-                            <img src="images/nav/icon-firewalls.svg" alt="Firewalls" width="64" height="64" loading="lazy">
+                    <a href="firewalls.html" class="category-tile" aria-label="Browse Firewalls — 2 products">
+                        <div class="category-tile__image">
+                            <img src="images/products/firewalls/arx200s-gtx.png" alt="Allied Telesis ARX200S Firewall" width="300" height="180" loading="lazy">
                         </div>
                         <h3 class="category-tile__title">Firewalls</h3>
-                        <p class="category-tile__desc">UTM security with SD-WAN, deep packet inspection, and 10G throughput</p>
+                        <p class="category-tile__desc">2 models &mdash; UTM security with SD-WAN, deep packet inspection, and 10G throughput</p>
                     </a>
-                    <a href="connectivity.html" class="category-tile" aria-label="Browse Connectivity">
-                        <div class="category-tile__image category-tile__image--icon">
-                            <img src="images/nav/icon-connectivity.svg" alt="Connectivity" width="64" height="64" loading="lazy">
+                    <a href="connectivity.html" class="category-tile" aria-label="Browse Connectivity — 9 products">
+                        <div class="category-tile__image">
+                            <img src="images/products/connectivity/mmc6000.png" alt="Allied Telesis MMC6000 Media Converter" width="300" height="180" loading="lazy">
                         </div>
                         <h3 class="category-tile__title">Connectivity</h3>
-                        <p class="category-tile__desc">Media converters and 25G PCIe network adapters for seamless bridging</p>
+                        <p class="category-tile__desc">9 models &mdash; media converters and 25G PCIe network adapters</p>
                     </a>
-                    <a href="network-management.html" class="category-tile" aria-label="Browse Network Management">
-                        <div class="category-tile__image category-tile__image--icon">
-                            <img src="images/nav/icon-network-management.svg" alt="Network Management" width="64" height="64" loading="lazy">
+                    <a href="network-management.html" class="category-tile" aria-label="Browse Network Management — 4 products">
+                        <div class="category-tile__image">
+                            <img src="images/products/software/vista-manager.png" alt="Allied Telesis Vista Manager Network Management" width="300" height="180" loading="lazy">
                         </div>
                         <h3 class="category-tile__title">Network Management</h3>
-                        <p class="category-tile__desc">Cloud and on-premise platforms for unified network visibility and control</p>
+                        <p class="category-tile__desc">4 platforms &mdash; cloud and on-premise unified network visibility and control</p>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Differentiators Section -->
-        <section class="from-manufacturer" aria-label="Why Allied Telesis">
-            <div class="from-manufacturer__background">
-                <img src="images/hero/hero-poster.svg" alt="" loading="lazy">
-            </div>
-            <div class="from-manufacturer__overlay"></div>
-            <div class="from-manufacturer__content container">
-                <h2 class="from-manufacturer__title">Why Allied Telesis</h2>
-                <div class="from-manufacturer__grid">
-                    <div class="from-manufacturer__card">
-                        <div class="from-manufacturer__card-badge">
-                            <img src="images/branding/icon-reliability.svg" alt="" width="28" height="28" loading="lazy" aria-hidden="true">
-                        </div>
-                        <h3 class="from-manufacturer__card-title">Non-Stop Networks</h3>
-                        <p class="from-manufacturer__card-text">Redundant hardware, VCStack resilience, and EPSRing with 50ms failover keep your network running 24/7.</p>
-                    </div>
-                    <div class="from-manufacturer__card">
-                        <div class="from-manufacturer__card-badge">
-                            <img src="images/branding/icon-automation.svg" alt="" width="28" height="28" loading="lazy" aria-hidden="true">
-                        </div>
-                        <h3 class="from-manufacturer__card-title">Autonomous Management</h3>
-                        <p class="from-manufacturer__card-text">AMF Plus zero-touch provisioning, AWC AI-driven Wi-Fi optimization, and Vista Manager single-pane-of-glass control.</p>
-                    </div>
-                    <div class="from-manufacturer__card">
-                        <div class="from-manufacturer__card-badge">
-                            <img src="images/branding/icon-security.svg" alt="" width="28" height="28" loading="lazy" aria-hidden="true">
-                        </div>
-                        <h3 class="from-manufacturer__card-title">Self-Defending Security</h3>
-                        <p class="from-manufacturer__card-text">AMF-Sec automatically quarantines threats without endpoint agents. Multiple InfoSec and Fortress Cyber Security Awards.</p>
-                    </div>
-                    <div class="from-manufacturer__card">
-                        <div class="from-manufacturer__card-badge">
-                            <img src="images/branding/icon-performance.svg" alt="" width="28" height="28" loading="lazy" aria-hidden="true">
-                        </div>
-                        <h3 class="from-manufacturer__card-title">Lower Total Cost</h3>
-                        <p class="from-manufacturer__card-text">Enterprise-grade networking at a fraction of Tier 1 pricing. License fees are a fraction of hardware cost.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Industries Served Section -->
-        <section class="brand-story" aria-label="Industries served">
-            <div class="container">
-                <div class="brand-story__header">
-                    <h2 class="section-title">Industries We Serve</h2>
-                    <p class="section-subtitle">Allied Telesis networking solutions are trusted across a wide range of industries worldwide.</p>
-                </div>
-                <div class="brand-story__cards">
-                    <div class="story-card">
-                        <div class="story-card__image">
-                            <img src="images/industries/education.svg" alt="Education networking solutions" loading="lazy">
-                        </div>
-                        <h3 class="story-card__title">Education</h3>
-                        <p class="story-card__desc">Next-level performance for classrooms and mobile users with secure infrastructure.</p>
-                    </div>
-                    <div class="story-card">
-                        <div class="story-card__image">
-                            <img src="images/industries/healthcare.svg" alt="Healthcare networking solutions" loading="lazy">
-                        </div>
-                        <h3 class="story-card__title">Healthcare</h3>
-                        <p class="story-card__desc">Reliable networks for diagnostic imaging, patient data, and 15+ devices per room.</p>
-                    </div>
-                    <div class="story-card">
-                        <div class="story-card__image">
-                            <img src="images/industries/government.svg" alt="Government networking solutions" loading="lazy">
-                        </div>
-                        <h3 class="story-card__title">Government</h3>
-                        <p class="story-card__desc">NDAA Section 889 and TAA compliant networking for federal, state, and local agencies.</p>
-                    </div>
-                </div>
-                <div class="brand-story__cards">
-                    <div class="story-card">
-                        <div class="story-card__image">
-                            <img src="images/industries/manufacturing.svg" alt="Manufacturing networking solutions" loading="lazy">
-                        </div>
-                        <h3 class="story-card__title">Manufacturing</h3>
-                        <p class="story-card__desc">Industrial-grade IIoT networking with PTP, CIP/IO, and extended lifecycle support.</p>
-                    </div>
-                    <div class="story-card">
-                        <div class="story-card__image">
-                            <img src="images/industries/transportation.svg" alt="Transportation networking solutions" loading="lazy">
-                        </div>
-                        <h3 class="story-card__title">Transportation</h3>
-                        <p class="story-card__desc">Fast, efficient, and safe transit network infrastructure.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stats Section -->
-        <section class="stats-section" aria-label="Allied Telesis by the numbers">
-            <div class="container">
-                <h2 class="section-title section-title--white">Allied Telesis by the Numbers</h2>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-item__number">1987</div>
-                        <p class="stat-item__desc">Founded in Tokyo, Japan — nearly four decades of networking innovation</p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-item__number">90+</div>
-                        <p class="stat-item__desc">Countries served worldwide with enterprise-grade networking solutions</p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-item__number">1,900</div>
-                        <p class="stat-item__desc">Employees delivering networking excellence from Tokyo, San Jose, and offices globally</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
+        <!-- SECTION 3: Testimonial — Social Proof (10-15s) -->
         <section class="testimonials-section" aria-label="Customer testimonials">
             <div class="testimonials-section__background">
                 <video autoplay muted loop playsinline preload="none" class="hero__bg-video">
@@ -383,45 +419,119 @@
             </template>
         </section>
 
-        <!-- Partners Section -->
-        <section class="brand-story" aria-label="Technology partners">
-            <div class="container">
-                <div class="brand-story__header">
-                    <h2 class="section-title">Technology Partners</h2>
-                    <p class="section-subtitle">Allied Telesis works with industry-leading technology partners to deliver integrated solutions.</p>
-                </div>
-                <div class="brand-story__cards">
-                    <div class="story-card">
-                        <div class="story-card__image">
-                            <img src="images/branding/partner-sinclair.svg" alt="Sinclair Digital" loading="lazy">
+        <!-- SECTION 4: Differentiators — Why Allied Telesis (15-30s) -->
+        <section class="from-manufacturer" id="why-allied-telesis" aria-label="Why Allied Telesis">
+            <div class="from-manufacturer__background">
+                <img src="images/hero/hero-poster.svg" alt="" loading="lazy">
+            </div>
+            <div class="from-manufacturer__overlay"></div>
+            <div class="from-manufacturer__content container">
+                <h2 class="from-manufacturer__title">Why Allied Telesis</h2>
+                <div class="from-manufacturer__grid">
+                    <div class="from-manufacturer__card">
+                        <div class="from-manufacturer__card-badge">
+                            <img src="images/branding/icon-reliability.svg" alt="" width="28" height="28" loading="lazy" aria-hidden="true">
                         </div>
-                        <h3 class="story-card__title">Sinclair Digital</h3>
+                        <h3 class="from-manufacturer__card-title">Non-Stop Networks</h3>
+                        <p class="from-manufacturer__card-text">Redundant hardware, VCStack resilience, and EPSRing with 50ms failover. Your network runs 24/7 without exception.</p>
                     </div>
-                    <div class="story-card">
-                        <div class="story-card__image">
-                            <img src="images/branding/partner-hanwha.svg" alt="Hanwha Vision" loading="lazy">
+                    <div class="from-manufacturer__card">
+                        <div class="from-manufacturer__card-badge">
+                            <img src="images/branding/icon-automation.svg" alt="" width="28" height="28" loading="lazy" aria-hidden="true">
                         </div>
-                        <h3 class="story-card__title">Hanwha Vision</h3>
+                        <h3 class="from-manufacturer__card-title">Autonomous Management</h3>
+                        <p class="from-manufacturer__card-text">AMF Plus zero-touch provisioning, AWC AI-driven Wi-Fi, and Vista Manager single-pane-of-glass control. Deploy in minutes, not days.</p>
                     </div>
-                    <div class="story-card">
-                        <div class="story-card__image">
-                            <img src="images/branding/partner-milestone.svg" alt="Milestone Systems" loading="lazy">
+                    <div class="from-manufacturer__card">
+                        <div class="from-manufacturer__card-badge">
+                            <img src="images/branding/icon-security.svg" alt="" width="28" height="28" loading="lazy" aria-hidden="true">
                         </div>
-                        <h3 class="story-card__title">Milestone Systems</h3>
+                        <h3 class="from-manufacturer__card-title">Self-Defending Security</h3>
+                        <p class="from-manufacturer__card-text">AMF-Sec quarantines threats automatically without endpoint agents. Winner of multiple InfoSec and Fortress Cyber Security Awards.</p>
+                    </div>
+                    <div class="from-manufacturer__card">
+                        <div class="from-manufacturer__card-badge">
+                            <img src="images/branding/icon-performance.svg" alt="" width="28" height="28" loading="lazy" aria-hidden="true">
+                        </div>
+                        <h3 class="from-manufacturer__card-title">Lower Total Cost</h3>
+                        <p class="from-manufacturer__card-text">Enterprise-grade performance at a fraction of Tier 1 pricing. License fees are minimal. NDAA Section 889 and TAA compliant.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact CTA Section -->
-        <section class="contact-cta-section" aria-label="Contact Allied Telesis">
+        <!-- SECTION 5: Featured Products — Hardware Showcase (30-45s) -->
+        <section class="featured-strip" aria-label="Featured products">
+            <div class="container">
+                <h2 class="section-title text-center">Featured Products</h2>
+                <p class="section-subtitle text-center">Flagship hardware from across our portfolio.</p>
+                <div class="featured-strip__grid">
+                    <a href="switches.html" class="featured-strip__card">
+                        <span class="featured-strip__card-category">Enterprise Switches</span>
+                        <div class="featured-strip__card-img">
+                            <img src="images/products/switches/x950-52xsq.png" alt="x950-52XSQ Stackable Switch" loading="lazy">
+                        </div>
+                        <div class="featured-strip__card-name">x950-52XSQ</div>
+                        <p class="featured-strip__card-desc">52-port 10G/100G stackable switch. The backbone of enterprise campus networks.</p>
+                    </a>
+                    <a href="wireless.html" class="featured-strip__card">
+                        <span class="featured-strip__card-category">Wireless Access Points</span>
+                        <div class="featured-strip__card-img">
+                            <img src="images/products/wireless/tq7613-r.png" alt="TQ7613-R Wi-Fi 7 Access Point" loading="lazy">
+                        </div>
+                        <div class="featured-strip__card-name">TQ7613-R</div>
+                        <p class="featured-strip__card-desc">Wi-Fi 7 tri-band access point with up to 12.4 Gbps throughput. Next-generation wireless.</p>
+                    </a>
+                    <a href="industrial.html" class="featured-strip__card">
+                        <span class="featured-strip__card-category">Industrial Switches</span>
+                        <div class="featured-strip__card-img">
+                            <img src="images/products/industrial/ie560-12gsx.png" alt="IE560-12GSX Industrial Ethernet Switch" loading="lazy">
+                        </div>
+                        <div class="featured-strip__card-name">IE560-12GSX</div>
+                        <p class="featured-strip__card-desc">12-port industrial managed switch. Ruggedized for factory floors, IIoT, and extreme temperatures.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: Industries Served — Compact Trust Strip -->
+        <section class="industries-bar" aria-label="Industries served">
+            <div class="container">
+                <div class="industries-bar__inner">
+                    <span class="industries-bar__label">Trusted in</span>
+                    <div class="industries-bar__item">
+                        <img src="images/industries/education.svg" alt="" loading="lazy" aria-hidden="true">
+                        <span>Education</span>
+                    </div>
+                    <div class="industries-bar__item">
+                        <img src="images/industries/healthcare.svg" alt="" loading="lazy" aria-hidden="true">
+                        <span>Healthcare</span>
+                    </div>
+                    <div class="industries-bar__item">
+                        <img src="images/industries/government.svg" alt="" loading="lazy" aria-hidden="true">
+                        <span>Government</span>
+                    </div>
+                    <div class="industries-bar__item">
+                        <img src="images/industries/manufacturing.svg" alt="" loading="lazy" aria-hidden="true">
+                        <span>Manufacturing</span>
+                    </div>
+                    <div class="industries-bar__item">
+                        <img src="images/industries/transportation.svg" alt="" loading="lazy" aria-hidden="true">
+                        <span>Transportation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: Final CTA — Drive to Categories -->
+        <section class="contact-cta-section" aria-label="Explore Allied Telesis products">
             <div class="contact-cta-section__background">
                 <img src="images/hero/hero-poster.svg" alt="" loading="lazy">
             </div>
             <div class="contact-cta">
                 <h2 class="contact-cta__headline">Ready to Network Smarter?</h2>
-                <p class="contact-cta__text">Contact an Allied Telesis authorized reseller to find the right solution for your organization.</p>
-                <a href="#" class="btn btn--primary btn--large">Find a Reseller</a>
+                <p class="contact-cta__text">Explore 44 enterprise networking products engineered in Japan since 1987. Switches, wireless, firewalls, and more.</p>
+                <a href="#category-preview" class="btn btn--primary btn--large">Explore All Categories</a>
             </div>
         </section>
 
@@ -490,11 +600,11 @@
                 <p class="amazon-footer__copyright">&copy; 1996-2026, Amazon.com, Inc. or its affiliates</p>
             </div>
         </div>
-        <div class="amazon-footer__brand">
+        <div class="amazon-footer__brand" style="background:#003865;padding:32px 0;text-align:center;">
             <div class="container">
-                <img src="images/branding/brand-logo-white.svg" alt="Allied Telesis - Official Amazon Brand Store" class="amazon-footer__brand-logo" loading="lazy" width="200" height="40">
-                <p class="amazon-footer__tagline">Network smarter.</p>
-                <p class="amazon-footer__brand-copyright">&copy; 2026 Allied Telesis, Inc. All rights reserved.</p>
+                <img src="images/branding/brand-logo-white.svg" alt="Allied Telesis - Official Amazon Brand Store" style="height:28px;opacity:0.85;margin:0 auto 8px;display:block;" loading="lazy" width="200" height="40">
+                <p style="font-family:'Roboto',sans-serif;font-size:14px;color:rgba(255,255,255,0.7);margin:0 0 4px;">Network smarter.</p>
+                <p style="font-family:'Roboto',sans-serif;font-size:12px;color:rgba(255,255,255,0.5);margin:0;">&copy; 2026 Allied Telesis, Inc. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -3,14 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Switches | Allied Telesis Official Store on Amazon</title>
     <meta name="description" content="Enterprise managed switches from Allied Telesis. Layer 3 campus, stackable edge, and SMB switches with VCStack resilience, AMF Plus automation, and up to 1.92 Tbps switching fabric.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Allied Telesis">
+    <meta property="og:title" content="Enterprise Switches | Allied Telesis Official Store on Amazon">
+    <meta property="og:description" content="Layer 3 managed switches with VCStack resilience, AMF Plus automation, and up to 1.92 Tbps switching fabric.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/branding/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Enterprise Switches | Allied Telesis Official Store on Amazon">
+    <meta name="twitter:description" content="Layer 3 managed switches with VCStack resilience and up to 1.92 Tbps switching fabric.">
+    <title>Enterprise Switches | Allied Telesis Official Store on Amazon</title>
     <link rel="icon" href="logos/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <style>
+        /* Page-specific styles for switches.html */
+
+        /* Section anchor nav */
+        .sw-anchor-nav {
+            background: #f7f8fa;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 98;
+        }
+        .sw-anchor-nav__list {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+        .sw-anchor-nav__link {
+            display: inline-block;
+            padding: 14px 28px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #4b5563;
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+            transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+        }
+        .sw-anchor-nav__link:hover,
+        .sw-anchor-nav__link--active {
+            color: #4D738A;
+            border-bottom-color: #4D738A;
+        }
+        .sw-anchor-nav__count {
+            font-weight: 400;
+            color: #9ca3af;
+            margin-left: 4px;
+            font-size: 12px;
+        }
+
+        /* Category intro text block */
+        .sw-intro {
+            background: #fff;
+            padding: 48px 0 0;
+            text-align: center;
+        }
+        .sw-intro__text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: 300;
+            color: #2b333f;
+            line-height: 1.7;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Subsection dividers */
+        .sw-section-header {
+            background: #003865;
+            padding: 24px 0;
+            position: relative;
+        }
+        .sw-section-header__inner {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+        .sw-section-header__title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+        .sw-section-header__subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.75);
+        }
+        .sw-section-header__count {
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.6);
+            white-space: nowrap;
+        }
+
+        /* Product card feature list styling (fixes missing SCSS) */
+        .product-card__features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 12px;
+            text-align: left;
+        }
+        .product-card__features li {
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            color: #4b5563;
+            line-height: 1.5;
+            padding: 3px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+        .product-card__features li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 5px;
+            height: 5px;
+            background: #4D738A;
+            border-radius: 50%;
+        }
+
+        /* Flagship highlight card */
+        .product-card--flagship {
+            border: 2px solid #4D738A;
+            position: relative;
+        }
+        .product-card--flagship::after {
+            content: 'FLAGSHIP';
+            position: absolute;
+            top: 0;
+            right: 16px;
+            background: #4D738A;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 0 0 4px 4px;
+        }
+
+        /* Cross-link tiles */
+        .sw-crosslinks {
+            background: #f7f8fa;
+            padding: 80px 0;
+        }
+        .sw-crosslinks__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .sw-crosslink-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: block;
+        }
+        .sw-crosslink-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        .sw-crosslink-card__icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 16px;
+        }
+        .sw-crosslink-card__title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #020817;
+            margin-bottom: 8px;
+        }
+        .sw-crosslink-card__desc {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* Alternating section backgrounds */
+        .featured-products--alt {
+            background: #f7f8fa;
+        }
+
+        /* Product card shipping used as subtitle */
+        .product-card__shipping {
+            min-height: 32px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .sw-crosslinks__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .sw-anchor-nav__link {
+                padding: 12px 18px;
+                font-size: 12px;
+            }
+            .sw-section-header__inner {
+                flex-direction: column;
+                gap: 4px;
+            }
+        }
+        @media (max-width: 768px) {
+            .sw-anchor-nav__list {
+                justify-content: flex-start;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .sw-anchor-nav__link {
+                padding: 12px 16px;
+                font-size: 11px;
+            }
+            .sw-crosslinks__grid {
+                grid-template-columns: 1fr;
+            }
+            .sw-section-header__title {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Skip Navigation -->
@@ -144,6 +385,16 @@
     <!-- Main Content -->
     <main id="main-content">
 
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item"><a href="index.html">Allied Telesis Store</a></li>
+                    <li class="breadcrumb__item" aria-current="page">Enterprise Switches</li>
+                </ol>
+            </div>
+        </nav>
+
         <!-- Hero Section -->
         <section class="hero" data-section="switches">
             <div class="hero__background">
@@ -152,24 +403,49 @@
             <div class="hero__overlay"></div>
             <div class="hero__content">
                 <h1 class="hero__headline">Enterprise Switches</h1>
-                <p class="hero__subtext">From 100G backbone aggregation to multi-gigabit edge access — Layer 3 managed switches with VCStack resilience, AMF Plus automation, and up to 1.92 Tbps switching fabric.</p>
+                <p class="hero__subtext">From 100G backbone aggregation to multi-gigabit edge access -- Layer 3 managed switches with VCStack resilience, AMF Plus automation, and up to 1.92 Tbps switching fabric.</p>
                 <div class="hero__ctas">
-                    <a href="#product-grid-campus" class="btn btn--amazon">View All Switches</a>
+                    <a href="#campus" class="btn btn--primary btn--large">View All 17 Switches</a>
+                    <a href="#specs-comparison" class="btn btn--secondary btn--large">Compare Specs</a>
                 </div>
             </div>
         </section>
 
-        <!-- Enterprise Campus Product Grid (13 products) -->
-        <section class="featured-products" id="product-grid-campus">
+        <!-- Anchor Navigation -->
+        <nav class="sw-anchor-nav" aria-label="Switch category navigation">
+            <ul class="sw-anchor-nav__list">
+                <li><a href="#campus" class="sw-anchor-nav__link sw-anchor-nav__link--active">Enterprise Campus<span class="sw-anchor-nav__count">(13)</span></a></li>
+                <li><a href="#edge" class="sw-anchor-nav__link">Stackable Edge<span class="sw-anchor-nav__count">(2)</span></a></li>
+                <li><a href="#smb" class="sw-anchor-nav__link">Small Business<span class="sw-anchor-nav__count">(2)</span></a></li>
+                <li><a href="#specs-comparison" class="sw-anchor-nav__link">Compare</a></li>
+            </ul>
+        </nav>
+
+        <!-- Category Introduction -->
+        <div class="sw-intro">
             <div class="container">
-                <div class="featured-products__header">
-                    <h2 class="section-title">Enterprise Campus</h2>
-                    <p class="section-subtitle">High-performance Layer 3 managed switches for backbone aggregation and campus distribution</p>
+                <p class="sw-intro__text">Allied Telesis offers 17 managed switches across three tiers: high-performance campus backbone, stackable edge access, and cost-effective small business. Every switch runs AlliedWare Plus with VCStack virtual chassis stacking and AMF Plus zero-touch automation.</p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!--   ENTERPRISE CAMPUS (13 products)            -->
+        <!-- ============================================ -->
+        <section class="featured-products" id="campus">
+            <div class="sw-section-header">
+                <div class="sw-section-header__inner">
+                    <div>
+                        <h2 class="sw-section-header__title">Enterprise Campus</h2>
+                        <p class="sw-section-header__subtitle">High-performance Layer 3 managed switches for backbone aggregation and campus distribution</p>
+                    </div>
+                    <span class="sw-section-header__count">13 products</span>
                 </div>
+            </div>
+            <div class="container">
                 <div class="product-grid">
 
-                    <!-- 1. x950-28XSQ -->
-                    <div class="product-card">
+                    <!-- 1. x950-28XSQ (FLAGSHIP) -->
+                    <div class="product-card product-card--flagship">
                         <div class="product-card__image">
                             <img src="images/products/switches/x950-28xsq.png" alt="Allied Telesis x950-28XSQ" loading="lazy" width="300" height="300">
                         </div>
@@ -180,7 +456,7 @@
                             <li>1,190 Mpps forwarding rate</li>
                             <li>VCStack virtual chassis stacking</li>
                             <li>AMF Plus zero-touch provisioning</li>
-                            <li>MACSec encryption, FIPS 140-2 certified</li>
+                            <li>MACSec encryption, FIPS 140-2</li>
                         </ul>
                         <span class="product-card__price">See Options</span>
                         <a href="#" class="btn btn--amazon">View on Amazon</a>
@@ -394,13 +670,20 @@
             </div>
         </section>
 
-        <!-- Stackable Edge Product Grid (2 products) -->
-        <section class="featured-products" id="product-grid-edge">
-            <div class="container">
-                <div class="featured-products__header">
-                    <h2 class="section-title">Stackable Edge</h2>
-                    <p class="section-subtitle">Cost-effective stackable switches for campus edge and branch deployments</p>
+        <!-- ============================================ -->
+        <!--   STACKABLE EDGE (2 products)                -->
+        <!-- ============================================ -->
+        <section class="featured-products featured-products--alt" id="edge">
+            <div class="sw-section-header">
+                <div class="sw-section-header__inner">
+                    <div>
+                        <h2 class="sw-section-header__title">Stackable Edge</h2>
+                        <p class="sw-section-header__subtitle">Cost-effective stackable switches for campus edge and branch deployments</p>
+                    </div>
+                    <span class="sw-section-header__count">2 products</span>
                 </div>
+            </div>
+            <div class="container">
                 <div class="product-grid">
 
                     <!-- 14. SE540L-28XTm -->
@@ -441,13 +724,20 @@
             </div>
         </section>
 
-        <!-- Small Business Product Grid (2 products) -->
-        <section class="featured-products" id="product-grid-smb">
-            <div class="container">
-                <div class="featured-products__header">
-                    <h2 class="section-title">Small Business</h2>
-                    <p class="section-subtitle">WebSmart managed switches for small offices and retail with fanless, silent operation</p>
+        <!-- ============================================ -->
+        <!--   SMALL BUSINESS (2 products)                -->
+        <!-- ============================================ -->
+        <section class="featured-products" id="smb">
+            <div class="sw-section-header">
+                <div class="sw-section-header__inner">
+                    <div>
+                        <h2 class="sw-section-header__title">Small Business</h2>
+                        <p class="sw-section-header__subtitle">WebSmart managed switches for small offices and retail with fanless, silent operation</p>
+                    </div>
+                    <span class="sw-section-header__count">2 products</span>
                 </div>
+            </div>
+            <div class="container">
                 <div class="product-grid">
 
                     <!-- 16. GS950/28 V2 -->
@@ -488,28 +778,35 @@
             </div>
         </section>
 
-        <!-- Why Allied Telesis Switches (From Manufacturer) -->
+        <!-- Why Allied Telesis Switches -->
         <section class="from-manufacturer" id="features">
             <div class="from-manufacturer__background">
                 <div class="from-manufacturer__overlay"></div>
             </div>
             <div class="from-manufacturer__content">
-                <h2 class="from-manufacturer__title">Why Allied Telesis Switches</h2>
-                <div class="from-manufacturer__grid">
-                    <div class="from-manufacturer__card">
-                        <span class="from-manufacturer__card-badge">01</span>
-                        <h3 class="from-manufacturer__card-title">VCStack Resilience</h3>
-                        <p class="from-manufacturer__card-text">Virtual chassis stacking creates a unified, fault-tolerant switching fabric across up to 8 units.</p>
-                    </div>
-                    <div class="from-manufacturer__card">
-                        <span class="from-manufacturer__card-badge">02</span>
-                        <h3 class="from-manufacturer__card-title">AMF Plus Automation</h3>
-                        <p class="from-manufacturer__card-text">Zero-touch provisioning, automated backup and recovery, and seamless firmware management.</p>
-                    </div>
-                    <div class="from-manufacturer__card">
-                        <span class="from-manufacturer__card-badge">03</span>
-                        <h3 class="from-manufacturer__card-title">MACSec &amp; FIPS 140-2</h3>
-                        <p class="from-manufacturer__card-text">Hardware-level encryption on every link. FIPS 140-2 certified for government compliance.</p>
+                <div class="container">
+                    <h2 class="from-manufacturer__title">Why Allied Telesis Switches</h2>
+                    <div class="from-manufacturer__grid">
+                        <div class="from-manufacturer__card">
+                            <span class="from-manufacturer__card-badge">01</span>
+                            <h3 class="from-manufacturer__card-title">VCStack Resilience</h3>
+                            <p class="from-manufacturer__card-text">Virtual chassis stacking creates a unified, fault-tolerant switching fabric across up to 8 units. One management plane, zero single points of failure.</p>
+                        </div>
+                        <div class="from-manufacturer__card">
+                            <span class="from-manufacturer__card-badge">02</span>
+                            <h3 class="from-manufacturer__card-title">AMF Plus Automation</h3>
+                            <p class="from-manufacturer__card-text">Zero-touch provisioning, automated backup and recovery, and seamless firmware management across your entire switching infrastructure.</p>
+                        </div>
+                        <div class="from-manufacturer__card">
+                            <span class="from-manufacturer__card-badge">03</span>
+                            <h3 class="from-manufacturer__card-title">MACSec &amp; FIPS 140-2</h3>
+                            <p class="from-manufacturer__card-text">Hardware-level encryption on every link. FIPS 140-2 certified for government and regulated industry compliance requirements.</p>
+                        </div>
+                        <div class="from-manufacturer__card">
+                            <span class="from-manufacturer__card-badge">04</span>
+                            <h3 class="from-manufacturer__card-title">AlliedWare Plus OS</h3>
+                            <p class="from-manufacturer__card-text">A unified operating system across all switches, routers, and firewalls. Consistent CLI, centralized policy, and automated lifecycle management.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -542,6 +839,14 @@
                                 <td>VCStack + MACSec</td>
                             </tr>
                             <tr>
+                                <td>x950-52XSQ</td>
+                                <td>48x 10G SFP+</td>
+                                <td>1.92 Tbps</td>
+                                <td>1,190 Mpps</td>
+                                <td>4x 100G QSFP28</td>
+                                <td>High-density 48-port</td>
+                            </tr>
+                            <tr>
                                 <td>x560-28YSQ</td>
                                 <td>24x 25G SFP28</td>
                                 <td>2.0 Tbps</td>
@@ -566,14 +871,6 @@
                                 <td>Stackable edge</td>
                             </tr>
                             <tr>
-                                <td>SBx908 GEN3</td>
-                                <td>8 expansion bays</td>
-                                <td>N/A</td>
-                                <td>N/A</td>
-                                <td>Modular</td>
-                                <td>3RU chassis</td>
-                            </tr>
-                            <tr>
                                 <td>x240-26GHXM</td>
                                 <td>24x Multi-Gig</td>
                                 <td>280 Gbps</td>
@@ -581,8 +878,85 @@
                                 <td>2x 10G SFP+</td>
                                 <td>90W PoE++</td>
                             </tr>
+                            <tr>
+                                <td>SBx908 GEN3</td>
+                                <td>8 expansion bays</td>
+                                <td>Modular</td>
+                                <td>Modular</td>
+                                <td>Modular</td>
+                                <td>3RU chassis</td>
+                            </tr>
+                            <tr>
+                                <td>GS950/28 V2</td>
+                                <td>24x 1G + 4 SFP</td>
+                                <td>56 Gbps</td>
+                                <td>41.66 Mpps</td>
+                                <td>4x SFP</td>
+                                <td>Fanless, 19W</td>
+                            </tr>
                         </tbody>
                     </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Stats -->
+        <section class="stats-section">
+            <div class="container">
+                <h2 class="section-title section-title--white">Trusted Worldwide</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-item__number">1.92 Tbps</div>
+                        <p class="stat-item__desc">Maximum switching fabric capacity in the x950 series flagship switches</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-item__number">37+</div>
+                        <p class="stat-item__desc">Years of networking innovation since Allied Telesis was founded in 1987</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-item__number">90+</div>
+                        <p class="stat-item__desc">Countries with Allied Telesis deployments across enterprise and government networks</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cross-Links to Related Categories -->
+        <section class="sw-crosslinks">
+            <div class="container">
+                <h2 class="section-title text-center">Complete Your Network</h2>
+                <p class="section-subtitle text-center">Allied Telesis switches integrate seamlessly with the full product ecosystem</p>
+                <div class="sw-crosslinks__grid">
+                    <a href="wireless.html" class="sw-crosslink-card">
+                        <img src="images/nav/icon-wireless.svg" alt="" class="sw-crosslink-card__icon" width="48" height="48" aria-hidden="true">
+                        <h3 class="sw-crosslink-card__title">Wireless Access Points</h3>
+                        <p class="sw-crosslink-card__desc">Wi-Fi 6 and Wi-Fi 6E access points with AMF Plus zero-touch provisioning and AWC optimization.</p>
+                    </a>
+                    <a href="firewalls.html" class="sw-crosslink-card">
+                        <img src="images/nav/icon-firewalls.svg" alt="" class="sw-crosslink-card__icon" width="48" height="48" aria-hidden="true">
+                        <h3 class="sw-crosslink-card__title">Firewalls &amp; Security</h3>
+                        <p class="sw-crosslink-card__desc">UTM firewalls with integrated SD-WAN, deep packet inspection, and AMF-Sec self-defending network.</p>
+                    </a>
+                    <a href="network-management.html" class="sw-crosslink-card">
+                        <img src="images/nav/icon-network-management.svg" alt="" class="sw-crosslink-card__icon" width="48" height="48" aria-hidden="true">
+                        <h3 class="sw-crosslink-card__title">Network Management</h3>
+                        <p class="sw-crosslink-card__desc">Vista Manager, AMF Plus controller, and AWC plugin for unified orchestration across your fabric.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page CTA -->
+        <section class="contact-cta-section">
+            <div class="contact-cta-section__background">
+                <img src="images/hero/switches-hero.svg" alt="" aria-hidden="true" loading="lazy">
+            </div>
+            <div class="contact-cta">
+                <h2 class="contact-cta__headline">Build Your Switching Fabric</h2>
+                <p class="contact-cta__text">From 100G backbone aggregation to silent desktop switches -- explore the full Allied Telesis switch lineup on Amazon with VCStack resilience and AMF Plus automation built in.</p>
+                <div class="hero__ctas">
+                    <a href="#campus" class="btn btn--primary btn--large">Browse All Switches</a>
+                    <a href="index.html" class="btn btn--secondary btn--large">Explore All Products</a>
                 </div>
             </div>
         </section>

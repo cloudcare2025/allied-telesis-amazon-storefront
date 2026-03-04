@@ -16,6 +16,151 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <style>
+        /* Page-specific styles for wireless.html */
+        .wireless-hero-badge {
+            display: inline-block;
+            background: rgba(77, 115, 138, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 20px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+        .product-card__features {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 12px;
+            text-align: left;
+        }
+        .product-card__features li {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #4b5563;
+            line-height: 1.6;
+            padding-left: 14px;
+            position: relative;
+        }
+        .product-card__features li::before {
+            content: "\2022";
+            position: absolute;
+            left: 0;
+            color: #4D738A;
+            font-weight: bold;
+        }
+        .wifi-generation-label {
+            display: inline-block;
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 10px;
+            border-radius: 3px;
+            margin-bottom: 8px;
+        }
+        .wifi-generation-label--wifi7 {
+            background: #003865;
+            color: #fff;
+        }
+        .wifi-generation-label--wifi6e {
+            background: #4D738A;
+            color: #fff;
+        }
+        .wifi-generation-label--wifi6 {
+            background: #6A8FA6;
+            color: #fff;
+        }
+        .cross-links {
+            background: #f7f8fa;
+            padding: 60px 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .cross-links__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+        .cross-links__card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s cubic-bezier(0.4,0,0.2,1);
+            text-decoration: none;
+            display: block;
+        }
+        .cross-links__card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .cross-links__icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 16px;
+        }
+        .cross-links__card-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #020817;
+            margin-bottom: 8px;
+        }
+        .cross-links__card-desc {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+        .page-cta {
+            position: relative;
+            padding: 80px 0;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #003865 0%, #002647 100%);
+            font-family: 'Roboto', sans-serif;
+        }
+        .page-cta__headline {
+            font-size: 36px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        .page-cta__text {
+            font-size: 18px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.6;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .page-cta__buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 768px) {
+            .cross-links__grid {
+                grid-template-columns: 1fr;
+            }
+            .page-cta__headline {
+                font-size: 28px;
+            }
+            .page-cta__text {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Skip Navigation -->
@@ -148,109 +293,272 @@
     <!-- Main Content -->
     <main id="main-content">
 
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item"><a href="index.html">Allied Telesis Store</a></li>
+                    <li class="breadcrumb__item" aria-current="page">Wireless Access Points</li>
+                </ol>
+            </div>
+        </nav>
+
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" data-section="wireless">
             <div class="hero__background">
-                <img src="images/hero/wireless-hero.svg" alt="Allied Telesis Wireless Access Points" loading="eager">
+                <img src="images/hero/wireless-hero.svg" alt="Allied Telesis Wireless Access Points" loading="eager" width="1500" height="300">
             </div>
             <div class="hero__overlay"></div>
             <div class="hero__content">
+                <span class="wireless-hero-badge">Enterprise Wi-Fi</span>
                 <h1 class="hero__headline">Wireless Access Points</h1>
                 <p class="hero__subtext">Wi-Fi 7, 6E, and 6 access points with Autonomous Wave Control for AI-driven RF optimization, hybrid single/multi-channel architecture, and up to 19 Gbps capacity.</p>
+                <div class="hero__ctas">
+                    <a href="#product-grid" class="btn btn--amazon">View All Access Points</a>
+                </div>
             </div>
         </section>
 
         <!-- Product Grid Section -->
         <section id="product-grid" class="featured-products">
             <div class="container">
-                <h2 class="section-title">Wireless Access Points</h2>
-                <p class="section-subtitle">Enterprise-class Wi-Fi with AI-powered RF management</p>
+                <div class="featured-products__header">
+                    <h2 class="section-title">All Wireless Access Points</h2>
+                    <p class="section-subtitle">Enterprise-class Wi-Fi with AI-powered RF management across Wi-Fi 7, 6E, and 6</p>
+                </div>
                 <div class="product-grid">
 
-                    <!-- TQ7613-R -->
+                    <!-- TQ7613-R (Wi-Fi 7) -->
                     <div class="product-card">
-                        <img src="images/products/wireless/tq7613-r.png" alt="Allied Telesis TQ7613-R Wi-Fi 7 Wireless Access Point" class="product-card__image" loading="lazy">
-                        <h3 class="product-card__name">TQ7613-R</h3>
-                        <p class="product-card__shipping">Wi-Fi 7 (802.11be) | 4x4 tri-radio | 19 Gbps | 2x Multi-Gig uplinks | AWC | DPI | 32W</p>
+                        <span class="wifi-generation-label wifi-generation-label--wifi7">Wi-Fi 7</span>
+                        <div class="product-card__image">
+                            <img src="images/products/wireless/tq7613-r.png" alt="Allied Telesis TQ7613-R Wi-Fi 7 Wireless Access Point" loading="lazy" width="300" height="300">
+                        </div>
+                        <a href="#" class="product-card__name">TQ7613-R</a>
+                        <ul class="product-card__features">
+                            <li>Wi-Fi 7 (802.11be) tri-radio 4x4</li>
+                            <li>19 Gbps aggregate throughput</li>
+                            <li>2x Multi-Gig uplinks</li>
+                            <li>AWC + DPI, 32W power</li>
+                        </ul>
                         <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn--amazon">See Options</a>
+                        <a href="#" class="btn btn--amazon">View on Amazon</a>
                     </div>
 
-                    <!-- TQ6403 GEN2 -->
+                    <!-- TQ6403 GEN2 (Wi-Fi 6) -->
                     <div class="product-card">
-                        <img src="images/products/wireless/tq6403-gen2.png" alt="Allied Telesis TQ6403 GEN2 Wi-Fi 6 Wireless Access Point" class="product-card__image" loading="lazy">
-                        <h3 class="product-card__name">TQ6403 GEN2</h3>
-                        <p class="product-card__shipping">Wi-Fi 6 (802.11ax) tri-radio 2x2 | 2.4 Gbps | Hybrid mode | 2x Multi-Gig uplinks</p>
+                        <span class="wifi-generation-label wifi-generation-label--wifi6">Wi-Fi 6</span>
+                        <div class="product-card__image">
+                            <img src="images/products/wireless/tq6403-gen2.png" alt="Allied Telesis TQ6403 GEN2 Wi-Fi 6 Wireless Access Point" loading="lazy" width="300" height="300">
+                        </div>
+                        <a href="#" class="product-card__name">TQ6403 GEN2</a>
+                        <ul class="product-card__features">
+                            <li>Wi-Fi 6 (802.11ax) tri-radio 2x2</li>
+                            <li>2.4 Gbps aggregate throughput</li>
+                            <li>Hybrid single/multi-channel mode</li>
+                            <li>2x Multi-Gig uplinks</li>
+                        </ul>
                         <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn--amazon">See Options</a>
+                        <a href="#" class="btn btn--amazon">View on Amazon</a>
                     </div>
 
-                    <!-- TQm6403 GEN2 -->
+                    <!-- TQm6403 GEN2 (Wi-Fi 6) -->
                     <div class="product-card">
-                        <img src="images/products/wireless/tqm6403-gen2.png" alt="Allied Telesis TQm6403 GEN2 Wi-Fi 6 Wireless Access Point" class="product-card__image" loading="lazy">
-                        <h3 class="product-card__name">TQm6403 GEN2</h3>
-                        <p class="product-card__shipping">Wi-Fi 6 tri-radio 2x2 | 2.4 Gbps | Wall/ceiling mount</p>
+                        <span class="wifi-generation-label wifi-generation-label--wifi6">Wi-Fi 6</span>
+                        <div class="product-card__image">
+                            <img src="images/products/wireless/tqm6403-gen2.png" alt="Allied Telesis TQm6403 GEN2 Wi-Fi 6 Wireless Access Point" loading="lazy" width="300" height="300">
+                        </div>
+                        <a href="#" class="product-card__name">TQm6403 GEN2</a>
+                        <ul class="product-card__features">
+                            <li>Wi-Fi 6 tri-radio 2x2</li>
+                            <li>2.4 Gbps aggregate throughput</li>
+                            <li>Wall/ceiling mount form factor</li>
+                            <li>Hybrid single/multi-channel mode</li>
+                        </ul>
                         <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn--amazon">See Options</a>
+                        <a href="#" class="btn btn--amazon">View on Amazon</a>
                     </div>
 
-                    <!-- TQ3403 -->
+                    <!-- TQ3403 (Wi-Fi 6E) -->
                     <div class="product-card">
-                        <img src="images/products/wireless/tq3403.png" alt="Allied Telesis TQ3403 Wi-Fi 6E Wireless Access Point" class="product-card__image" loading="lazy">
-                        <h3 class="product-card__name">TQ3403</h3>
-                        <p class="product-card__shipping">Wi-Fi 6E tri-radio | 2.4/5/6GHz | 2.4 Gbps | 1x Multi-Gig uplink | AWC</p>
+                        <span class="wifi-generation-label wifi-generation-label--wifi6e">Wi-Fi 6E</span>
+                        <div class="product-card__image">
+                            <img src="images/products/wireless/tq3403.png" alt="Allied Telesis TQ3403 Wi-Fi 6E Wireless Access Point" loading="lazy" width="300" height="300">
+                        </div>
+                        <a href="#" class="product-card__name">TQ3403</a>
+                        <ul class="product-card__features">
+                            <li>Wi-Fi 6E tri-radio (2.4/5/6 GHz)</li>
+                            <li>2.4 Gbps aggregate throughput</li>
+                            <li>1x Multi-Gig uplink</li>
+                            <li>AWC AI-driven optimization</li>
+                        </ul>
                         <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn--amazon">See Options</a>
+                        <a href="#" class="btn btn--amazon">View on Amazon</a>
                     </div>
 
-                    <!-- TQ7403-R -->
+                    <!-- TQ7403-R (Wi-Fi 6E + Router) -->
                     <div class="product-card">
-                        <img src="images/products/wireless/tq7403-r.png" alt="Allied Telesis TQ7403-R Wi-Fi 6E Access Point with VPN Router" class="product-card__image" loading="lazy">
-                        <h3 class="product-card__name">TQ7403-R</h3>
-                        <p class="product-card__shipping">Wi-Fi 6E AP + built-in VPN router | AlliedWare Plus | SD-WAN</p>
+                        <span class="wifi-generation-label wifi-generation-label--wifi6e">Wi-Fi 6E</span>
+                        <div class="product-card__image">
+                            <img src="images/products/wireless/tq7403-r.png" alt="Allied Telesis TQ7403-R Wi-Fi 6E Access Point with VPN Router" loading="lazy" width="300" height="300">
+                        </div>
+                        <a href="#" class="product-card__name">TQ7403-R</a>
+                        <ul class="product-card__features">
+                            <li>Wi-Fi 6E AP + built-in VPN router</li>
+                            <li>AlliedWare Plus operating system</li>
+                            <li>SD-WAN capable</li>
+                            <li>All-in-one branch solution</li>
+                        </ul>
                         <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn--amazon">See Options</a>
+                        <a href="#" class="btn btn--amazon">View on Amazon</a>
                     </div>
 
-                    <!-- TQ6702e GEN2-R -->
+                    <!-- TQ6702e GEN2-R (Wi-Fi 6 Outdoor) -->
                     <div class="product-card">
-                        <img src="images/products/wireless/tq6702e-gen2-r.png" alt="Allied Telesis TQ6702e GEN2-R Outdoor Wi-Fi 6 Access Point" class="product-card__image" loading="lazy">
-                        <h3 class="product-card__name">TQ6702e GEN2-R</h3>
-                        <p class="product-card__shipping">Wi-Fi 6 | 8x8 MIMO | 4.8 Gbps | Outdoor-rated</p>
+                        <span class="wifi-generation-label wifi-generation-label--wifi6">Wi-Fi 6</span>
+                        <div class="product-card__image">
+                            <img src="images/products/wireless/tq6702e-gen2-r.png" alt="Allied Telesis TQ6702e GEN2-R Outdoor Wi-Fi 6 Access Point" loading="lazy" width="300" height="300">
+                        </div>
+                        <a href="#" class="product-card__name">TQ6702e GEN2-R</a>
+                        <ul class="product-card__features">
+                            <li>Wi-Fi 6, 8x8 MIMO outdoor</li>
+                            <li>4.8 Gbps aggregate throughput</li>
+                            <li>Outdoor-rated IP67 enclosure</li>
+                            <li>Extended range coverage</li>
+                        </ul>
                         <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn--amazon">See Options</a>
+                        <a href="#" class="btn btn--amazon">View on Amazon</a>
                     </div>
 
-                    <!-- TQ3403-R -->
+                    <!-- TQ3403-R (Wi-Fi 6E + Router) -->
                     <div class="product-card">
-                        <img src="images/products/wireless/tq3403-r.png" alt="Allied Telesis TQ3403-R Wi-Fi 6E Access Point with Built-in Routing" class="product-card__image" loading="lazy">
-                        <h3 class="product-card__name">TQ3403-R</h3>
-                        <p class="product-card__shipping">Wi-Fi 6E tri-radio 2x2 | 2.4 Gbps | AlliedWare Plus | Built-in routing</p>
+                        <span class="wifi-generation-label wifi-generation-label--wifi6e">Wi-Fi 6E</span>
+                        <div class="product-card__image">
+                            <img src="images/products/wireless/tq3403-r.png" alt="Allied Telesis TQ3403-R Wi-Fi 6E Access Point with Built-in Routing" loading="lazy" width="300" height="300">
+                        </div>
+                        <a href="#" class="product-card__name">TQ3403-R</a>
+                        <ul class="product-card__features">
+                            <li>Wi-Fi 6E tri-radio 2x2</li>
+                            <li>2.4 Gbps aggregate throughput</li>
+                            <li>AlliedWare Plus built-in routing</li>
+                            <li>Integrated branch networking</li>
+                        </ul>
                         <span class="product-card__price">See Options</span>
-                        <a href="#" class="btn--amazon">See Options</a>
+                        <a href="#" class="btn btn--amazon">View on Amazon</a>
                     </div>
 
                 </div>
             </div>
         </section>
 
-        <!-- Features Section (From the Manufacturer) -->
-        <section id="features" class="from-manufacturer">
+        <!-- Wireless Comparison Table -->
+        <section class="comparison-section" id="specs-comparison">
             <div class="container">
-                <div class="from-manufacturer__content">
+                <h2 class="section-title">Access Point Comparison</h2>
+                <p class="section-subtitle">Compare specifications across the Allied Telesis wireless lineup</p>
+                <div class="comparison-table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Wi-Fi Gen</th>
+                                <th>Radios</th>
+                                <th>Max Throughput</th>
+                                <th>Uplinks</th>
+                                <th>Key Feature</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>TQ7613-R</td>
+                                <td>Wi-Fi 7</td>
+                                <td>Tri-radio 4x4</td>
+                                <td>19 Gbps</td>
+                                <td>2x Multi-Gig</td>
+                                <td>Flagship, AWC + DPI</td>
+                            </tr>
+                            <tr>
+                                <td>TQ6702e GEN2-R</td>
+                                <td>Wi-Fi 6</td>
+                                <td>8x8 MIMO</td>
+                                <td>4.8 Gbps</td>
+                                <td>Multi-Gig</td>
+                                <td>Outdoor IP67</td>
+                            </tr>
+                            <tr>
+                                <td>TQ6403 GEN2</td>
+                                <td>Wi-Fi 6</td>
+                                <td>Tri-radio 2x2</td>
+                                <td>2.4 Gbps</td>
+                                <td>2x Multi-Gig</td>
+                                <td>Hybrid mode</td>
+                            </tr>
+                            <tr>
+                                <td>TQm6403 GEN2</td>
+                                <td>Wi-Fi 6</td>
+                                <td>Tri-radio 2x2</td>
+                                <td>2.4 Gbps</td>
+                                <td>Multi-Gig</td>
+                                <td>Wall/ceiling mount</td>
+                            </tr>
+                            <tr>
+                                <td>TQ3403</td>
+                                <td>Wi-Fi 6E</td>
+                                <td>Tri-radio</td>
+                                <td>2.4 Gbps</td>
+                                <td>1x Multi-Gig</td>
+                                <td>6 GHz band</td>
+                            </tr>
+                            <tr>
+                                <td>TQ7403-R</td>
+                                <td>Wi-Fi 6E</td>
+                                <td>Tri-radio</td>
+                                <td>2.4 Gbps</td>
+                                <td>Multi-Gig</td>
+                                <td>Built-in VPN router</td>
+                            </tr>
+                            <tr>
+                                <td>TQ3403-R</td>
+                                <td>Wi-Fi 6E</td>
+                                <td>Tri-radio 2x2</td>
+                                <td>2.4 Gbps</td>
+                                <td>Multi-Gig</td>
+                                <td>Built-in routing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- From the Manufacturer: Wireless Innovation -->
+        <section id="features" class="from-manufacturer">
+            <div class="from-manufacturer__background">
+                <div class="from-manufacturer__overlay"></div>
+            </div>
+            <div class="from-manufacturer__content">
+                <div class="container">
                     <h2 class="from-manufacturer__title">Wireless Innovation</h2>
                     <div class="from-manufacturer__grid">
                         <div class="from-manufacturer__card">
+                            <span class="from-manufacturer__card-badge">01</span>
                             <h3 class="from-manufacturer__card-title">Autonomous Wave Control</h3>
-                            <p class="from-manufacturer__card-text">AI-powered RF optimization that automatically tunes channel, power, and coverage for best performance.</p>
+                            <p class="from-manufacturer__card-text">AI-powered RF optimization that automatically tunes channel selection, power levels, and coverage patterns for the best possible performance in any environment.</p>
                         </div>
                         <div class="from-manufacturer__card">
+                            <span class="from-manufacturer__card-badge">02</span>
                             <h3 class="from-manufacturer__card-title">Hybrid Wi-Fi (World First)</h3>
-                            <p class="from-manufacturer__card-text">Simultaneous Channel Blanket single-channel and traditional multi-channel architecture for seamless roaming.</p>
+                            <p class="from-manufacturer__card-text">Simultaneous Channel Blanket single-channel and traditional multi-channel architecture enables seamless roaming with zero handoff delay for mobile clients.</p>
                         </div>
                         <div class="from-manufacturer__card">
+                            <span class="from-manufacturer__card-badge">03</span>
                             <h3 class="from-manufacturer__card-title">AlliedWare Plus OS</h3>
-                            <p class="from-manufacturer__card-text">Enterprise operating system with DPI, Passpoint, OpenRoaming, and centralized management.</p>
+                            <p class="from-manufacturer__card-text">Enterprise operating system with deep packet inspection, Passpoint hotspot 2.0, OpenRoaming, and centralized management across your entire network.</p>
+                        </div>
+                        <div class="from-manufacturer__card">
+                            <span class="from-manufacturer__card-badge">04</span>
+                            <h3 class="from-manufacturer__card-title">Built-in Branch Routing</h3>
+                            <p class="from-manufacturer__card-text">Select models integrate a full VPN router with SD-WAN capability, eliminating the need for separate networking hardware at branch locations.</p>
                         </div>
                     </div>
                 </div>
@@ -261,31 +569,54 @@
         <section id="video-section" class="video-section">
             <div class="container">
                 <h2 class="section-title">See It In Action</h2>
+                <p class="section-subtitle">Watch how Autonomous Wave Control transforms wireless network performance</p>
 
                 <div class="video-section__main">
-                    <div class="video-thumbnail" role="button" tabindex="0" aria-label="Play AWC Wireless Solutions video" data-video-index="0">
-                        <div class="video-thumbnail__overlay">
-                            <svg class="play-icon" viewBox="0 0 60 60" aria-hidden="true">
-                                <circle cx="30" cy="30" r="28" fill="rgba(0,0,0,0.6)"/>
-                                <polygon points="24,18 24,42 44,30" fill="#fff"/>
-                            </svg>
-                        </div>
-                    </div>
+                    <iframe src="https://player.vimeo.com/video/516758202?title=0&byline=0&portrait=0" class="video-section__player" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="AWC Wireless Solutions"></iframe>
                 </div>
 
                 <div class="video-section__grid">
                     <div class="video-section__card">
-                        <div class="video-thumbnail" role="button" tabindex="0" aria-label="Play Wireless Solutions Overview video" data-video-index="1">
-                            <div class="video-thumbnail__overlay">
-                                <svg class="play-icon" viewBox="0 0 60 60" aria-hidden="true">
-                                    <circle cx="30" cy="30" r="28" fill="rgba(0,0,0,0.6)"/>
-                                    <polygon points="24,18 24,42 44,30" fill="#fff"/>
-                                </svg>
-                            </div>
-                        </div>
+                        <iframe src="https://player.vimeo.com/video/324894758?title=0&byline=0&portrait=0" class="video-section__player video-section__player--secondary" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Wireless Solutions Overview"></iframe>
                     </div>
                 </div>
+            </div>
+        </section>
 
+        <!-- Cross-Links to Related Categories -->
+        <section class="cross-links">
+            <div class="container text-center">
+                <h2 class="section-title">Complete Your Network</h2>
+                <p class="section-subtitle">Pair your wireless access points with Allied Telesis switching, security, and management</p>
+                <div class="cross-links__grid">
+                    <a href="switches.html" class="cross-links__card">
+                        <img src="images/nav/icon-switches.svg" alt="" class="cross-links__icon" aria-hidden="true">
+                        <h3 class="cross-links__card-title">Enterprise Switches</h3>
+                        <p class="cross-links__card-desc">Multi-gigabit PoE switches to power and connect your access points</p>
+                    </a>
+                    <a href="network-management.html" class="cross-links__card">
+                        <img src="images/nav/icon-network-management.svg" alt="" class="cross-links__icon" aria-hidden="true">
+                        <h3 class="cross-links__card-title">Network Management</h3>
+                        <p class="cross-links__card-desc">Vista Manager, AWC plugin, and AMF Plus for centralized wireless control</p>
+                    </a>
+                    <a href="firewalls.html" class="cross-links__card">
+                        <img src="images/nav/icon-firewalls.svg" alt="" class="cross-links__icon" aria-hidden="true">
+                        <h3 class="cross-links__card-title">Firewalls</h3>
+                        <p class="cross-links__card-desc">Secure your wireless edge with next-gen firewall protection</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page CTA -->
+        <section class="page-cta">
+            <div class="container">
+                <h2 class="page-cta__headline">Ready to Upgrade Your Wireless?</h2>
+                <p class="page-cta__text">From Wi-Fi 7 flagships to compact wall-mount access points, Allied Telesis has an enterprise wireless solution for every deployment.</p>
+                <div class="page-cta__buttons">
+                    <a href="#product-grid" class="btn btn--outline-light">Browse Access Points</a>
+                    <a href="index.html" class="btn btn--outline-light">Explore Full Store</a>
+                </div>
             </div>
         </section>
 

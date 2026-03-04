@@ -456,7 +456,7 @@ type DebouncedFunction<T extends (...args: never[]) => void> = (...args: Paramet
   // ==========================================================================
 
   function initBackToTop(): void {
-    const backToTopLink: Element | null = document.querySelector('.amazon-footer__back-to-top-link');
+    const backToTopLink: Element | null = document.querySelector('.amazon-footer__back-to-top-link, .amazon-footer__back-to-top-link');
     if (!backToTopLink) return;
     backToTopLink.addEventListener('click', (e: Event): void => {
       e.preventDefault();

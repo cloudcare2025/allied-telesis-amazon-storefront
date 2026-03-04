@@ -1,0 +1,18 @@
+{
+  "brand_name": "Allied Telesis",
+  "brand_url": "https://www.alliedtelesis.com/",
+  "brand_slug": "allied-telesis",
+  "project_dir": "/home/claude-agent/projects/Allied Telesis Amazon Storefront",
+  "railway_service": "allied-telesis-amazon-storefront",
+  "phases_completed": ["phase-0"],
+  "github_url": "https://github.com/cloudcare2025/allied-telesis-amazon-storefront",
+  "railway_project": "allied-telesis-amazon-storefront",
+  "railway_linked": true,
+  "production_url": null,
+  "brand_colors": null,
+  "navigation": null,
+  "pages": null,
+  "product_count": 0,
+  "category_count": 0,
+  "image_path_contract": null
+}
